@@ -6,12 +6,19 @@
     :class="{ Cscroll: onTop }"
     height=""
   >
-     <searchModal v-if="modela" :message="computedTopValue" /> 
+    <searchModal
+      @CloseSearchModal="closeModal"
+      v-if="modela"
+      :message="computedTopValue"
+    />
     <v-row class="d-flex">
       <v-col cols="1" class="d-md-none">
         <button><v-icon>mdi-cart-plus</v-icon></button>
       </v-col>
-      <v-col class="ml-md-5 ml-6 text-center col-md-4 img" :class="{ scroll: onTop }">
+      <v-col
+        class="ml-md-5 ml-6 text-center col-md-4 img"
+        :class="{ scroll: onTop }"
+      >
         <v-btn variant="text"
           ><img
             src="/public/437523928_403353212455742_52635376963353824_n.jpg"
@@ -23,7 +30,7 @@
       <v-col cols="1" class="d-md-none pr-8">
         <button><v-icon>mdi-menu</v-icon></button></v-col
       >
-      <v-col class="d-none d-md-flex "
+      <v-col class="d-none d-md-flex"
         ><v-btn variant="text" class="mx-n2">Home</v-btn>
         <div @mouseenter="openMenu" @mouseleave="closeMenu">
           <v-btn variant="text" class="mx-n2">Categrious</v-btn>
@@ -41,7 +48,7 @@
         </div>
         <v-btn variant="text" class="mx-n5">Contact US</v-btn></v-col
       >
-      <v-col class="d-none d-md-flex justify-end mr-16 ">
+      <v-col class="d-none d-md-flex justify-end mr-16">
         <v-btn variant="text" size="small"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,11 +76,11 @@
         ></v-btn>
 
         <v-btn
+          v-if="!modela"
           variant="text"
           size="small"
-         
           @click="modela = !modela"
-          ><svg v-if="!modela"
+          ><svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
@@ -82,8 +89,15 @@
           >
             <path
               d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
-            /></svg> <v-icon v-else size="24px">mdi-close</v-icon></v-btn
-        ><v-btn variant="text" class="mx-n4 text-caption"
+            />
+          </svg>
+        </v-btn>
+
+        <v-btn v-else variant="text" size="small" @click="closeModal"
+          ><v-icon  height="24px" size="x-large">mdi-close</v-icon></v-btn
+        >
+
+        <v-btn variant="text" class="mx-n4 text-caption"
           ><span>LOGIN / REGISTER</span></v-btn
         ></v-col
       >
@@ -98,9 +112,18 @@ const computedTopValue = ref();
 import searchModal from "./modals/searchModal.vue";
 const onTop = ref(false);
 const Menu = ref(false);
+
 const openMenu = () => {
   Menu.value = true;
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = "hidden";
+};
+const closeModal = () => {
+  const searchModal = document.querySelector(".search");
+  searchModal.classList.add("closeModal");
+
+  setTimeout(() => {
+    modela.value = false;
+  }, 300);
 };
 const closeMenu = () => {
   Menu.value = false;
@@ -116,7 +139,7 @@ const handleScroll = () => {
 };
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
-  document.documentElement.overflowX='hidden'
+  document.documentElement.overflowX = "hidden";
 });
 onUnmounted(() => {
   window.removeEventListener("scroll");
@@ -145,6 +168,5 @@ img {
   width: 80px;
   height: 62px;
   margin-top: -15px;
-  
 }
 </style>
