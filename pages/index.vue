@@ -4,13 +4,13 @@
       <div class="">
         <img src="../assets/imges/sport-men-slider-1.png" alt="" ref="hero" />
       </div>
-      <div class="text-white align-self-center">
+      <div class="text-white align-self-center overflow">
         <p class="text-h3 text-uppercase font-weight-medium line-break title">
           <span class="text-black"> Pro</span> Performance <br />online store
         </p>
-        <p class="text-uppercase font-weight-medium fakeTitle">
+         <p class="text-uppercase  fakeTitle">
           performance gym
-        </p>
+        </p> 
       </div>
     </div>
     <div class="wave">
@@ -37,7 +37,7 @@
           position: absolute;
           right: 100px;
           width: 100%;
-          transform: scale(2);
+          transform: scale(1.6);
         "
       >
         <path
@@ -53,7 +53,7 @@
           position: absolute;
           right: 100px;
           width: 100%;
-          transform: scale(2);
+          transform: scale(1.6);
         "
       >
         <path
@@ -94,7 +94,7 @@ onMounted(() => {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-
+  overflow: hidden !important;
   background: linear-gradient(to top, #ef6c00, #ffa726);
   width: 100%;
   height: 100vh;
@@ -105,11 +105,13 @@ onMounted(() => {
 .line-break {
   line-height: 1.4;
 }
+
 .fakeTitle {
   position: absolute;
   opacity: 0.1;
   font-size: 10rem !important;
-  scale: (3) !important;
+  scale: (3) !important ;
+ 
   bottom: 10%;
   left: 10%;
 }
@@ -130,6 +132,9 @@ img {
 @media (min-width: 768px) {
   .hero {
     padding-left: 10%;
+  }
+  .fakeTitle{
+    font-size:2rem ;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {

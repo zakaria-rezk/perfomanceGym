@@ -5,7 +5,3 @@
   </nuxt-layout>
   </div>
 </template>
-<style>
-
-
-</style>

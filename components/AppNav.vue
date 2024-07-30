@@ -6,12 +6,12 @@
     :class="{ Cscroll: onTop }"
     height=""
   >
-    <searchModal v-if="modela" :message="computedTopValue" />
+     <searchModal v-if="modela" :message="computedTopValue" /> 
     <v-row class="d-flex">
       <v-col cols="1" class="d-md-none">
         <button><v-icon>mdi-cart-plus</v-icon></button>
       </v-col>
-      <v-col class="ml-m-5 text-center col-md-4 img" :class="{ scroll: onTop }">
+      <v-col class="ml-md-5 ml-6 text-center col-md-4 img" :class="{ scroll: onTop }">
         <v-btn variant="text"
           ><img
             src="/public/437523928_403353212455742_52635376963353824_n.jpg"
@@ -28,15 +28,15 @@
         <div @mouseenter="openMenu" @mouseleave="closeMenu">
           <v-btn variant="text" class="mx-n2">Categrious</v-btn>
           <v-list v-if="Menu" rounded class="w-200 position-absolute">
-            <v-list-itme>
+            <v-list-item>
               <p>dsfdsfds</p>
-            </v-list-itme>
-            <v-list-itme>
+            </v-list-item>
+            <v-list-item>
               <p>dsfdsfds</p>
-            </v-list-itme>
-            <v-list-itme>
+            </v-list-item>
+            <v-list-item>
               <p>dsfdsfds</p>
-            </v-list-itme>
+            </v-list-item>
           </v-list>
         </div>
         <v-btn variant="text" class="mx-n5">Contact US</v-btn></v-col
@@ -116,6 +116,7 @@ const handleScroll = () => {
 };
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
+  document.documentElement.overflowX='hidden'
 });
 onUnmounted(() => {
   window.removeEventListener("scroll");
