@@ -35,7 +35,11 @@ const props = defineProps({
     default: "120px",
   },
 }) as Props;
-const emits = defineEmits(["CloseSearchModal"]);
+
+const emit = defineEmits<{
+  (event: 'CloseSearchModal'): void;
+ 
+}>();
 const searchModal = ref<HTMLDivElement | null>(null);
 
 const closeModal = () => {
@@ -43,13 +47,15 @@ const closeModal = () => {
     searchModal.value.classList.add("closeModal");
   }
   setTimeout(() => {
-    emits("CloseSearchModal");
+    emit("CloseSearchModal");
   }, 300);
 };
+//stop scrlloing when the searhc bar opend
 onBeforeMount(() => {
   document.documentElement.style.overflowY = "hidden";
   console.log("stop");
 });
+//restart scrlloing when the searhc bar opend
 onBeforeUnmount(() => {
   document.documentElement.style.overflowY = "scroll";
   console.log("start");
