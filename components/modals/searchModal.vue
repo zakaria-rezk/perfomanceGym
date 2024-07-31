@@ -2,7 +2,7 @@
   <teleport to="body">
     <div
       class="search position-fixed bg-black"
-      :style="{ top: props.message }"
+      :style="{ top: props.height }"
       ref="searchModal"
     >
       <div>
@@ -23,20 +23,27 @@
     </div>
   </teleport>
 </template>
-<script setup>
-import { defineProps } from "vue";
-const emits = defineEmits(["CloseSearchModal"]);
-const searchModal = ref();
+<script setup lang="ts">
+
+
+interface Props {
+  height: string;
+}
 const props = defineProps({
-  message: {
+  height: {
     type: String,
     default: "120px",
   },
-});
+}) as Props;
+const emits = defineEmits(["CloseSearchModal"]);
+const searchModal = ref<HTMLDivElement | null>(null);
+
 const closeModal = () => {
-  searchModal.value.classList.add("closeModal");
+  if (searchModal.value) {
+    searchModal.value.classList.add("closeModal");
+  }
   setTimeout(() => {
-    emits("CloseSearchModal", searchModal.value);
+    emits("CloseSearchModal");
   }, 300);
 };
 onBeforeMount(() => {

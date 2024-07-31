@@ -9,7 +9,7 @@
     <searchModal
       @CloseSearchModal="closeModal"
       v-if="modela"
-      :message="computedTopValue"
+      :height="computedTopValue"
     />
     <v-row class="d-flex">
       <v-col cols="1" class="d-md-none">
@@ -94,7 +94,7 @@
         </v-btn>
 
         <v-btn v-else variant="text" size="small" @click="closeModal"
-          ><v-icon  height="24px" size="x-large">mdi-close</v-icon></v-btn
+          ><v-icon height="24px" size="x-large">mdi-close</v-icon></v-btn
         >
 
         <v-btn variant="text" class="mx-n4 text-caption"
@@ -105,7 +105,7 @@
   </v-container>
 </template>
 
-<script setup>
+<script setup >
 import { ref, onBeforeMount } from "vue";
 const modela = ref(false);
 const computedTopValue = ref();
@@ -118,6 +118,7 @@ const openMenu = () => {
   document.body.style.overflow = "hidden";
 };
 const closeModal = () => {
+  console.log("emitsfire");
   const searchModal = document.querySelector(".search");
   searchModal.classList.add("closeModal");
 
