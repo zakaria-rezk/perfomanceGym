@@ -1,138 +1,62 @@
 <template>
-    <v-list class="list text-white">
-      <v-list-item-group>
-        <v-list-item
-          ><v-list-item-action>
-            <v-text-field
-              light
-              @keyup.enter="search"
-              label="Search for products"
-              v-model="searchQuery"
-              append-outer-icon="mdi-magnify"
-              ><v-bnt @click="search" class="input"
-                ><v-icon color="white">mdi-magnify</v-icon></v-bnt
-              ></v-text-field
-            ></v-list-item-action
-          ></v-list-item
-        >
-        <v-list-item>
-          <div class="d-flex justify-end text-white">
-            <div class="mx-4">
-              <p>dsfsdfasfsd</p>
-              <p>dsfadsfsdaf</p>
-            </div>
-            <div>
-              <img
-                src="/public/437523928_403353212455742_52635376963353824_n.jpg"
-                width="50px"
-                height="50"
-                alt=""
-              />
-            </div>
-          </div>
-          <hr color="gray" />
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action class="listitem">
-            <button class="btn" to="home">home</button>
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action class="listitem">
-            <p>Categrious</p>
-  
-            <v-spacer></v-spacer>
-            <button @click="showCategrious" ref="arrowBtn">
-              <v-icon>mdi-chevron-right</v-icon>
-            </button>
-          </v-list-item-action>
-          <v-list v-if="categrious" class="lsisst">
-            <v-list-item class="lsist">
-              <p class="l-p">elia rezk</p>
-              <v-divider></v-divider>
-              <p>elia rezk</p>
-              <v-divider></v-divider>
-              <p>elia rezk</p>
-              <v-divider></v-divider>
-              <p>elia rezk</p>
-              <v-divider></v-divider>
-            </v-list-item>
-          </v-list>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action class="listitem">
-            <button class="btn" to="home">Wishlist</button>
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action class="listitem">
-            <button class="btn" to="home">Compare</button>
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action class="listitem">
-            <button class="btn" to="home">Login/Register</button>
-          </v-list-item-action>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
-  </template>
-  <script setup lang="ts">
-  import { ref } from 'vue';
-  const categrious: Ref<boolean> = ref(false);
-  const arrowBtn = ref<HTMLDivElement | null>(null);
-  const showCategrious = () => {
-    if(!arrowBtn.value) return
-    categrious.value = !categrious.value;
-    arrowBtn.value.classList.toggle("rotate");
-  };
-  const searchQuery = ref();
-  const search = () => {
-    searchQuery.value = "";
-  };
-  </script>
-  <style scoped>
-  .l-p{
-    margin: 2px 0;
-  }
-  .rotate {
-    transform: rotate(-90deg);
-    transition: all 0.3s ease-in-out;
-    background-color: #ef6c00;
-  }
-  .lsist {
-    transition: all 0.3s ease-in-out;
-    animation: slide-topdown 0.5s none;
-  }
-  .input {
-    position: relative;
-    left: 180px;
-    bottom: 7.5px;
-  }
-  img {
-    border-radius: 10px;
-  }
-  .btn:hover {
-    color: rgb(188, 107, 49);
-  }
-  
-  .listitem::before {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    height: 1px;
-    width: 100%;
-    background-color: rgb(80, 80, 82);
-  }
-  @keyframes slide-topdown {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  </style>
-  
+  <div>
+    <Headline title="sign in" />
+    <v-divider></v-divider>
+    <v-label class="ml-3 mt-2"
+      >Enter your email addresss <span class="text-red ml-1">*</span></v-label
+    >
+    <v-text-field
+      class="bg-white rounded-xl ma-3 pl-2 text-center font-weight-light"
+      :style="{ height: '40px' }"
+      variant="plain"
+      density="compact"
+    ></v-text-field>
+    <v-divider></v-divider>
+    <v-label class="ml-3 mt-2"
+      >Enter your password <span class="text-red ml-1">*</span></v-label
+    >
+    <v-text-field
+      v-model="password"
+      :type="showPassword ? 'text' : 'password'"
+      :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+      @click:append="togglePasswordVisibility"
+      class="bg-white rounded-xl ma-3 px-2 text-center font-weight-light"
+      :style="{ height: '40px' }"
+      variant="plain"
+      density="compact"
+    ></v-text-field>
+    <v-divider></v-divider>
+    <v-btn
+      class="bg-white rounded-xl ma-3 pl-2 text-center font-weight-light bg-red flex-grow-1"
+      width="90%"
+      >Log-in</v-btn
+    >
+    <v-divider></v-divider>
+    <div class="d-flex">
+      <p class="mt-2 ml-4 text-red text-caption">?Lost your password</p>
+      <v-spacer></v-spacer>
+      <div class="d-flex">
+        <v-label class="mt-n8 text-caption mr-n2">Remeber me</v-label>
+        <v-checkbox
+          v-model="rememberMe"
+          class="text-caption mt-n2"
+        ></v-checkbox>
+      </div>
+    </div>
+    <v-divider></v-divider>
+    <div class="account d-flex align-center flex-column w-100 mt-10">
+      <v-icon size="xxx-large">mdi-account-alert-outline</v-icon>
+      <p>No account yet</p>
+      <a href="#" class="text-red">Create an account</a>
+    </div>
+  </div>
+</template>
+<script setup>
+import Headline from './Headline.vue';
+const rememberMe = ref(false);
+const showPassword = ref(false);
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
+const password = ref();
+</script>
