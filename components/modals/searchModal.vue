@@ -14,7 +14,7 @@
         <v-btn
           size="large"
           variant="plain"
-          class="position-relative ss"
+          class="position-relative btn"
           @click="closeModal"
           ><v-icon size="x-large">mdi-close ></v-icon></v-btn
         >
@@ -24,8 +24,6 @@
   </teleport>
 </template>
 <script setup lang="ts">
-
-
 interface Props {
   height: string;
 }
@@ -62,7 +60,7 @@ onBeforeUnmount(() => {
 });
 </script>
 <style scoped>
-.ss {
+.btn {
   bottom: 72px;
 }
 .input {
@@ -81,10 +79,8 @@ onBeforeUnmount(() => {
   position: relative;
   height: 100vh;
   width: 100%;
-
   z-index: 10000;
   animation: slide-downup 0.5s ease-out forwards;
-
   overflow: scroll !important;
   opacity: 1;
 }

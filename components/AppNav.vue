@@ -109,6 +109,7 @@
       temporary class="bg-black"
         v-model="drawer"
         :location="$vuetify.display.mobile ? 'left' : undefined"
+        width="300"
       ><defaultNav /></v-navigation-drawer>
     </v-container>
   </v-layout>
@@ -172,7 +173,7 @@ onUnmounted(() => {
   background-color: rgb(5, 5, 5) !important;
   height: 100vh;
   z-index: 10000000 !important;
-  width: 200px;
+  width: 250px;
 }
 
 img {

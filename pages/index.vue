@@ -5,7 +5,7 @@
         <img src="../assets/imges/sport-men-slider-1.png" alt="" ref="hero" />
       </div>
       <div class="text-white align-self-center overflow">
-        <p class="text-h3 text-uppercase font-weight-medium line-break title">
+        <p class="text-h2 text-uppercase font-weight-medium line-break title">
           <span class="text-black"> Pro</span> Performance <br />online store
         </p>
          <p class="text-uppercase  fakeTitle">
@@ -144,7 +144,7 @@ img {
 }
 @media (min-width: 1430px) {
   .wave {
-    bottom: 15% !important;
+    bottom: 30% !important;
   }
 }
 @media (max-width: 760px) {
