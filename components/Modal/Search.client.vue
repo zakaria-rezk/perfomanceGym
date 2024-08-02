@@ -24,6 +24,7 @@
   </teleport>
 </template>
 <script setup lang="ts">
+
 interface Props {
   height: string;
 }
@@ -51,12 +52,12 @@ const closeModal = () => {
 //stop scrlloing when the searhc bar opend
 onBeforeMount(() => {
   document.documentElement.style.overflowY = "hidden";
-  console.log("stop");
+
 });
 //restart scrlloing when the searhc bar opend
 onBeforeUnmount(() => {
   document.documentElement.style.overflowY = "scroll";
-  console.log("start");
+ 
 });
 </script>
 <style scoped>
