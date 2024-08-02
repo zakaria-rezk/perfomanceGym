@@ -7,14 +7,19 @@
       :class="{ Cscroll: onTop }"
       height=""
     >
-      <searchModal
+      <ModalSearch
         @CloseSearchModal="closeModal"
         v-if="modela"
         :height="computedTopValue"
       />
       <v-row class="d-flex">
         <v-col cols="1" class="d-md-none">
-          <button @click="changeNavBar('shopping')">
+          <button
+            @click="
+              navNumber = 2;
+              drawer = !drawer;
+            "
+          >
             <v-icon>mdi-cart-plus</v-icon>
           </button>
         </v-col>
@@ -31,7 +36,7 @@
           /></v-btn>
         </v-col>
         <v-col cols="1" class="d-md-none pr-8">
-          <button @click="changeNavBar('default')">
+          <button @click="navNumber = 0 ;drawer=!drawer">
             <v-icon>mdi-menu</v-icon>
           </button></v-col
         >
@@ -54,7 +59,14 @@
           <v-btn variant="text" class="mx-n5">Contact US</v-btn></v-col
         >
         <v-col class="d-none d-md-flex justify-end mr-16">
-          <v-btn @click="changeNavBar('shopping')" variant="text" size="small">
+          <v-btn
+            @click="
+              navNumber = 2;
+              drawer = !drawer;
+            "
+            variant="text"
+            size="small"
+          >
             <v-icon size="x-large">mdi-cart-plus</v-icon></v-btn
           >
 
@@ -78,7 +90,10 @@
           <v-btn
             variant="text"
             class="mx-n4 text-caption"
-            @click="changeNavBar('auth')"
+            @click="
+              navNumber = 1;
+              drawer = !drawer;
+            "
             ><span>LOGIN / REGISTER</span></v-btn
           ></v-col
         >
@@ -89,32 +104,32 @@
         v-model="drawer"
         :location="$vuetify.display.mobile ? 'left' : undefined"
         width="300"
-        ><defaultNav v-if="currentNav === 'default'" />
-        <authNav v-else-if="currentNav === 'auth'" />
-        <pasketNav v-else-if="currentNav === 'shopping'"
-      /></v-navigation-drawer>
+      >
+        <component :is="drawerNav" />
+      </v-navigation-drawer>
     </v-container>
   </v-layout>
 </template>
-
 <script setup lang="ts">
-'import searchModal from "./modals/searchModal.vue";'
-'import defaultNav from "./mobileNavs/defaultNav.vue";'
-'import pasketNav from "./mobileNavs/pasketNav.vue"'
-'import authNav from "./mobileNavs/authNav.vue";'
-'import { ref, onBeforeMount, provide } from "vue";'
-type navBar = "default" | "auth" | "shopping" | "";
-const currentNav = ref<navBar>("default");
+const navNumber = ref<number>(0);
+
 const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
 const computedTopValue = ref<string>();
-
 const onTop = ref<boolean>(false);
 const Menu = ref<boolean>(false);
-
-const changeNavBar = (nav: navBar) => {
+const drawerNav = computed(() => {
+  switch (navNumber.value) {
+    case 1:
+      return resolveComponent("MobileNavAuth");
+    case 2:
+      return resolveComponent("MobileNavCart");
+    default:
+      return resolveComponent("MobileNavMenu");
+  }
+});
+const changeNavBar = () => {
   drawer.value = !drawer.value;
-  currentNav.value = nav;
 };
 const openMenu = () => {
   Menu.value = true;
@@ -124,7 +139,6 @@ const closeModal = () => {
   const searchModal = document.querySelector(".search");
   if (!searchModal) return;
   searchModal.classList.add("closeModal");
-
   setTimeout(() => {
     modela.value = false;
   }, 300);
@@ -147,11 +161,8 @@ const handleScroll = (): void => {
 };
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
-  document.documentElement.overflowX = "hidden";
 });
-onUnmounted(() => {
-  window.removeEventListener("scroll");
-});
+
 </script>
 <!-- SDFD -->
 <style scoped>

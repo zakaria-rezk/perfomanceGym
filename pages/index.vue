@@ -86,6 +86,9 @@ const handelousemove = (e) => {
 onMounted(() => {
   window.addEventListener("mousemove", handelousemove);
 });
+onUnmounted(()=>{
+  window.removeEventListener('mousemove')
+})
 </script>
 <style scoped>
 .hero {

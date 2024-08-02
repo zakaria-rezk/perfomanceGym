@@ -78,15 +78,14 @@
   </v-list>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
-const categrious: Ref<boolean> = ref(false);
+const categrious = ref<boolean>(false);
 const arrowBtn = ref<HTMLDivElement | null>(null);
 const showCategrious = () => {
   if (!arrowBtn.value) return;
   categrious.value = !categrious.value;
   arrowBtn.value.classList.toggle("rotate");
 };
-const searchQuery = ref();
+const searchQuery = ref<string | null>(null);
 const search = () => {
   searchQuery.value = "";
 };

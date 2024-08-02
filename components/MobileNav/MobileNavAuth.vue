@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headline title="sign in" />
+    <MobileNavHeadline title="sign in" />
     <v-divider></v-divider>
     <v-label class="ml-3 mt-2"
       >Enter your email addresss <span class="text-red ml-1">*</span></v-label
@@ -52,7 +52,7 @@
   </div>
 </template>
 <script setup>
-import Headline from './Headline.vue';
+
 const rememberMe = ref(false);
 const showPassword = ref(false);
 const togglePasswordVisibility = () => {
