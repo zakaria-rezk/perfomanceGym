@@ -1,6 +1,6 @@
 <template>
   <v-list class="list text-white">
-    <v-list-item-group>
+   
       <v-list-item
         ><v-list-item-action>
           <v-text-field
@@ -9,8 +9,8 @@
             label="Search for products"
             v-model="searchQuery"
             append-outer-icon="mdi-magnify"
-            ><v-bnt @click="search" class="input"
-              ><v-icon color="white">mdi-magnify</v-icon></v-bnt
+            ><v-btn @click="search" class="input"
+              ><v-icon color="white">mdi-magnify</v-icon></v-btn
             ></v-text-field
           ></v-list-item-action
         ></v-list-item
@@ -74,7 +74,7 @@
           <button class="btn" to="home">Login/Register</button>
         </v-list-item-action>
       </v-list-item>
-    </v-list-item-group>
+  
   </v-list>
 </template>
 <script setup lang="ts">

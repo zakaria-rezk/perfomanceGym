@@ -83,7 +83,7 @@ onBeforeUnmount(() => {
   z-index: 10000;
   animation: slide-downup 0.5s ease-out forwards;
   overflow: scroll !important;
-  opacity: 1;
+
 }
 .closeModal {
   animation: slide-topdown 0.5s ease-out forwards;

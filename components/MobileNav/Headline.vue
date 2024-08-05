@@ -6,8 +6,6 @@
   </div>
 </template>
 <script setup lang="ts">
-'import { inject } from "vue";'
-
 interface CloseNav {
   changeNavBar: () => void;
 }

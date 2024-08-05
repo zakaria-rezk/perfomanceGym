@@ -112,7 +112,6 @@
 </template>
 <script setup lang="ts">
 const navNumber = ref<number>(0);
-
 const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
 const computedTopValue = ref<string>();
