@@ -10,14 +10,9 @@ const props = defineProps<Props>() as Props;
 interface Props {
   src: string;
   alt: string;
-  observer: any;
+  
 }
-onMounted(async () => {
-  await nextTick();
 
- 
-  props.observer.observe(figure.value);
-});
 const figure = ref<HTMLDivElement>();
 </script>
 <style scoped>

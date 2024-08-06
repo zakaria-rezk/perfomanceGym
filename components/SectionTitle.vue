@@ -2,7 +2,7 @@
   <div>
     <v-container class="overflow-hidden"> 
       <v-row >
-        <v-col cols="5" class="text-right text-uppercase ">
+        <v-col cols="1" class=" ml-4  mb-4 text-uppercase">
           <p class="fakeTitle text-uppercase text-h2">{{ props.title }}</p>
         </v-col>
         <v-col class="text-right">
