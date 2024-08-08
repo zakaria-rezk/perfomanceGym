@@ -114,17 +114,31 @@ input[type="number"]::-webkit-outer-spin-button {
   z-index: 10000;
   background-color: rgba(42, 42, 44, 0.8);
   overflow-y: scroll;
-  transition: all 0.3s;
+  
 }
 .content {
   bottom: 10px;
   background-color: rgb(255, 255, 255);
   top: 64px;
   height: 100%;
+  transition: all 0.3s;
+  transform: translateX(50px);
+  
+  animation: showmodal 0.3s ease-in-out forwards;
 }
 .img {
   width: 100%;
   height: 600px;
   object-fit: contain;
+}
+@keyframes showmodal {
+  form {
+    opacity: 0;
+    
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>
