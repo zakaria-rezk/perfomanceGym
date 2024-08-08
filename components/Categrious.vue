@@ -4,7 +4,7 @@
       <SectionTitle title="categrious" SectionContent="product categrious" />
       <v-row class="overflow-hidden container">
         <v-col
-          v-for="(pro, index) in productCategories"
+          v-for="(pro, index) in products"
           :key="pro.id"
           :class="{ brnach: pro.bransh }"
           md="3"
@@ -13,7 +13,7 @@
           @mouseleave="lowers(index)"
           class="col rounded flex-grow-1 overflow-hidden text-uppercase position-relative cursor-pointer"
         >
-          <LzyLoadingImg :src="pro.img" :alt="pro.alt" v-if="intersecting" />
+          <LzyLoadingImg :src="pro.img" :alt="pro.alt" :object="false" v-if="intersecting" :hot="false" />
           <p
             class="position text-white text-h5"
             ref="title"
@@ -28,6 +28,7 @@
 </template>
 <script setup lang="ts">
 const title = ref<HTMLDivElement[]>([]);
+  const { products } = useProductCategories();
 const raises = (index: number) => {
   if (!title.value || !title.value[index].closest(".brnach")) return;
 
@@ -38,75 +39,9 @@ const lowers = (index: number) => {
 
   title.value[index].style.transform = "translate(-17%,-50%)";
 };
-type product = {
-  id: number;
-  title: string;
-  bransh: boolean;
-  img: string;
-  alt: string;
-};
-type ProductCategories = product[];
-const productCategories: ProductCategories = [
-  {
-    id: 1,
-    title: "PRE WORKOUT",
-    bransh: false,
-    img: "/_nuxt/assets/imges/Categrious/1641481364410-860x484.jpeg",
-    alt: "Image of Product 1",
-  },
-  {
-    id: 2,
-    title: "CREATINE",
-    bransh: false,
-    img: "/_nuxt/assets/imges/Categrious/young-man-preparing-his-protein-drink-royalty-free-image-618752694-1551094694-700x467.jpeg",
-    alt: "Image of Product 2",
-  },
-  {
-    id: 3,
-    title: "WEIGHT GAINER & CARBS",
-    bransh: true,
-    img: "/_nuxt/assets/imges/Categrious/sport-inst-1.jpg",
 
-    alt: "Image of Product 3",
-  },
-  {
-    id: 4,
-    title: "WHEY PROTEIN",
-    bransh: true,
-    img: "/_nuxt/assets/imges/Categrious/on-understanding-optimum-nutrition-gold-standard-100-whey-protein_Image_01.jpeg",
 
-    alt: "Image of Product 4",
-  },
-  {
-    id: 5,
-    title: "VITAMINS",
-    bransh: false,
-    img: "/_nuxt/assets/imges/Categrious/blog-preworkout.jpeg",
-    alt: "Image of Product 5",
-  },
-  {
-    id: 6,
-    title: "ACCESSORIES",
-    bransh: false,
-    img: "/_nuxt/assets/imges/Categrious/best-fitness-equipment-brands_header.jpeg",
-    alt: "Image of Product 6",
-  },
-  {
-    id: 7,
-    title: "WATER SHAKER",
-    bransh: true,
-    img: "/_nuxt/assets/imges/Categrious/protein-shaker-bottles-1630513844-860x574.jpeg",
-    alt: "Image of Product 7",
-  },
-  {
-    id: 8,
-    title: "RECOVERY",
-    bransh: true,
-    img: "/_nuxt/assets/imges/Categrious/Muscular-Lean-And-Fit-Man-Resting-and-Drinking-Supplement-Drink-After-A-Workout-860x476.webp",
 
-    alt: "Image of Product 8",
-  },
-];
 const observer = ref();
 const intersecting = ref<boolean>(false);
 const obs = (entries: any) => {

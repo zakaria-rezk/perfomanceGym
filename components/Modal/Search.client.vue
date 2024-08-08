@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
   color: rgb(255, 255, 255);
 }
 .search {
-  position: relative;
+
   height: 100vh;
   width: 100%;
   z-index: 10000;
