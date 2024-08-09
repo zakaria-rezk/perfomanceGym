@@ -1,13 +1,14 @@
 <template>
-  <div class="bg-grey-darken-4 w-100">
+  
+  <div class="bg-grey-darken-4 w-100 overflow-hidden">
     <v-container class="">
       <v-row class="">
-        <v-col >
+        <v-col class="text-center">
           <img
             src="/public/437523928_403353212455742_52635376963353824_n.jpg"
             width="300"
             height="200"
-            class="my-10 rounded-xl text-center"
+            class="my-10 ml-n1 rounded-xl text-center"
             alt=""
           />
           <div class="icons text-center mt-n5">

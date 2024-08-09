@@ -2,7 +2,6 @@
   <div class="layout">
     <AppNav />
     <slot></slot>
-    
-    <AppFotter />  
+    <AppFooter />  
   </div>
 </template>

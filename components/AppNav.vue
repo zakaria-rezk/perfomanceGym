@@ -36,7 +36,12 @@
           /></v-btn>
         </v-col>
         <v-col cols="1" class="d-md-none pr-8">
-          <button @click="navNumber = 0 ;drawer=!drawer">
+          <button
+            @click="
+              navNumber = 0;
+              drawer = !drawer;
+            "
+          >
             <v-icon>mdi-menu</v-icon>
           </button></v-col
         >
@@ -44,15 +49,18 @@
           ><v-btn variant="text" class="mx-n2">Home</v-btn>
           <div @mouseenter="openMenu" @mouseleave="closeMenu">
             <v-btn variant="text" class="mx-n2">Categrious</v-btn>
-            <v-list v-if="Menu" rounded class="w-200 position-absolute">
-              <v-list-item>
-                <p>dsfdsfds</p>
-              </v-list-item>
-              <v-list-item>
-                <p>dsfdsfds</p>
-              </v-list-item>
-              <v-list-item>
-                <p>dsfdsfds</p>
+            <v-list v-if="Menu" rounded class="position-absolute bg-black">
+              <v-list-item
+                v-for="item in RouterItems"
+                :key="item"
+                class="my-n2 w-200 rounded-xl "
+                style="width: 220px"
+              >
+                <nuxt-link
+                  to="/"
+                  class="text-decoration-none text-white text-caption"
+                  >{{ item }}
+                </nuxt-link>
               </v-list-item>
             </v-list>
           </div>
@@ -111,12 +119,22 @@
   </v-layout>
 </template>
 <script setup lang="ts">
+
+
 const navNumber = ref<number>(0);
 const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
 const computedTopValue = ref<string>();
 const onTop = ref<boolean>(false);
 const Menu = ref<boolean>(false);
+const RouterItems = ref<string[]>([
+  "whey protein",
+  "Weight gainer & carbs",
+  "Creatine",
+  "Pre workout",
+  "Recovery",
+  "Accessories",
+]);
 const drawerNav = computed(() => {
   switch (navNumber.value) {
     case 1:
@@ -161,7 +179,6 @@ const handleScroll = (): void => {
 onBeforeMount(() => {
   window.addEventListener("scroll", handleScroll);
 });
-
 </script>
 <!-- SDFD -->
 <style scoped>
