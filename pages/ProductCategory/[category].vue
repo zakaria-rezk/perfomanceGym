@@ -33,7 +33,7 @@
         <v-list-group>
           <template v-slot:activator="{ props }">
             <v-list-item class="bg-transparent w-100" v-bind="props"
-              ><v-list-item-title class="bg-transparent "
+              ><v-list-item-title class="bg-transparent"
                 >Categrouis</v-list-item-title
               >
             </v-list-item>
@@ -52,9 +52,39 @@
         ></v-list
       >
     </div>
-    <div class="w- bg-red"><h2>sdfsdfds</h2></div>
+    <v-container>
+      <v-row>
+        <v-col cols="3" class="bg-">
+          <FilterProducts />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
+
+<script setup lang="ts">
+const route = useRoute();
+const router = useRouter();
+
+const RouterItems = ref<string[]>([
+  "whey protein",
+  "Weight gainer & carbs",
+  "Creatine",
+  "Pre workout",
+  "Recovery",
+  "Accessories",
+]);
+
+onMounted(() => {
+  router.push({
+    query: {
+      ...route.query,
+      on_sale: "true",
+    },
+  });
+  console.log(route.query.id);
+});
+</script>
 <style scoped>
 .w- {
   height: 900px;
@@ -94,19 +124,3 @@ img {
   }
 }
 </style>
-<script setup lang="ts">
-const route = useRoute();
-
-const RouterItems = ref<string[]>([
-  "whey protein",
-  "Weight gainer & carbs",
-  "Creatine",
-  "Pre workout",
-  "Recovery",
-  "Accessories",
-]);
-
-onMounted(() => {
-  console.log(route.params);
-});
-</script>

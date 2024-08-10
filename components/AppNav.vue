@@ -65,6 +65,7 @@
                   :to="{
                     name: 'ProductCategory-category',
                     params: { category: item },
+                    query: { id: '123' },
                   }"
                   class="text-decoration-none text-white text-caption"
                   >{{ item }}
