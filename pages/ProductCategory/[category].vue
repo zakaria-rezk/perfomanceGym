@@ -57,6 +57,51 @@
         <v-col cols="3" class="bg-">
           <FilterProducts />
         </v-col>
+        <v-col cols="9">
+          <div class="d-flex">
+            <v-breadcrumbs :items="items"></v-breadcrumbs>
+            <v-spacer></v-spacer>
+            <div class="d-flex mx-2" justify="start">
+              <p class="mt-4 mx-2">Show:</p>
+              <v-btn
+                v-for="item in itemsPerPage"
+                :key="item"
+                variant="plain"
+                class="mx-1"
+                width="25"
+                size="sm"
+                >{{ item }}</v-btn
+              >
+            </div>
+            <div class="d-flex mx-5" justify="start">
+              <v-btn size="sm" variant="plain">
+                <v-icon>mdi-view-grid-outline</v-icon></v-btn
+              >
+              <v-btn class="mx-1" size="sm" variant="plain">
+                <v-icon size="large">mdi-view-module-outline</v-icon></v-btn
+              >
+              <v-btn class="mx-1" size="md" variant="plain">
+                <v-icon size="large">mdi-view-comfy</v-icon></v-btn
+              >
+            </div>
+            <div class="d-flex select" justify="start" width="100">
+              <v-select
+                class="mt-3"
+                density="compact"
+                label="Sort"
+                :items="[
+                  'California',
+                  'Colorado',
+                  'Florida',
+                  'Georgia',
+                  'Texas',
+                  'Wyoming',
+                ]"
+                variant="outlined"
+              ></v-select>
+            </div>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -65,7 +110,8 @@
 <script setup lang="ts">
 const route = useRoute();
 const router = useRouter();
-
+const items = ref<string[]>(["ProductCategory", route.params.category]);
+const itemsPerPage = ref<number[]>([9, 12, 18, 24]);
 const RouterItems = ref<string[]>([
   "whey protein",
   "Weight gainer & carbs",
@@ -86,6 +132,10 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+.select {
+  width: 120px;
+  height: 50px !important;
+}
 .w- {
   height: 900px;
 }
