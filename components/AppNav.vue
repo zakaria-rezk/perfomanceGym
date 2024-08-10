@@ -46,18 +46,26 @@
           </button></v-col
         >
         <v-col class="d-none d-md-flex"
-          ><v-btn variant="text" class="mx-n2">Home</v-btn>
+          ><v-btn variant="text" class="text-white"
+            ><nuxt-link to="/" class="mx-n2 text-white text-decoration-none"
+              >Home</nuxt-link
+            ></v-btn
+          >
           <div @mouseenter="openMenu" @mouseleave="closeMenu">
             <v-btn variant="text" class="mx-n2">Categrious</v-btn>
             <v-list v-if="Menu" rounded class="position-absolute bg-black">
               <v-list-item
                 v-for="item in RouterItems"
                 :key="item"
-                class="my-n2 w-200 rounded-xl "
+                class="my-n2 w-200 rounded-xl"
                 style="width: 220px"
               >
                 <nuxt-link
-                  to="/"
+                  @click="closeMenu"
+                  :to="{
+                    name: 'ProductCategory-category',
+                    params: { category: item },
+                  }"
                   class="text-decoration-none text-white text-caption"
                   >{{ item }}
                 </nuxt-link>
@@ -119,8 +127,6 @@
   </v-layout>
 </template>
 <script setup lang="ts">
-
-
 const navNumber = ref<number>(0);
 const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
@@ -128,10 +134,10 @@ const computedTopValue = ref<string>();
 const onTop = ref<boolean>(false);
 const Menu = ref<boolean>(false);
 const RouterItems = ref<string[]>([
-  "whey protein",
-  "Weight gainer & carbs",
+  "whey-protein",
+  "Weight-gainer&carbs",
   "Creatine",
-  "Pre workout",
+  "Pre-workout",
   "Recovery",
   "Accessories",
 ]);

@@ -1,6 +1,6 @@
 <template>
   
-  <div class="bg-grey-darken-4 w-100 overflow-hidden">
+  <div class="bg-grey-darken-4 w-100 overflow-hidden s">
     <v-container class="">
       <v-row class="">
         <v-col class="text-center">
@@ -63,4 +63,11 @@
    <p>@copywrights</p>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.s{
+ position: relative;
+ 
+ bottom: 0px;
+ 
+
+}</style>

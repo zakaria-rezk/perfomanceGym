@@ -85,7 +85,7 @@ onMounted(() => {
   window.addEventListener("mousemove", handelousemove);
 });
 onUnmounted(() => {
-  window.removeEventListener("mousemove");
+  window.removeEventListener("mousemove", handelousemove);
 });
 </script>
 <style scoped>
