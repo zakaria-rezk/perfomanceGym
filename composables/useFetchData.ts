@@ -1,9 +1,8 @@
-import type { product } from "~/types/product";
+import type { SpecialProduct } from "~/types/SpecialProduct";
 export function useFetchData() {
   // act as getting data from api url
-  
 
-  const products: product[] = [
+  const PopurlaProducts: SpecialProduct[] = [
     {
       id: 1,
       name: "BULK GAINER MANGO 4kg",
@@ -12,6 +11,8 @@ export function useFetchData() {
       category: "rush",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: true,
+      OnSale: true,
+      InStock: true,
       offer: "-7%",
       icons: {
         quickview: false,
@@ -27,6 +28,8 @@ export function useFetchData() {
       category: "mokka",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -42,6 +45,8 @@ export function useFetchData() {
       category: "bulk",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -57,6 +62,8 @@ export function useFetchData() {
       category: "rush",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: "-11%",
       icons: {
         quickview: false,
@@ -69,9 +76,11 @@ export function useFetchData() {
       name: "BULK GAINER ICE CREAM ",
       price: 1500,
       img: "/_nuxt/assets/imges/products/Picsart_24-02-23_21-22-40-677-150x193.png",
-      category: "string",
+      category: "BULK",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -87,6 +96,8 @@ export function useFetchData() {
       category: "whey brotain",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -102,6 +113,8 @@ export function useFetchData() {
       category: "whey bortain",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: true,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -117,6 +130,8 @@ export function useFetchData() {
       category: "wehy broatain",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
+      OnSale: true,
+      InStock: true,
       offer: null,
       icons: {
         quickview: false,
@@ -125,7 +140,7 @@ export function useFetchData() {
       },
     },
   ];
-  const data = ref<product[]>(products);
+  const data = ref<SpecialProduct[]>(PopurlaProducts);
 
   return data.value;
 }

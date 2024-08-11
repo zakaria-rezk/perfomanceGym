@@ -89,7 +89,7 @@ interface props {
 }
 const Props =defineProps<props>();
 const modela = ref<boolean>(false);
-import type { product } from "~/types/product";
+import type { product } from "~/types/SpecialProduct";
 const loading = (val: string, pro: product) => {
   switch (val) {
     case "compare":

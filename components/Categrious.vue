@@ -39,9 +39,6 @@ const lowers = (index: number) => {
 
   title.value[index].style.transform = "translate(-17%,-50%)";
 };
-
-
-
 const observer = ref();
 const intersecting = ref<boolean>(false);
 const obs = (entries: any) => {

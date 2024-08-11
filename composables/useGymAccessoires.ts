@@ -1,4 +1,4 @@
-import type { product } from "~/types/product";
+import type { product } from "~/types/SpecialProduct";
 export function useGymAccessoires() {
   // act as getting data from api url
 
