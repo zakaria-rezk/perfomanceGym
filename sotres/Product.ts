@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import type { product } from "~/types/Product";
 export const useUserStore = defineStore("user", {
-  state: () =>
-    ({
+  state: ():product => ({
+    product: {
       PreWorkout: [
         {
           id: 1,
@@ -77,7 +77,7 @@ export const useUserStore = defineStore("user", {
           },
         },
       ],
-      WheyPortain: [
+      WheyProtain: [
         {
           id: 6,
           name: "RUSH PUMP LEMON MINT 30",
@@ -189,7 +189,7 @@ export const useUserStore = defineStore("user", {
           },
         },
       ],
-      Shaker: [
+      Accessories: [
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
@@ -200,6 +200,8 @@ export const useUserStore = defineStore("user", {
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale:true,
+          InStock:true,
           icons: {
             quickview: false,
             compare: false,
@@ -216,6 +218,8 @@ export const useUserStore = defineStore("user", {
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale:true,
+          InStock:true,
           icons: {
             quickview: false,
             compare: false,
@@ -225,13 +229,15 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
-          price: 150,
+          price: 986,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           category: "bulk",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale:true,
+          InStock:true,
           icons: {
             quickview: false,
             compare: false,
@@ -243,13 +249,15 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "ISOLATE MOKKA 60SERV",
-          price: 100,
+          price: 1400,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           category: "mokka",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale: false,
+          InStock: true,
           icons: {
             quickview: false,
             compare: false,
@@ -266,6 +274,8 @@ export const useUserStore = defineStore("user", {
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale: false,
+          InStock: true,
           icons: {
             quickview: false,
             compare: false,
@@ -282,6 +292,8 @@ export const useUserStore = defineStore("user", {
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           offer: null,
+          OnSale: false,
+          InStock: true,
           icons: {
             quickview: false,
             compare: false,
@@ -289,7 +301,28 @@ export const useUserStore = defineStore("user", {
           },
         },
       ],
-    } as product),
+      WeightGainerCarbs: [
+        {
+          id: 1,
+          name: "BULK GAINER MANGO 4kg",
+          price: 500,
+          img: "/_nuxt/assets/imges/products/Picsart_24-04-26_05-04-39-687.png",
+          category: "rush",
+          details:
+            "Lorem ipsum is placeholder text commonly used in the graphic.",
+          isHot: true,
+          OnSale: true,
+          InStock: true,
+          offer: "-7%",
+          icons: {
+            quickview: false,
+            compare: false,
+            wishlist: false,
+          },
+        },
+      ],
+    },
+  }),
   getters: {},
   actions: {},
 });

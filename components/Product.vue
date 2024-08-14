@@ -159,7 +159,7 @@ const loading = (val: string, pro: product) => {
 .details {
   margin: 1px;
   position: absolute;
-  z-index: 100000;
+  z-index: 10000;
   display: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -183,7 +183,7 @@ const loading = (val: string, pro: product) => {
   position: relative;
   background-color: #fff;
   transform: scaleY(1.1);
-  z-index: 100;
+  z-index: 10;
 }
 .btn {
   

@@ -29,7 +29,10 @@
           </nuxt-link>
         </v-list-item>
       </v-list>
-      <v-list class="routelist text-white bg-transparent d-lg-none">
+      <v-list
+        class="routelist text-white bg-transparent d-lg-none"
+        style="z-index: 100"
+      >
         <v-list-group>
           <template v-slot:activator="{ props }">
             <v-list-item class="bg-transparent w-100" v-bind="props"
@@ -57,8 +60,21 @@
         <v-col cols="3" class="bg-">
           <FilterProducts />
         </v-col>
-        <v-col cols="9">
-          <ControlPage :routeParams="route.params.category" />
+        <v-col cols="9" class="position-relative">
+          <ControlPage :routeParams="route.params.category" class="mb-10" />
+          <v-progress-circular
+            indeterminate
+            color="red"
+            class="ma position-absolute"
+            size="100"
+            v-if="loading"
+          ></v-progress-circular>
+          <Product
+            :mdCOLS="4"
+            :products="state.product[`${proCategory}`]"
+            v-else
+          />
+          <h1>{{ proCategory }}</h1>
         </v-col>
       </v-row>
     </v-container>
@@ -66,13 +82,21 @@
 </template>
 
 <script setup lang="ts">
+import { useUserStore } from "~/sotres/Product";
+const state = useUserStore();
 const route = useRoute();
 const router = useRouter();
+const category = ref(route.params.category);
+const loading = ref<boolean>(false);
+
+const proCategory = computed(() => {
+  return category.value.replace(/[&\s]/g, "");
+});
 const RouterItems = ref<string[]>([
-  "whey protein",
-  "Weight gainer & carbs",
+  "Whey Protain",
+  "Weight Gainer&Carbs",
   "Creatine",
-  "Pre workout",
+  "Pre Workout",
   "Recovery",
   "Accessories",
 ]);
@@ -84,11 +108,12 @@ onMounted(() => {
       on_sale: "true",
     },
   });
-  console.log(route.params.category);
 });
 </script>
 <style scoped>
-
+.ma {
+  left: 50%;
+}
 .w- {
   height: 900px;
 }

@@ -1,10 +1,12 @@
 import type { SpecialProduct } from "./SpecialProduct";
 export type product = {
-  WheyPortain: SpecialProduct[];
-  Creatine: SpecialProduct[];
-  PreWorkout: SpecialProduct[];
-  Shaker: SpecialProduct[];
-  Accessoires: SpecialProduct[];
-  Recovery: SpecialProduct[];
-  WeightGainer:SpecialProduct[];
+  product:{
+    WheyProtain: SpecialProduct[];
+    Creatine: SpecialProduct[];
+    PreWorkout: SpecialProduct[];
+    Accessories: SpecialProduct[];
+    Recovery: SpecialProduct[];
+    WeightGainerCarbs:SpecialProduct[];
+  }
+
 };

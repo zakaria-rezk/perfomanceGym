@@ -65,7 +65,7 @@
                   :to="{
                     name: 'ProductCategory-category',
                     params: { category: item },
-                    query: { id: '123' },
+                   
                   }"
                   class="text-decoration-none text-white text-caption"
                   >{{ item }}
@@ -135,12 +135,12 @@ const computedTopValue = ref<string>();
 const onTop = ref<boolean>(false);
 const Menu = ref<boolean>(false);
 const RouterItems = ref<string[]>([
-  "whey-protein",
-  "Weight-gainer&carbs",
+  "Whey Protain",
+  "Weight Gainer&Carbs",
   "Creatine",
-  "Pre-workout",
+  "Pre Workout",
   "Recovery",
-  "Accessories",
+  "Accessoires",
 ]);
 const drawerNav = computed(() => {
   switch (navNumber.value) {
