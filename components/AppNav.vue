@@ -140,7 +140,7 @@ const RouterItems = ref<string[]>([
   "Creatine",
   "Pre Workout",
   "Recovery",
-  "Accessoires",
+  "Accessories",
 ]);
 const drawerNav = computed(() => {
   switch (navNumber.value) {

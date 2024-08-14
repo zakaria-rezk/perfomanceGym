@@ -74,7 +74,6 @@
             :products="state.product[`${proCategory}`]"
             v-else
           />
-          <h1>{{ proCategory }}</h1>
         </v-col>
       </v-row>
     </v-container>
@@ -92,6 +91,16 @@ const loading = ref<boolean>(false);
 const proCategory = computed(() => {
   return category.value.replace(/[&\s]/g, "");
 });
+
+onMounted(() => {
+  
+  router.push({
+    query: {
+      ...route.query,
+  
+    },
+  });
+});
 const RouterItems = ref<string[]>([
   "Whey Protain",
   "Weight Gainer&Carbs",
@@ -100,15 +109,6 @@ const RouterItems = ref<string[]>([
   "Recovery",
   "Accessories",
 ]);
-
-onMounted(() => {
-  router.push({
-    query: {
-      ...route.query,
-      on_sale: "true",
-    },
-  });
-});
 </script>
 <style scoped>
 .ma {
