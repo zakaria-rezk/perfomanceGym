@@ -65,8 +65,11 @@
           />
         </v-col>
         <v-col cols="9" class="position-relative">
-         
-          <ControlPage :routeParams="route.params.category" class="mb-10" />
+          <ControlPage
+            :routeParams="route.params.category"
+            class="mb-10"
+            @controlPageCol="handleCole"
+          />
           <v-progress-circular
             indeterminate
             color="red"
@@ -76,7 +79,7 @@
           ></v-progress-circular>
 
           <Product
-            :mdCOLS="4"
+            :mdCOLS="mdCOLS"
             :products="state.product[`${proCategory}`]"
             v-else
           />
@@ -87,6 +90,10 @@
 </template>
 
 <script setup lang="ts">
+const mdCOLS = ref<number>(4);
+const handleCole = (payload: number) => {
+  mdCOLS.value = payload;
+};
 import type { SpecialProduct } from "~/types/SpecialProduct";
 import { useUserStore } from "~/sotres/Product";
 
@@ -121,7 +128,7 @@ onMounted(() => {
   //     ...route.query,
   //   },
   // });
-  search()
+  search();
 });
 const RouterItems = ref<string[]>([
   "Whey Protain",

@@ -15,13 +15,36 @@
       >
     </div>
     <div class="d-flex mx-5" justify="start">
-      <v-btn size="sm" variant="plain">
+      <v-btn
+        size="sm"
+        variant="plain"
+        @click="
+          numPerPge = 6;
+          fireEmit(numPerPge);
+        "
+      >
         <v-icon>mdi-view-grid-outline</v-icon></v-btn
       >
-      <v-btn class="mx-1" size="sm" variant="plain">
+      <v-btn
+        class="mx-1"
+        size="sm"
+        variant="plain"
+        @click="
+          numPerPge = 4;
+          fireEmit(numPerPge);
+        "
+      >
         <v-icon size="large">mdi-view-module-outline</v-icon></v-btn
       >
-      <v-btn class="mx-1" size="md" variant="plain">
+      <v-btn
+        class="mx-1"
+        size="md"
+        variant="plain"
+        @click="
+          numPerPge = 3;
+          fireEmit(numPerPge);
+        "
+      >
         <v-icon size="large">mdi-view-comfy</v-icon></v-btn
       >
     </div>
@@ -44,7 +67,14 @@
   </div>
 </template>
 <script setup lang="ts">
+const numPerPge = ref<number>(4);
+const fireEmit = (num: number) => {
+  emits("controlPageCol", num);
+};
 const itemsPerPage = ref<number[]>([9, 12, 18, 24]);
+const emits = defineEmits<{
+  (event: "controlPageCol", payload: number): void;
+}>();
 interface props {
   routeParams: string;
 }

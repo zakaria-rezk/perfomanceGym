@@ -33,9 +33,7 @@
         style="transform: scale(0.8)"
         color="red"
       ></v-checkbox>
-      <h2>{{ priceMin }}</h2>
-      /
-      <h2>{{ priceMax }}</h2>
+    
     </div>
   </div>
 </template>
@@ -54,9 +52,7 @@ const onSale = ref<boolean>(route.query.onsale === "true");
 
 const priceMin = computed(() => Math.floor(value.value[0]));
 const priceMax = computed(() => Math.floor(value.value[1]));
-const search = () => {
-  value.value = [900, 1522];
-};
+
 
 onMounted(() => {
   console.log();
