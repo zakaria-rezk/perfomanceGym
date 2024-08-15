@@ -25,7 +25,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "BULK GAINER MANGO 4kg",
-          price: 500,
+          price: 600,
           img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           category: "rush",
           details:
@@ -43,7 +43,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "BULK GAINER MANGO 4kg",
-          price: 500,
+          price: 700,
           img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           category: "rush",
           details:
@@ -81,7 +81,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 6,
           name: "RUSH PUMP LEMON MINT 30",
-          price: 1000,
+          price: 100,
           img: "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
           category: "whey brotain",
           details:
@@ -117,7 +117,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 6,
           name: "RUSH PUMP LEMON MINT 30",
-          price: 500,
+          price: 300,
           img: "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
           category: "whey brotain",
           details:
@@ -173,7 +173,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
-          price: 986,
+          price: 900,
           img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
           category: "bulk",
           details:
@@ -193,7 +193,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
-          price: 986,
+          price: 1206,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           category: "bulk",
           details:
@@ -211,7 +211,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
-          price: 986,
+          price: 1200,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           category: "bulk",
           details:
@@ -229,7 +229,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "BULK GAINER MANGO 4kg",
-          price: 986,
+          price: 2500,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           category: "bulk",
           details:
@@ -267,7 +267,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "ISOLATE MOKKA 60SERV",
-          price: 1400,
+          price: 1800,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           category: "mokka",
           details:
@@ -285,7 +285,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "ISOLATE MOKKA 60SERV",
-          price: 1400,
+          price: 1700,
           img: "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           category: "mokka",
           details:
@@ -305,7 +305,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "BULK GAINER MANGO 4kg",
-          price: 500,
+          price: 1500,
           img: "/_nuxt/assets/imges/products/Picsart_24-04-26_05-04-39-687.png",
           category: "rush",
           details:

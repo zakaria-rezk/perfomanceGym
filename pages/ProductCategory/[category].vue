@@ -47,6 +47,7 @@
             class="my-n2 py-n4 bg-grey-darken-3"
           >
             <nuxt-link
+              @click="search"
               :to="item"
               class="text-white text-md-h6 text-subtitle-1 text-decoration-none"
               >{{ item }}
@@ -58,9 +59,13 @@
     <v-container>
       <v-row>
         <v-col cols="3" class="bg-">
-          <FilterProducts />
+          <FilterProducts
+            :minPrice="minPrice?.price"
+            :maxPrice="maxPrice?.price"
+          />
         </v-col>
         <v-col cols="9" class="position-relative">
+         
           <ControlPage :routeParams="route.params.category" class="mb-10" />
           <v-progress-circular
             indeterminate
@@ -69,6 +74,7 @@
             size="100"
             v-if="loading"
           ></v-progress-circular>
+
           <Product
             :mdCOLS="4"
             :products="state.product[`${proCategory}`]"
@@ -81,25 +87,41 @@
 </template>
 
 <script setup lang="ts">
+import type { SpecialProduct } from "~/types/SpecialProduct";
 import { useUserStore } from "~/sotres/Product";
+
 const state = useUserStore();
+const minPrice = ref<SpecialProduct>();
+const maxPrice = ref<SpecialProduct>();
 const route = useRoute();
 const router = useRouter();
 const category = ref(route.params.category);
 const loading = ref<boolean>(false);
-
+const search = () => {
+  minPrice.value = state.product[`${proCategory.value}`].reduce(
+    (min: SpecialProduct, product: SpecialProduct) => {
+      return product.price < min.price ? product : min;
+    }
+  );
+  maxPrice.value = state.product[`${proCategory.value}`].reduce(
+    (min: SpecialProduct, product: SpecialProduct) => {
+      return product.price > min.price ? product : min;
+    }
+  );
+  console.log(minPrice.value?.price);
+  console.log(maxPrice.value?.price);
+};
 const proCategory = computed(() => {
   return category.value.replace(/[&\s]/g, "");
 });
 
 onMounted(() => {
-  
-  router.push({
-    query: {
-      ...route.query,
-  
-    },
-  });
+  // router.push({
+  //   query: {
+  //     ...route.query,
+  //   },
+  // });
+  search()
 });
 const RouterItems = ref<string[]>([
   "Whey Protain",

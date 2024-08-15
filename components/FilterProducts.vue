@@ -1,12 +1,19 @@
 <template>
   <div>
     <p class="text-uppercase my-5">filter by price</p>
-    <v-range-slider color="red" v-model="value" strict></v-range-slider>
+    <v-range-slider
+      color="red"
+      v-model="value"
+      :max="props.maxPrice"
+      :min="props.minPrice"
+      strict
+    ></v-range-slider>
     <div class="d-flex mb-10">
       <p>Price {{ priceMin }} from to {{ priceMax }} $</p>
-      <v-btn class="mx-4 my-n1">search</v-btn>
+      <v-btn @click="search" class="mx-4 my-n1">search</v-btn>
     </div>
     <v-divider></v-divider>
+
     <h2 class="mt-2">Status Stock</h2>
     <div class="d-flex mt-n4">
       <v-label class="text-caption">On Stock </v-label>
@@ -26,21 +33,38 @@
         style="transform: scale(0.8)"
         color="red"
       ></v-checkbox>
+      <h2>{{ priceMin }}</h2>
+      /
+      <h2>{{ priceMax }}</h2>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+interface prop {
+  minPrice: number;
+  maxPrice: number;
+}
+const props = defineProps<prop>();
 const value = ref<number[]>([0, 100]);
+
 const router = useRouter();
 const route = useRoute();
 const onStock = ref<boolean>(route.query.onstock === "true");
 const onSale = ref<boolean>(route.query.onsale === "true");
+
 const priceMin = computed(() => Math.floor(value.value[0]));
 const priceMax = computed(() => Math.floor(value.value[1]));
-watch(value, (newValue: number[], oldValue: number[]) => {
-  console.log(newValue);
-  console.log(oldValue);
+const search = () => {
+  value.value = [900, 1522];
+};
+
+onMounted(() => {
+  console.log();
+  nextTick(() => {
+    value.value = [props.minPrice, props.maxPrice];
+  });
 });
+
 const query = () => {
   console.log(typeof route.query);
   if (onStock.value) {
@@ -59,5 +83,4 @@ const query = () => {
     router.replace({ query: newQuery });
   }
 };
-onBeforeMount(() => {});
 </script>
