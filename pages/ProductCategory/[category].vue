@@ -68,7 +68,7 @@
           <ControlPage
             :routeParams="route.params.category"
             class="mb-10"
-            @controlPageCol="handleCole"
+            @controlPageCol="handleCol"
           />
           <v-progress-circular
             indeterminate
@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 const mdCOLS = ref<number>(4);
-const handleCole = (payload: number) => {
+const handleCol = (payload: number) => {
   mdCOLS.value = payload;
 };
 import type { SpecialProduct } from "~/types/SpecialProduct";

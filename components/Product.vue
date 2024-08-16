@@ -84,13 +84,13 @@
 </template>
 <script setup lang="ts">
 interface props {
-    products :product[],
+    products :SpecialProduct[],
     mdCOLS:number,
 }
 const Props =defineProps<props>();
 const modela = ref<boolean>(false);
-import type { product } from "~/types/SpecialProduct";
-const loading = (val: string, pro: product) => {
+import type { SpecialProduct } from "~/types/SpecialProduct";
+const loading = (val: string, pro: SpecialProduct) => {
   switch (val) {
     case "compare":
       pro.icons.compare = true;
