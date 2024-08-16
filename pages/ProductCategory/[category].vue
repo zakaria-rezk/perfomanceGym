@@ -60,6 +60,7 @@
       <v-row>
         <v-col cols="3" class="bg-">
           <FilterProducts
+            @loadingSpinner="loadingSpinner"
             :minPrice="minPrice?.price"
             :maxPrice="maxPrice?.price"
           />
@@ -90,7 +91,13 @@
 </template>
 
 <script setup lang="ts">
-const mdCOLS = ref<number>(4);
+const route = useRoute();
+const validRow = [3, 4, 6];
+const mdCOLS = ref<number>(
+  validRow.includes (+(route.query.per_row as string))
+    ? +(route.query.per_row as string)
+    : 4
+);
 const handleCol = (payload: number) => {
   mdCOLS.value = payload;
 };
@@ -100,11 +107,16 @@ import { useUserStore } from "~/sotres/Product";
 const state = useUserStore();
 const minPrice = ref<SpecialProduct>();
 const maxPrice = ref<SpecialProduct>();
-const route = useRoute();
-const router = useRouter();
 const category = ref(route.params.category);
 const loading = ref<boolean>(false);
+const loadingSpinner = () => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000);
+};
 const search = () => {
+  loadingSpinner();
   minPrice.value = state.product[`${proCategory.value}`].reduce(
     (min: SpecialProduct, product: SpecialProduct) => {
       return product.price < min.price ? product : min;
@@ -115,19 +127,13 @@ const search = () => {
       return product.price > min.price ? product : min;
     }
   );
-  console.log(minPrice.value?.price);
-  console.log(maxPrice.value?.price);
 };
 const proCategory = computed(() => {
   return category.value.replace(/[&\s]/g, "");
 });
 
 onMounted(() => {
-  // router.push({
-  //   query: {
-  //     ...route.query,
-  //   },
-  // });
+
   search();
 });
 const RouterItems = ref<string[]>([

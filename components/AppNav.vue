@@ -27,13 +27,13 @@
           class="ml-md-5 ml-6 text-center col-md-4 img"
           :class="{ scroll: onTop }"
         >
-          <v-btn variant="text"
+          <nuxt-link to="/"
             ><img
               src="/public/437523928_403353212455742_52635376963353824_n.jpg"
               width="160"
               height="110"
               alt=""
-          /></v-btn>
+          /></nuxt-link>
         </v-col>
         <v-col cols="1" class="d-md-none pr-8">
           <button
@@ -65,7 +65,6 @@
                   :to="{
                     name: 'ProductCategory-category',
                     params: { category: item },
-                   
                   }"
                   class="text-decoration-none text-white text-caption"
                   >{{ item }}

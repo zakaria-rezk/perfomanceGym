@@ -41,6 +41,9 @@
 <script setup lang="ts">
 const router = useRouter();
 const route = useRoute();
+const emit = defineEmits<{
+  (event: "loadingSpinner"): void;
+}>();
 interface prop {
   minPrice: number;
   maxPrice: number;
@@ -56,7 +59,7 @@ const onsale = ref<boolean>(route.query.onsale === "true");
 const priceMin = computed(() => Math.floor(value.value[0]));
 const priceMax = computed(() => Math.floor(value.value[1]));
 onMounted(() => {
-  console.log();
+ 
   nextTick(() => {
     value.value = [
       +(route.query.minprice as string) || props.minPrice,
@@ -65,6 +68,7 @@ onMounted(() => {
   });
 });
 const search = () => {
+  emit("loadingSpinner");
   router.push({
     query: {
       ...route.query,
@@ -73,30 +77,16 @@ const search = () => {
     },
   });
 };
-
+//composable to add and delte route query
+const { addQuery, deleteQuery } = useRouteQuery();
 const onStockQuery = (val: string) => {
   if (onstock.value) {
-    addQuery(val);
+    addQuery(val,'true');
   } else deleteQuery(val);
 };
 const onSaleQuery = (val: string) => {
   if (onsale.value) {
-    addQuery(val);
+    addQuery(val,'true');
   } else deleteQuery(val);
-};
-
-const deleteQuery = (val: string) => {
-  const query = { ...route.query };
-  delete query[val];
-  router.replace({ query: query });
-};
-
-const addQuery = (val: string) => {
-  router.push({
-    query: {
-      ...route.query,
-      [val]: true.toString(),
-    },
-  });
 };
 </script>
