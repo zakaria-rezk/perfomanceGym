@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <AppNav />
+    <AppNav  />
     <slot></slot>
     <AppFooter />  
   </div>

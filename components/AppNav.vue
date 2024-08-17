@@ -1,8 +1,9 @@
 <template>
   <v-layout>
     <v-container
-      class="text-white position-fixed bg-transparent"
+      class="text-white position-fixed nav"
       style="z-index: 10000"
+      :style="{backgroundColor:prop.bgColor}"
       fluid
       :class="{ Cscroll: onTop }"
       height=""
@@ -45,7 +46,7 @@
             <v-icon>mdi-menu</v-icon>
           </button></v-col
         >
-        <v-col class="d-none d-md-flex"
+        <v-col class="d-none d-md-flex my-n1"
           ><v-btn variant="text" class="text-white"
             ><nuxt-link to="/" class="mx-n2 text-white text-decoration-none"
               >Home</nuxt-link
@@ -105,7 +106,7 @@
 
           <v-btn
             variant="text"
-            class="mx-n4 text-caption"
+            class="mx-n4 my-n1 text-caption"
             @click="
               navNumber = 1;
               drawer = !drawer;
@@ -127,6 +128,14 @@
   </v-layout>
 </template>
 <script setup lang="ts">
+
+const prop =defineProps({
+  bgColor:{
+    type:String,
+    default:"transparent"
+
+  }
+})
 const navNumber = ref<number>(0);
 const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
@@ -191,19 +200,25 @@ onBeforeMount(() => {
 .v-navigation-drawer__scrim {
   height: 100vh;
 }
+.nav{
+  padding:40px 0;
+ height: 115px;
+}
 .Cscroll {
   height: 64px;
   background-color: rgb(0, 0, 0) !important;
   position: fixed;
   transition: 1s;
+ padding:20px 0;
 }
 img {
   border-radius: 30px;
   object-fit: fill;
+  margin-top:-35px ;
 }
 .scroll img {
   width: 80px;
   height: 62px;
-  margin-top: -15px;
+  margin-top: -20px;
 }
 </style>
