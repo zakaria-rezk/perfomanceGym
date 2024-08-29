@@ -1,18 +1,20 @@
 <template>
-  <figure ref="figure position-relative" :class="{'hot':hot}">
-   
-    <img class="rounded-xl img" :class="{'default':object, }" :src="props.src" :alt="props.alt" />
+  <figure ref="figure position-relative" :class="{ hot: props.hot }">
+    <img
+      class="rounded-xl img"
+      :class="{ default: props.object }"
+      :src="props.src"
+      :alt="props.alt"
+    />
   </figure>
 </template>
 <script setup lang="ts">
-
 const props = defineProps<Props>() as Props;
 interface Props {
   src: string;
   alt: string;
-  object:boolean,
-  hot:boolean
-  
+  object: boolean;
+  hot: boolean;
 }
 
 const figure = ref<HTMLDivElement>();
@@ -23,11 +25,10 @@ const figure = ref<HTMLDivElement>();
   border-radius: 30px !important;
   width: 100%;
   height: 200px;
-
 }
-.default{
+.default {
   object-fit: none !important;
-  height: 300px ;
+  height: 300px;
 }
 
 .hot::before {
