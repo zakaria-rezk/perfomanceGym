@@ -63,23 +63,21 @@
     </div>
   </div>
 </template>
-<script setup>
-const hero = ref(null);
-const handelousemove = (e) => {
-  if (!e.srcElement.closest(".hero")) return;
-  const containerWidth = hero.value.clientWidth;
-  if (
-    +e.clientX - +containerWidth <= 10 &&
-    +e.clientX - +containerWidth >= -10
-  ) {
-    hero.value.style.transform = `translateX(${e.clientX - containerWidth}px)`;
-  }
-  if (
-    +e.clientY - +containerWidth <= 10 &&
-    +e.clientY - +containerWidth >= -10
-  ) {
-    hero.value.style.transform = `translateY(${e.clientY - containerWidth}px)`;
-  }
+<script setup lang="ts">
+const hero = ref<HTMLImageElement>();
+const lastPositionX = ref<number>(0);
+const lastPositionY = ref<number>(0);
+const handelousemove = (e: Event) => {
+  if (!hero.value) return;
+  let Xtrans: number = (e.screenX - lastPositionX.value) * 1.1;
+  let Ytrans: number = (e.screenY - lastPositionY.value) * 1.1;
+
+  console.log(Xtrans);
+  hero.value.style.transform = `translate(${-Xtrans}px, ${Ytrans}px)`;
+  console.log(Xtrans);
+
+  lastPositionX.value = e.screenX;
+  lastPositionY.value = e.screenY;
 };
 onMounted(() => {
   window.addEventListener("mousemove", handelousemove);
@@ -127,7 +125,7 @@ img {
   max-width: 100%;
   perspective: 100px;
   height: 100vh;
-  transition: all 1s ease-in;
+  transition: all 0.8s ease;
 }
 
 @media (min-width: 768px) {
