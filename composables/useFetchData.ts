@@ -5,6 +5,7 @@ export function useFetchData() {
   const PopurlaProducts: SpecialProduct[] = [
     {
       id: 1,
+      quickview:false,
       name: "BULK GAINER MANGO 4kg",
       price: 500,
       img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
@@ -22,6 +23,7 @@ export function useFetchData() {
     },
     {
       id: 2,
+      quickview:false,
       name: "ISOLATE MOKKA 60SERV",
       price: 1400,
       img: "/_nuxt/assets/imges/products/Picsart_24-02-21_01-59-10-412-150x225.png",
@@ -39,6 +41,7 @@ export function useFetchData() {
     },
     {
       id: 3,
+      quickview:false,
       name: "BULK GAINER MANGO 4kg",
       price: 986,
       img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
@@ -54,25 +57,10 @@ export function useFetchData() {
         wishlist: false,
       },
     },
-    {
-      id: 4,
-      name: "RUSH PUMP LEMON MINT 30 ",
-      price: 850,
-      img: "/_nuxt/assets/imges/products/Picsart_24-02-21_02-01-26-953-150x225.png",
-      category: "rush",
-      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
-      isHot: false,
-      OnSale: true,
-      InStock: true,
-      offer: "-11%",
-      icons: {
-        quickview: false,
-        compare: false,
-        wishlist: false,
-      },
-    },
+   
     {
       id: 5,
+      quickview:false,
       name: "BULK GAINER ICE CREAM ",
       price: 1500,
       img: "/_nuxt/assets/imges/products/Picsart_24-02-23_21-22-40-677-150x193.png",
@@ -89,7 +77,26 @@ export function useFetchData() {
       },
     },
     {
+      id: 4,
+      quickview:false,
+      name: "RUSH PUMP LEMON MINT 30 ",
+      price: 850,
+      img: "/_nuxt/assets/imges/products/Picsart_24-02-21_02-01-26-953-150x225.png",
+      category: "rush",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
+      isHot: false,
+      OnSale: true,
+      InStock: true,
+      offer: "-11%",
+      icons: {
+        quickview: false,
+        compare: false,
+        wishlist: false,
+      },
+    },
+    {
       id: 6,
+      quickview:false,
       name: "RUSH PUMP LEMON MINT 30",
       price: 1000,
       img: "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
@@ -107,6 +114,7 @@ export function useFetchData() {
     },
     {
       id: 7,
+      quickview:false,
       name: "ARGININE AKG 60 SERVING",
       price: 1000,
       img: "/_nuxt/assets/imges/products/Picsart_24-04-26_04-57-48-902-150x225.png",
@@ -116,6 +124,7 @@ export function useFetchData() {
       OnSale: true,
       InStock: true,
       offer: null,
+      
       icons: {
         quickview: false,
         compare: false,
@@ -124,6 +133,7 @@ export function useFetchData() {
     },
     {
       id: 8,
+      quickview:false,
       name: "BULK GAINER STRAWPERRY",
       price: 520,
       img: "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
@@ -139,6 +149,8 @@ export function useFetchData() {
         wishlist: false,
       },
     },
+
+
   ];
   const data = ref<SpecialProduct[]>(PopurlaProducts);
 

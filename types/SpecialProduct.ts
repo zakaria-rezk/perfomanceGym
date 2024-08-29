@@ -1,5 +1,6 @@
 export type SpecialProduct = {
   id: number;
+  quickview:boolean,
   name: string;
   price: number;
   img: string;

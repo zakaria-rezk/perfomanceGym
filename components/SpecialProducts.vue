@@ -1,5 +1,5 @@
 <template>
-  <v-container class="position-relative my-10" id="teleport-target">
+  <v-container class="position-relative my-10" >
     <SectionTitle title="special" SectionContent="FEATURED PRODUCTS" />
     <Product :products="data" :mdCOLS="3" />
   </v-container>

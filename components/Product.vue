@@ -7,10 +7,9 @@
         :ProName="pro.name"
         :ProPrice="pro.price"
         :ProCategory="pro.category"
-        @closeModal="modela = false;
-        pro.icons.quickview = false;
-        "
-        v-if="modela"
+        @closeModal="
+        pro.quickview = false;
+        " v-if="pro.quickview"
       />
       <div>
         <div
@@ -109,6 +108,7 @@ const loading = (val: string, pro: SpecialProduct) => {
       setTimeout(() => {
         modela.value = true;
         pro.icons.quickview = false;
+        pro.quickview = true;
       }, 500);
       break;
   }

@@ -68,7 +68,7 @@
 definePageMeta({
   layout: "custom",
 });
-const mainImg = ref<HTMLImageElement >();
+const mainImg = ref<HTMLImageElement>();
 const swapArrowRight = () => {
   if (!mainImg.value) return;
   resetAnimation();
@@ -80,8 +80,7 @@ const swapArrowRight = () => {
     mainImg.value.classList.add("right2center");
     mainImg.value.src =
       "http://localhost:3000/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png";
-
-  }, 1000);
+  }, 250);
 };
 const swapArrowLeft = () => {
   if (!mainImg.value) return;
@@ -93,14 +92,12 @@ const swapArrowLeft = () => {
     mainImg.value.classList.remove("center2right");
     mainImg.value?.classList.add("left2center");
 
-
     mainImg.value.src =
       "http://localhost:3000/_nuxt/assets/imges/products/IMG_20240126_074825-150x160.png";
-   
-  }, 1000);
+  }, 250);
 };
 const resetAnimation = () => {
-  if(!mainImg.value) return
+  if (!mainImg.value) return;
   mainImg.value.classList.remove(
     "center2right",
     "right2center",
@@ -136,20 +133,21 @@ onMounted(() => {
 .imgContainer:hover .arrow-r {
   animation: right2center 0.3s ease-in-out;
 }
+
 .arrow {
   display: none;
 }
 .center2right {
-  animation: center2right 1s ease-in-out;
+  animation: center2right 0.3s ease-in-out;
 }
 .right2center {
-  animation: right2center 1s ease-in-out;
+  animation: right2center 0.3s ease-in-out;
 }
 .center2left {
-  animation: center2left 1s ease-in-out;
+  animation: center2left 0.3s ease-in-out;
 }
 .left2center {
-  animation: left2center 1s ease-in-out;
+  animation: left2center 0.3s ease-in-out;
 }
 @keyframes center2left {
   0% {
