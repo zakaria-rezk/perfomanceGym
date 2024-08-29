@@ -1,37 +1,52 @@
 <template>
   <div>
-    <v-container style="margin-top: 115px"
+    <v-container style="margin-top: 125px"
       ><v-row>
         <v-col cols="6" class="d-md-flex justify-end">
           <div class="d-flex flex-column">
-            <img
-              src="/assets/imges/products/IMG_20240126_074825-150x160.png"
-              alt=""
-              class="my-2"
-            />
-            <img
-              src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
-              alt=""
-            />
+            <button
+              @click="swapArrowRight"
+              :disabled="counter === 0"
+              :class="{ disabled: counter === 0 }"
+            >
+              <img
+                src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
+                alt=""
+              />
+            </button>
+            <button
+              @click="swapArrowLeft"
+              :disabled="counter === 1"
+              :class="{ disabled: counter === 1 }"
+            >
+              <img
+                src="/assets/imges/products/IMG_20240126_074825-150x160.png"
+                alt=""
+                class="my-2"
+              />
+            </button>
           </div>
           <div class="imgContainer">
             <div class="position-relative d-flex align-center">
               <v-btn
+                :disabled="counter === 1"
                 variant="text"
                 class="mr-n16 position-relative text-grey arrow arrow-l"
                 @click="swapArrowLeft"
                 ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
               >
-              <div class="overflow-hidden cursor-pointer">
+              <div class="overflow-hidden" ref="imgContainer">
                 <img
                   src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
                   alt=""
-                  class="my-2 mx-5 mainimg position-relative"
+                  class="my-2 mx-5 mainimg position-relative cursor-move"
+                  @mousemove="magnfiy"
                   ref="mainImg"
                 />
               </div>
 
               <v-btn
+                :disabled="counter === 0"
                 variant="text"
                 class="ml-n16 position-relative text-grey arrow arrow-r"
                 @click="swapArrowRight"
@@ -68,9 +83,28 @@
 definePageMeta({
   layout: "custom",
 });
+
+//MAIN IMG MAGINFY
+const imgContainer = ref<HTMLDivElement>();
 const mainImg = ref<HTMLImageElement>();
+const magnfiy = (e: Event) => {
+  if (!imgContainer.value || !mainImg.value) return;
+  const x = e.pageX - imgContainer.value.getBoundingClientRect().left,
+    imgWidth = mainImg.value.width,
+    Xperc = (x / imgWidth) * 100 + "%";
+
+  // height
+  const y = e.pageY - imgContainer.value.getBoundingClientRect().top,
+    imgHeight = mainImg.value.height,
+    Yperc = (y / imgHeight) * 100 + "%";
+
+  mainImg.value.style.transformOrigin = Xperc + Yperc;
+};
+//CHANGE IMG ANIMATION
+const counter = ref<number>(0);
 const swapArrowRight = () => {
   if (!mainImg.value) return;
+  counter.value--;
   resetAnimation();
   mainImg.value.classList.add("center2left");
 
@@ -80,21 +114,22 @@ const swapArrowRight = () => {
     mainImg.value.classList.add("right2center");
     mainImg.value.src =
       "http://localhost:3000/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png";
-  }, 250);
+  }, 300);
 };
 const swapArrowLeft = () => {
   if (!mainImg.value) return;
+  counter.value++;
   resetAnimation();
   mainImg.value.classList.add("center2right");
 
   setTimeout(() => {
     if (!mainImg.value) return;
-    mainImg.value.classList.remove("center2right");
+    mainImg.value?.classList.remove("center2right");
     mainImg.value?.classList.add("left2center");
 
     mainImg.value.src =
       "http://localhost:3000/_nuxt/assets/imges/products/IMG_20240126_074825-150x160.png";
-  }, 250);
+  }, 300);
 };
 const resetAnimation = () => {
   if (!mainImg.value) return;
@@ -104,7 +139,7 @@ const resetAnimation = () => {
     "left2center",
     "center2left"
   );
-  console.log(mainImg.value.classList);
+  
 };
 
 const items = ref<string[]>(["home", "wheyPortain", "mokka"]);
@@ -116,13 +151,21 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+.disabled {
+  transition: all 0.5s ease;
+  opacity: 0.5;
+}
 .mainimg {
-  z-index: -1;
   height: 90vh;
-  max-height: 100vh;
-  max-width: 450px;
-  background-color: red;
-  transition: transform 1s ease-in-out;
+  width: 450px;
+  object-fit: fill;
+
+  transition: all 0.3s;
+}
+.scale {
+}
+.mainimg:hover {
+  transform: scale(1.8);
 }
 .imgContainer:hover .arrow {
   display: block;
@@ -136,6 +179,7 @@ onMounted(() => {
 
 .arrow {
   display: none;
+  z-index: 11;
 }
 .center2right {
   animation: center2right 0.3s ease-in-out;

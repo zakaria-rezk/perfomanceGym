@@ -11,6 +11,7 @@
         pro.quickview = false;
         " v-if="pro.quickview"
       />
+   
       <div>
         <div
           class="position-absolute product-icons d-flex flex-column align-center"
@@ -55,19 +56,28 @@
             Add to wishlist
           </p>
         </div>
+        <nuxt-link
+        :to="{ name: 'Product-product', params: { product: pro.name } }"
+        class="text-decoration-none text-black"
+      >
         <LzyLoadingImg
           :src="pro.img"
           alt="pro.alt"
           :object="true"
           :hot="pro.isHot"
         />
+     
         <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
-      </div>
+     
+     
+      
       <div class="text-right">
         <p>{{ pro.name }}</p>
         <p>{{ pro.category }}</p>
         <p>{{ pro.price }} USD</p>
       </div>
+    </nuxt-link>
+    </div>
       <v-btn class="btn w-100 h bg-orange-accent-4"
         ><div>
           <p class="cart ">add to cart</p>
@@ -78,6 +88,7 @@
       <div class="details">
         <p>{{ pro.details }}</p>
       </div>
+   
     </v-col>
   </v-row>
 </template>
