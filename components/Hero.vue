@@ -1,5 +1,5 @@
 <template>
-  <div class="hero d-flex">
+  <div class="hero d-flex" @mousemove="handelousemove">
     <div class="d-flex hero-imag">
       <div class="">
         <img src="../assets/imges/sport-men-slider-1.png" alt="" ref="hero" />
@@ -79,12 +79,7 @@ const handelousemove = (e: Event) => {
   lastPositionX.value = e.screenX;
   lastPositionY.value = e.screenY;
 };
-onMounted(() => {
-  window.addEventListener("mousemove", handelousemove);
-});
-onUnmounted(() => {
-  window.removeEventListener("mousemove", handelousemove);
-});
+
 </script>
 <style scoped>
 .hero {

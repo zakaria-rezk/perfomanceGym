@@ -1,62 +1,67 @@
 <template>
   <div>
-    <v-container style="margin-top: 125px"
-      ><v-row>
-        <v-col cols="6" class="d-md-flex justify-end">
-          <div class="d-flex flex-column">
-            <button
-              @click="swapArrowRight"
-              :disabled="counter === 0"
-              :class="{ disabled: counter === 0 }"
-            >
-              <img
-                src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
-                alt=""
-              />
-            </button>
-            <button
-              @click="swapArrowLeft"
-              :disabled="counter === 1"
-              :class="{ disabled: counter === 1 }"
-            >
-              <img
-                src="/assets/imges/products/IMG_20240126_074825-150x160.png"
-                alt=""
-                class="my-2"
-              />
-            </button>
-          </div>
-          <div class="imgContainer">
-            <div class="position-relative d-flex align-center">
-              <v-btn
-                :disabled="counter === 1"
-                variant="text"
-                class="mr-n16 position-relative text-grey arrow arrow-l"
-                @click="swapArrowLeft"
-                ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
+    <v-container style="margin-top: 125px"  
+      ><v-row class="overflow-hidden no-wrap">
+        <v-col cols="12" md="6" class="d-flex justify-center ">
+          <div class="d-flex flex-md-row-reverse flex-column justify-center align-center">
+            <div class="imgContainer">
+              <div class="position-relative d-flex align-center justify-center">
+                <v-btn
+                  :disabled="counter === 1"
+                  variant="text"
+                  class="mr-n16 position-relative text-grey arrow arrow-l"
+                  @click="swapArrowLeft"
+                  ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
+                >
+                <div
+                  class="overflow-hidden position-relative"
+                  ref="imgContainer"
+                >
+                  <img
+                    src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
+                    alt=""
+                    class="md-my-2 md-mx-5 mainimg position-relative cursor-move"
+                    @mousemove="magnfiy"
+                    ref="mainImg"
+                  />
+                </div>
+
+                <v-btn
+                  :disabled="counter === 0"
+                  variant="text"
+                  class="ml-n16 position-relative text-grey arrow arrow-r"
+                  @click="swapArrowRight"
+                  ><v-icon size="30">mdi-arrow-right</v-icon></v-btn
+                >
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <button
+                @click="swapArrowRight"
+                :disabled="counter === 0"
+                :class="{ disabled: counter === 0 }"
               >
-              <div class="overflow-hidden" ref="imgContainer">
                 <img
                   src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
                   alt=""
-                  class="my-2 mx-5 mainimg position-relative cursor-move"
-                  @mousemove="magnfiy"
-                  ref="mainImg"
                 />
-              </div>
-
-              <v-btn
-                :disabled="counter === 0"
-                variant="text"
-                class="ml-n16 position-relative text-grey arrow arrow-r"
-                @click="swapArrowRight"
-                ><v-icon size="30">mdi-arrow-right</v-icon></v-btn
+              </button>
+              <button
+                @click="swapArrowLeft"
+                :disabled="counter === 1"
+                :class="{ disabled: counter === 1 }"
               >
+                <img
+                  src="/assets/imges/products/IMG_20240126_074825-150x160.png"
+                  alt=""
+                  class="my-2"
+                />
+              </button>
             </div>
           </div> </v-col
-        ><v-col cols="6" class="">
-          <div class="d-flex justify-space-between">
-            <div class="text-black mx-15">
+        ><v-col cols="12" md="6" >
+          <div class="d-flex justify-space-around">
+            <div class="text-black">
               <v-breadcrumbs :items="items"></v-breadcrumbs>
               <h1>sdfdsfdsaf</h1>
               <h3>1500 sud</h3>
@@ -139,7 +144,6 @@ const resetAnimation = () => {
     "left2center",
     "center2left"
   );
-  
 };
 
 const items = ref<string[]>(["home", "wheyPortain", "mokka"]);
@@ -156,14 +160,11 @@ onMounted(() => {
   opacity: 0.5;
 }
 .mainimg {
-  height: 90vh;
-  width: 450px;
   object-fit: fill;
 
   transition: all 0.3s;
 }
-.scale {
-}
+
 .mainimg:hover {
   transform: scale(1.8);
 }
@@ -192,6 +193,19 @@ onMounted(() => {
 }
 .left2center {
   animation: left2center 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .mainimg {
+    height: 90vh;
+    max-width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .mainimg {
+    height: 90vh;
+    max-width: 450px;
+  }
+  
 }
 @keyframes center2left {
   0% {
