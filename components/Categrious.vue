@@ -42,7 +42,7 @@ const lowers = (index: number) => {
 const observer = ref();
 const intersecting = ref<boolean>(false);
 const obs = (entries: any) => {
-  console.log("done");
+;
 
   entries.forEach((element: any) => {
     if (!element.isIntersecting) return;
@@ -51,7 +51,7 @@ const obs = (entries: any) => {
 };
 const root = ref<HTMLDivElement>();
 onMounted(() => {
-  console.log(root.value);
+  
   observer.value = new IntersectionObserver(obs, {
     root: null,
     threshold: 0.1,
@@ -62,12 +62,12 @@ const stopObserving = () => {
   if (observer.value && root.value) {
     observer.value.unobserve(root.value);
     observer.value.disconnect();
-    console.log("Stopped observing");
+    
   }
 };
 
 onUnmounted(() => {
-  console.log("unmounted");
+ 
 });
 </script>
 <style scoped>

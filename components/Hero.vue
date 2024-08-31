@@ -72,9 +72,9 @@ const handelousemove = (e: Event) => {
   let Xtrans: number = (e.screenX - lastPositionX.value) * 1.1;
   let Ytrans: number = (e.screenY - lastPositionY.value) * 1.1;
 
-  console.log(Xtrans);
+
   hero.value.style.transform = `translate(${-Xtrans}px, ${Ytrans}px)`;
-  console.log(Xtrans);
+ 
 
   lastPositionX.value = e.screenX;
   lastPositionY.value = e.screenY;

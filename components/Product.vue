@@ -1,17 +1,22 @@
 <template>
   <v-row>
-    <v-col v-for="pro in Props.products" :key="pro.id" cols="12" :md="Props.mdCOLS" class="col">
+    <v-col
+      v-for="pro in Props.products"
+      :key="pro.id"
+      cols="12"
+      :md="Props.mdCOLS"
+      class="col"
+    >
       <ModalQuickView
         class="text-center"
-        :imgSrc="pro.img"
+        :imgSrc="pro.imgs[0]"
         :ProName="pro.name"
         :ProPrice="pro.price"
         :ProCategory="pro.category"
-        @closeModal="
-        pro.quickview = false;
-        " v-if="pro.quickview"
+        @closeModal="pro.quickview = false"
+        v-if="pro.quickview"
       />
-   
+
       <div>
         <div
           class="position-absolute product-icons d-flex flex-column align-center"
@@ -57,30 +62,29 @@
           </p>
         </div>
         <nuxt-link
-        :to="{ name: 'Product-product', params: { product: pro.name } }"
-        class="text-decoration-none text-black"
-      >
-        <LzyLoadingImg
-          :src="pro.img"
-          alt="pro.alt"
-          :object="true"
-          :hot="pro.isHot"
-        />
-     
-        <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
-     
-     
-      
-      <div class="text-right">
-        <p>{{ pro.name }}</p>
-        <p>{{ pro.category }}</p>
-        <p>{{ pro.price }} USD</p>
+          :to="{
+            name: 'Product-Category-product',
+            params: { Category: pro.category, product: pro.name },
+          }"
+          class="text-decoration-none text-black"
+        >
+          <LzyLoadingImg
+            :src="pro.imgs[0]"
+            alt="pro.alt"
+            :object="true"
+            :hot="pro.isHot"
+          />
+          <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
+          <div class="text-right">
+            <p>{{ pro.name }}</p>
+            <p>{{ pro.category }}</p>
+            <p>{{ pro.price }} USD</p>
+          </div>
+        </nuxt-link>
       </div>
-    </nuxt-link>
-    </div>
       <v-btn class="btn w-100 h bg-orange-accent-4"
         ><div>
-          <p class="cart ">add to cart</p>
+          <p class="cart">add to cart</p>
           <v-icon class="icon">mdi-cart-outline</v-icon>
         </div></v-btn
       >
@@ -88,17 +92,17 @@
       <div class="details">
         <p>{{ pro.details }}</p>
       </div>
-   
     </v-col>
   </v-row>
 </template>
 <script setup lang="ts">
 interface props {
-    products :SpecialProduct[],
-    mdCOLS:number,
+  products: SpecialProduct[];
+  mdCOLS: number;
 }
-const Props =defineProps<props>();
+const Props = defineProps<props>();
 const modela = ref<boolean>(false);
+
 import type { SpecialProduct } from "~/types/SpecialProduct";
 const loading = (val: string, pro: SpecialProduct) => {
   switch (val) {
@@ -197,7 +201,6 @@ const loading = (val: string, pro: SpecialProduct) => {
   z-index: 10;
 }
 .btn {
-  
   height: 50px;
   border-radius: 30px;
 }
