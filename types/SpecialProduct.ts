@@ -2,7 +2,7 @@ export type SpecialProduct = {
   id: number;
   name: string;
   price: number;
-  imgs: [string];
+  imgs: string[];
   category: string;
   details: string;
   isHot: boolean;

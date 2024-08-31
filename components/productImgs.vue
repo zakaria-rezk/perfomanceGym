@@ -14,7 +14,7 @@
           >
           <div class="overflow-hidden position-relative" ref="imgContainer">
             <img
-              src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
+              :src="props.imgSrc[0]"
               alt=""
               class="my-md-2 mx-md-5 mainimg position-relative cursor-move"
               @mousemove="magnfiy"
@@ -40,6 +40,7 @@
           <img
             src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
             alt=""
+            class="imgTH "
           />
         </button>
         <button
@@ -48,9 +49,9 @@
           :class="{ disabled: counter === 1 }"
         >
           <img
-            src="/assets/imges/products/IMG_20240126_074825-150x160.png"
+            src="/assets/imges/products/IMG_20240126_074825-430x457.png"
             alt=""
-            class="my-2"
+            class="my-2 imgTH "
           />
         </button>
       </div>
@@ -60,6 +61,10 @@
 <script setup lang="ts">
 const imgContainer = ref<HTMLDivElement>();
 const mainImg = ref<HTMLImageElement>();
+interface Props{
+  imgSrc:string[]
+}
+const props =defineProps<Props>();
 const magnfiy = (e: Event) => {
   if (!imgContainer.value || !mainImg.value) return;
   const x = e.pageX - imgContainer.value.getBoundingClientRect().left,
@@ -76,6 +81,7 @@ const magnfiy = (e: Event) => {
 //CHANGE IMG ANIMATION
 const counter = ref<number>(0);
 const swapArrowRight = () => {
+  console.log(props.imgSrc[0]) 
   if (!mainImg.value) return;
   counter.value--;
   resetAnimation();
@@ -101,7 +107,7 @@ const swapArrowLeft = () => {
     mainImg.value?.classList.add("left2center");
 
     mainImg.value.src =
-      "http://localhost:3000/_nuxt/assets/imges/products/IMG_20240126_074825-150x160.png";
+      "http://localhost:3000/_nuxt/assets/imges/products/IMG_20240126_074825-430x457.png";
   }, 300);
 };
 const resetAnimation = () => {
@@ -121,8 +127,12 @@ const resetAnimation = () => {
 }
 .mainimg {
   object-fit: fill;
+  width: 380px;
 
   transition: all 0.3s;
+}
+.imgTH {
+  width: 115px;
 }
 
 .mainimg:hover {
@@ -154,16 +164,19 @@ const resetAnimation = () => {
 .left2center {
   animation: left2center 0.3s ease-in-out;
 }
-@media (max-width: 960px) {
-  img {
-    height: 90vh;
-    max-width: 450px;
+@media (min-width: 968px) and (max-width: 1280px) {
+  .mainimg {
+    width: 300px;
   }
 }
-@media (min-width: 1280px) {
-  .mainimg {
-    height: 90vh;
-    max-width: 400px;
+@media (max-width: 425px) {
+  img {
+    width: 350px !important;
+  }
+}
+@media(min-width: 425px) and (max-width: 950px) {
+  img {
+    width: 450px !important;
   }
 }
 @keyframes center2left {

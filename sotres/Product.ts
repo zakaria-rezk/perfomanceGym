@@ -10,6 +10,8 @@ export const useUserStore = defineStore("user", {
           price: 500,
           imgs: [
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           ],
           category: "PreWorkout",
           details:
@@ -30,6 +32,7 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER MANGO 2kg",
           price: 600,
           imgs: [
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           ],
           category: "PreWorkout",
@@ -52,6 +55,7 @@ export const useUserStore = defineStore("user", {
           price: 700,
           imgs: [
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           ],
           category: "PreWorkout",
           details:
@@ -72,6 +76,8 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER MANGO 4kg",
           price: 250,
           imgs: [
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
           ],
           category: "PreWorkout",
@@ -96,6 +102,8 @@ export const useUserStore = defineStore("user", {
           price: 100,
           imgs: [
             "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
           ],
           category: "WheyProtain",
           details:
@@ -118,6 +126,7 @@ export const useUserStore = defineStore("user", {
           price: 1000,
           imgs: [
             "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
           ],
           category: "WheyProtain",
           details:
@@ -139,6 +148,7 @@ export const useUserStore = defineStore("user", {
           name: "RUSH PUMP LEMON MINT 30",
           price: 300,
           imgs: [
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
             "/_nuxt/assets/imges/products/Picsart_24-04-26_05-03-50-535-150x225.png",
           ],
           category: "WheyProtain",
@@ -186,6 +196,7 @@ export const useUserStore = defineStore("user", {
           price: 986,
           imgs: [
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
           ],
           category: "Creatine",
           details:
@@ -207,6 +218,7 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER MANGO 7kg",
           price: 900,
           imgs: [
+            "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
             "/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png",
           ],
           category: "Creatine",
@@ -232,8 +244,9 @@ export const useUserStore = defineStore("user", {
           price: 1206,
           imgs: [
             "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+            "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           ],
-          category: "Creatine",
+          category: "Accessories",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
@@ -253,8 +266,9 @@ export const useUserStore = defineStore("user", {
           price: 1200,
           imgs: [
             "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+            "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           ],
-          category: "Creatine",
+          category: "Accessories",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
@@ -274,8 +288,10 @@ export const useUserStore = defineStore("user", {
           price: 2500,
           imgs: [
             "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+            "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+            "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
           ],
-          category: "Creatine",
+          category: "Accessories",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
@@ -296,6 +312,7 @@ export const useUserStore = defineStore("user", {
           name: "ISOLATE MOKKA 60SERV",
           price: 1400,
           imgs: [
+            "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
             "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           ],
           category: "Recovery",
@@ -318,6 +335,7 @@ export const useUserStore = defineStore("user", {
           price: 1800,
           imgs: [
             "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
+            "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           ],
           category: "Recovery",
           details:
@@ -338,6 +356,7 @@ export const useUserStore = defineStore("user", {
           name: "ISOLATE MOKKA 60SERV3",
           price: 1700,
           imgs: [
+            "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
             "/_nuxt/assets/imges/GymAccessories/Picsart_23-02-11_20-20-42-190-300x300.png",
           ],
           category: "Recovery",
@@ -361,6 +380,8 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER MANGO ",
           price: 1500,
           imgs: [
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-04-39-687.png",
+            "/_nuxt/assets/imges/products/Picsart_24-04-26_05-04-39-687.png",
             "/_nuxt/assets/imges/products/Picsart_24-04-26_05-04-39-687.png",
           ],
           category: "WeightGainerCarbs",

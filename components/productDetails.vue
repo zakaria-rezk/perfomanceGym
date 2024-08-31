@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6">
+  <v-col cols="12" md="6" class="">
     <div class="d-flex justify-space-around">
       <div class="text-black w-75">
         <v-breadcrumbs :items="items" class=".v-breadcrumbs-item">
