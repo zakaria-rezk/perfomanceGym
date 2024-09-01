@@ -37,22 +37,22 @@
           :disabled="counter === 0"
           :class="{ disabled: counter === 0 }"
         >
-          <img
+          <!-- <img
             src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
             alt=""
             class="imgTH "
-          />
+          /> -->
         </button>
         <button
           @click="swapArrowLeft"
           :disabled="counter === 1"
           :class="{ disabled: counter === 1 }"
         >
-          <img
+          <!-- <img
             src="/assets/imges/products/IMG_20240126_074825-430x457.png"
             alt=""
             class="my-2 imgTH "
-          />
+          /> -->
         </button>
       </div>
     </div>

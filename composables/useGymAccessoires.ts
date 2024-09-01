@@ -4,15 +4,16 @@ export function useGymAccessoires() {
 
   const products: SpecialProduct[] = [
     {
-      id: 3,
-      name: "BULK GAINER MANGO 8kg",
+      id: 1,
+      name: "HANDLITING",
       price: 1206,
       imgs: [
-        "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
-        "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+        "/_nuxt/assets/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
+        "/_nuxt/assets/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
       ],
       category: "Accessories",
-      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details:
+        "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
       offer: null,
       OnSale: true,
@@ -26,18 +27,18 @@ export function useGymAccessoires() {
     },
     {
       id: 1,
-      name: "BULK GAINER MANGO 2kg",
-      price: 600,
+      name: "LIFTING LETING",
+      price: 1206,
       imgs: [
-        "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
-        "/_nuxt/assets/imges/products/Picsart_24-01-26_07-47-00-836-150x225.png",
+        "/_nuxt/assets/imges/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
       ],
-      category: "PreWorkout",
-      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
-      isHot: true,
+      category: "Accessories",
+      details:
+        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      isHot: false,
+      offer: null,
       OnSale: true,
       InStock: true,
-      offer: "-7%",
       quickview: false,
       icons: {
         quickview: false,
@@ -47,19 +48,20 @@ export function useGymAccessoires() {
     },
     {
       id: 3,
-      name: "BULK GAINER MANGO 4kg",
-      price: 986,
-
+      name: "SHAKER 70ML",
+      price: 2500,
       imgs: [
-        "/_nuxt/assets/imges/GymAccessories/Picsart_24-01-26_08-44-09-221-200x300.png",
+        "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
+        "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
       ],
-      category: "PreWorkout",
-      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
+      category: "Accessories",
+      details:
+        "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
-      quickview: false,
-      InStock: false,
       offer: null,
-      OnSale: false,
+      OnSale: true,
+      InStock: true,
+      quickview: false,
       icons: {
         quickview: false,
         compare: false,

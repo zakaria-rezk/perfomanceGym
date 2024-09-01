@@ -1,7 +1,7 @@
 <template>
   <figure ref="figure position-relative" :class="{ hot: props.hot }">
     <img
-      class="rounded-xl img"
+      class=" img"
       :class="{ default: props.object }"
       :src="props.src"
       :alt="props.alt"
@@ -21,13 +21,12 @@ const figure = ref<HTMLDivElement>();
 </script>
 <style scoped>
 .img {
-  object-fit: fill;
-  border-radius: 30px !important;
   width: 100%;
-  height: 200px;
+  height: 250px;
+  border-radius: 30px;
 }
 .default {
-  object-fit: none !important;
+ 
   height: 300px;
 }
 

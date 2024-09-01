@@ -3,7 +3,7 @@
     <v-container style="margin-top: 125px"
       ><v-row class="no-wrap">
         <productImgs :imgSrc="arr" v-if="arr.length > 0" />
-          <v-progress v-else />
+        <v-progress v-else />
         <productDetails /> </v-row
     ></v-container>
   </div>
@@ -26,6 +26,6 @@ onBeforeMount(() => {
     (pro: SpecialProduct) => pro.name === route.params.product
   );
   arr.value = item.value[0].imgs;
-  console.log(arr);
+  console.log(arr.value);
 });
 </script>
