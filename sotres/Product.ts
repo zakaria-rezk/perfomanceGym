@@ -364,7 +364,7 @@ export const useUserStore = defineStore("user", {
           price: 1500,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-07-10-921.png",
-            "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-01-26_07-57-49-568-150x225.png",
+           
             "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_072909-860x1052.png",
             "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_072909.png",
           ],

@@ -6,10 +6,10 @@
       <div class="imgContainer">
         <div class="position-relative d-flex align-center justify-center">
           <v-btn
-            :disabled="counter === 1"
+            :disabled="CurrImgNum === props.imgSrc.length-1"
             variant="text"
             class="mr-n16 position-relative text-grey arrow arrow-l"
-            @click="swapArrowLeft"
+            @click="swap(CurrImgNum+1)"
             ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
           >
           <div class="overflow-hidden position-relative" ref="imgContainer">
@@ -23,37 +23,29 @@
           </div>
 
           <v-btn
-            :disabled="counter === 0"
+            :disabled="CurrImgNum === 0"
             variant="text"
             class="ml-n16 position-relative text-grey arrow arrow-r"
-            @click="swapArrowRight"
+           @click="swap(CurrImgNum-1)"
             ><v-icon size="30">mdi-arrow-right</v-icon></v-btn
           >
         </div>
       </div>
       <div class="d-flex flex-column">
         <button
-          @click="swapArrowRight"
-          :disabled="counter === 0"
-          :class="{ disabled: counter === 0 }"
+          v-for="(img, index) in props.imgSrc"
+          :key="img"
+          @click="swap(index)"
         >
-          <!-- <img
-            src="/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png"
-            alt=""
-            class="imgTH "
-          /> -->
+          <img :src="img" alt="" class="imgTH" />
         </button>
-        <button
+        <!-- <button
           @click="swapArrowLeft"
           :disabled="counter === 1"
           :class="{ disabled: counter === 1 }"
         >
-          <!-- <img
-            src="/assets/imges/products/IMG_20240126_074825-430x457.png"
-            alt=""
-            class="my-2 imgTH "
-          /> -->
-        </button>
+       
+        </button> -->
       </div>
     </div>
   </v-col>
@@ -61,10 +53,59 @@
 <script setup lang="ts">
 const imgContainer = ref<HTMLDivElement>();
 const mainImg = ref<HTMLImageElement>();
-interface Props{
-  imgSrc:string[]
+interface Props {
+  imgSrc: string[];
 }
-const props =defineProps<Props>();
+const props = defineProps<Props>();
+const CurrImgNum = ref<number>(0);
+//CHANGE IMG ANIMATION
+const swap = (index: number) => {
+  if (!mainImg.value) return;
+  resetAnimation();
+  if (index > CurrImgNum.value) swapArrowLeft(index);
+  else if (index < CurrImgNum.value) swapArrowRight(index);
+};
+
+const swapArrowRight = (index: number) => {
+  if (!mainImg.value) return;
+  for (let i = CurrImgNum.value; CurrImgNum.value > index; CurrImgNum.value--) {
+    mainImg.value.classList.add("center2left");
+    setTimeout(() => {
+      if (!mainImg.value) return;
+      mainImg.value?.classList.remove("center2left");
+      mainImg.value?.classList.add("right2center");
+      console.log(CurrImgNum.value);
+      mainImg.value.src = props.imgSrc[CurrImgNum.value];
+      CurrImgNum.value = index;
+    }, 300 * (CurrImgNum.value - index));
+    mainImg.value.src = props.imgSrc[CurrImgNum.value];
+  }
+};
+const swapArrowLeft = async (index: number) => {
+  if (!mainImg.value) return;
+  for (let i = CurrImgNum.value; CurrImgNum.value < index; CurrImgNum.value++) {
+    mainImg.value.classList.add("center2right");
+    setTimeout(() => {
+      if (!mainImg.value) return;
+      mainImg.value?.classList.remove("center2right");
+      mainImg.value?.classList.add("left2center");
+      console.log(CurrImgNum.value);
+      mainImg.value.src = props.imgSrc[CurrImgNum.value];
+      CurrImgNum.value = index;
+    }, 300 * 1);
+    mainImg.value.src = props.imgSrc[CurrImgNum.value];
+    mainImg.value?.classList.remove("left2center");
+  }
+};
+const resetAnimation = () => {
+  if (!mainImg.value) return;
+  mainImg.value.classList.remove(
+    "center2right",
+    "right2center",
+    "left2center",
+    "center2left"
+  );
+};
 const magnfiy = (e: Event) => {
   if (!imgContainer.value || !mainImg.value) return;
   const x = e.pageX - imgContainer.value.getBoundingClientRect().left,
@@ -77,47 +118,6 @@ const magnfiy = (e: Event) => {
     Yperc = (y / imgHeight) * 100 + "%";
 
   mainImg.value.style.transformOrigin = Xperc + Yperc;
-};
-//CHANGE IMG ANIMATION
-const counter = ref<number>(0);
-const swapArrowRight = () => {
-  console.log(props.imgSrc[0]) 
-  if (!mainImg.value) return;
-  counter.value--;
-  resetAnimation();
-  mainImg.value.classList.add("center2left");
-
-  setTimeout(() => {
-    if (!mainImg.value) return;
-    mainImg.value.classList.remove("center2left");
-    mainImg.value.classList.add("right2center");
-    mainImg.value.src =
-      "http://localhost:3000/_nuxt/assets/imges/products/Picsart_24-01-26_07-57-49-568-150x225.png";
-  }, 300);
-};
-const swapArrowLeft = () => {
-  if (!mainImg.value) return;
-  counter.value++;
-  resetAnimation();
-  mainImg.value.classList.add("center2right");
-
-  setTimeout(() => {
-    if (!mainImg.value) return;
-    mainImg.value?.classList.remove("center2right");
-    mainImg.value?.classList.add("left2center");
-
-    mainImg.value.src =
-      "http://localhost:3000/_nuxt/assets/imges/products/IMG_20240126_074825-430x457.png";
-  }, 300);
-};
-const resetAnimation = () => {
-  if (!mainImg.value) return;
-  mainImg.value.classList.remove(
-    "center2right",
-    "right2center",
-    "left2center",
-    "center2left"
-  );
 };
 </script>
 <style scoped>
@@ -153,16 +153,16 @@ const resetAnimation = () => {
   z-index: 11;
 }
 .center2right {
-  animation: center2right 0.3s ease-in-out;
+  animation: center2right 0.3s ease-out;
 }
 .right2center {
-  animation: right2center 0.3s ease-in-out;
+  animation: right2center 0.3s ease-out;
 }
 .center2left {
-  animation: center2left 0.3s ease-in-out;
+  animation: center2left 0.3s ease-out;
 }
 .left2center {
-  animation: left2center 0.3s ease-in-out;
+  animation: left2center 0.3s ease-out;
 }
 @media (min-width: 968px) and (max-width: 1280px) {
   .mainimg {
@@ -174,7 +174,7 @@ const resetAnimation = () => {
     width: 350px !important;
   }
 }
-@media(min-width: 425px) and (max-width: 950px) {
+@media (min-width: 425px) and (max-width: 950px) {
   img {
     width: 450px !important;
   }
