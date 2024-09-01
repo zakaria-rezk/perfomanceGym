@@ -58,8 +58,7 @@ export function useFetchData() {
         "/_nuxt/assets/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
       ],
       category: "WheyProtain",
-      details:
-        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
       OnSale: true,
       InStock: true,
@@ -74,7 +73,7 @@ export function useFetchData() {
     },
     {
       id: 1,
-      name: "ARGININE AKG 60 SERVING",
+      name: "CITRULLINE MALATE 60 SERVING",
       price: 500,
       imgs: [
         "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
@@ -162,7 +161,7 @@ export function useFetchData() {
 
     {
       id: 1,
-      name: "PRO CARB STRAWPERRY",
+      name: "CARPOTINE STRAWPERRY 1.5kg",
       price: 1500,
       imgs: [
         "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-07-10-921.png",
@@ -171,8 +170,7 @@ export function useFetchData() {
         "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_072909.png",
       ],
       category: "WeightGainerCarbs",
-      details:
-        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: true,
       OnSale: true,
       InStock: true,
