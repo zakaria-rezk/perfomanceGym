@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="d-flex justify-center">
     <div
       class="d-flex flex-md-row-reverse flex-column justify-center align-center"
-   
     >
       <div class="imgContainer">
         <div class="position-relative d-flex align-center justify-center">
@@ -44,7 +43,6 @@
         </button>
       </div>
     </div>
-
   </v-col>
 </template>
 <script setup lang="ts">
@@ -125,6 +123,7 @@ const magnfiy = (e: Event) => {
 .mainimg {
   object-fit: fill;
   width: 380px;
+  min-height: 50vh;
 
   transition: all 0.3s;
 }

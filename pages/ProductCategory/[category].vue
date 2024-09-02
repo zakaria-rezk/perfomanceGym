@@ -108,9 +108,9 @@ const state = useUserStore();
 const minPrice = ref<SpecialProduct>();
 const maxPrice = ref<SpecialProduct>();
 const category = ref(route.params.category);
-const loading = ref<boolean>(false);
+const loading = ref<boolean>(true);
 const loadingSpinner = () => {
-  loading.value = true;
+  
   setTimeout(() => {
     loading.value = false;
   }, 1000);

@@ -9,18 +9,18 @@ export type SpecialProduct = {
   OnSale: boolean;
   InStock: boolean;
   offer: string | null;
-  quickview:boolean,
+  quickview: boolean;
   icons: {
     quickview: boolean;
     compare: boolean;
     wishlist: boolean;
   };
-  next:{
-    name:string,
-    category:string
-  },
-  prev:{
-    name:string,
-    category:string
-  }
+  next: {
+    name: string;
+    category: string;
+  };
+  prev: {
+    name: string;
+    category: string;
+  };
 };

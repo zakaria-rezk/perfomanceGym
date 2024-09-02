@@ -14,7 +14,7 @@
         :height="computedTopValue"
       />
       <v-row class="d-flex">
-        <v-col cols="1" class="d-md-none">
+        <v-col cols="1" class="d-md-none pl-5">
           <button
             @click="
               navNumber = 2;
@@ -36,7 +36,7 @@
               alt=""
           /></nuxt-link>
         </v-col>
-        <v-col cols="1" class="d-md-none pr-8">
+        <v-col cols="1" class="d-md-none pr-9">
           <button
             @click="
               navNumber = 0;
