@@ -35,8 +35,6 @@ onBeforeMount(() => {
     isloading.value = false;
   }, 500);
   const route = useRoute();
-
-  console.log(route.params.Category);
   item.value = Product.product[`${route.params.Category}`].filter(
     (pro: SpecialProduct) => pro.name === route.params.product
   );

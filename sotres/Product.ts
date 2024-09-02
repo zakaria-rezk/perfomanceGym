@@ -86,7 +86,10 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "RUSH PUMP WATERMELON 30 SERVING", category: "PreWorkout" },
+          next: {
+            name: "RUSH PUMP WATERMELON 30 SERVING",
+            category: "PreWorkout",
+          },
           prev: {
             name: "CARBO GAINER WATERMELON 1kg",
             category: "WeightGainerCarbs",
@@ -194,7 +197,7 @@ export const useUserStore = defineStore("user", {
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
-          category: "CITRULLINE MALATE 60 SERVING",
+          category: "PreWorkout",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: true,
@@ -296,7 +299,10 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "CITRULLINE MALATE 60 SERVING", category: "CITRULLINE MALATE 60 SERVING" },
+          next: {
+            name: "CITRULLINE MALATE 60 SERVING",
+            category: "PreWorkout",
+          },
           prev: { name: "WHEY OREO 1kg", category: "WheyProtain" },
         },
       ],
@@ -323,7 +329,10 @@ export const useUserStore = defineStore("user", {
             wishlist: false,
           },
           next: { name: "CASEIN PROTEIN STRWPERRY", category: "WheyProtain" },
-          prev: { name: "CITRULLINE MALATE 60 SERVING", category: "PreWorkout" },
+          prev: {
+            name: "CITRULLINE MALATE 60 SERVING",
+            category: "PreWorkout",
+          },
         },
         {
           id: 2,
@@ -345,7 +354,10 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "WHEY STROPERRY CHEESE CAKE 1kg", category: "WheyProtain" },
+          next: {
+            name: "WHEY STROPERRY CHEESE CAKE 1kg",
+            category: "WheyProtain",
+          },
           prev: { name: "BULK GAINER MANGO", category: "WeightGainerCarbs" },
         },
         {
@@ -369,8 +381,14 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "BULK GAINER VANILLA 4KG", category: "WeightGainerCarbs" },
-          prev: { name: "WHEY STROPERRY CHEESE CAKE 1kg", category: "WheyProtain" },
+          next: {
+            name: "BULK GAINER VANILLA 4KG",
+            category: "WeightGainerCarbs",
+          },
+          prev: {
+            name: "WHEY STROPERRY CHEESE CAKE 1kg",
+            category: "WheyProtain",
+          },
         },
       ],
       Creatine: [
@@ -395,8 +413,14 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "WHEY PROTIEN STRWPERRY 1.5kg", category: "WheyProtain" },
-          prev: { name: "CARBO GAINER STRAWPERRY 1kg", category: "WeightGainerCarbs" },
+          next: {
+            name: "WHEY PROTIEN STRWPERRY 1.5kg",
+            category: "WheyProtain",
+          },
+          prev: {
+            name: "CARBO GAINER STRAWPERRY 1kg",
+            category: "WeightGainerCarbs",
+          },
         },
         {
           id: 2,
@@ -419,8 +443,14 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "CARBO GAINER STRAWPERRY 1kg", category: "WeightGainerCarbs" },
-          prev: { name: "WHEY PROTIEN STRWPERRY 1.5kg", category: "WheyProtain" },
+          next: {
+            name: "CARBO GAINER STRAWPERRY 1kg",
+            category: "WeightGainerCarbs",
+          },
+          prev: {
+            name: "WHEY PROTIEN STRWPERRY 1.5kg",
+            category: "WheyProtain",
+          },
         },
       ],
 
@@ -475,7 +505,10 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "ARBO GAINER WATERMELON 1kg", category: "WeightGainerCarbs" },
+          next: {
+            name: "ARBO GAINER WATERMELON 1kg",
+            category: "WeightGainerCarbs",
+          },
           prev: { name: "CASEIN PROTEIN CHOCOLATE", category: "WheyProtain" },
         },
         {
@@ -501,7 +534,10 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "CARPOTINE STRAWPERRY 1.5kg", category: "WeightGainerCarbs" },
+          next: {
+            name: "CARPOTINE STRAWPERRY 1.5kg",
+            category: "WeightGainerCarbs",
+          },
           prev: { name: "WHEY OREO 1kg", category: "WheyProtain" },
         },
         {
@@ -525,7 +561,10 @@ export const useUserStore = defineStore("user", {
             wishlist: false,
           },
           next: { name: "WHEY OREO 1kg", category: "WheyProtain" },
-          prev: { name: "BULK GAINER CHOCOLATE ICE CREAM 4KG", category: "WeightGainerCarbs" },
+          prev: {
+            name: "BULK GAINER CHOCOLATE ICE CREAM 4KG",
+            category: "WeightGainerCarbs",
+          },
         },
         {
           id: 5,
@@ -547,8 +586,14 @@ export const useUserStore = defineStore("user", {
             compare: false,
             wishlist: false,
           },
-          next: { name: "CREATINE MONOHYDRATE 60 SERVING", category: "Creatine" },
-          prev: { name: "CREATINE MONOHYDRATE 30 SERVING", category: "Creatine" },
+          next: {
+            name: "CREATINE MONOHYDRATE 60 SERVING",
+            category: "Creatine",
+          },
+          prev: {
+            name: "CREATINE MONOHYDRATE 30 SERVING",
+            category: "Creatine",
+          },
         },
         {
           id: 6,
