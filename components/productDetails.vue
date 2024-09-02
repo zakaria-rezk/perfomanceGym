@@ -12,8 +12,8 @@
             </v-breadcrumbs-item>
           </template></v-breadcrumbs
         >
-        <h1>sdfdsfdsaf</h1>
-        <h3>1500 sud</h3>
+        <h1>{{ Props.name }}</h1>
+        <h3>{{ Props.price }} USD</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quasi
           voluptatibus, labore dolores maxime veniam eius nobis? Facere optio
@@ -38,6 +38,11 @@
 </template>
 <script setup lang="ts">
 const items = ref<string[]>(["home", "wheyPortain", "mokka"]);
+interface props {
+  name: string;
+  price: number;
+}
+const Props = defineProps<props>();
 </script>
 <style scoped>
 .last-breadcrumb-item {

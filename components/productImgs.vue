@@ -2,14 +2,15 @@
   <v-col cols="12" md="6" class="d-flex justify-center">
     <div
       class="d-flex flex-md-row-reverse flex-column justify-center align-center"
+   
     >
       <div class="imgContainer">
         <div class="position-relative d-flex align-center justify-center">
           <v-btn
-            :disabled="CurrImgNum === props.imgSrc.length-1"
+            :disabled="CurrImgNum === props.imgSrc.length - 1"
             variant="text"
             class="mr-n16 position-relative text-grey arrow arrow-l"
-            @click="swap(CurrImgNum+1)"
+            @click="swap(CurrImgNum + 1)"
             ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
           >
           <div class="overflow-hidden position-relative" ref="imgContainer">
@@ -26,7 +27,7 @@
             :disabled="CurrImgNum === 0"
             variant="text"
             class="ml-n16 position-relative text-grey arrow arrow-r"
-           @click="swap(CurrImgNum-1)"
+            @click="swap(CurrImgNum - 1)"
             ><v-icon size="30">mdi-arrow-right</v-icon></v-btn
           >
         </div>
@@ -36,18 +37,14 @@
           v-for="(img, index) in props.imgSrc"
           :key="img"
           @click="swap(index)"
+          :disabled="CurrImgNum === index"
+          :class="{ disabled: CurrImgNum === index }"
         >
           <img :src="img" alt="" class="imgTH" />
         </button>
-        <!-- <button
-          @click="swapArrowLeft"
-          :disabled="counter === 1"
-          :class="{ disabled: counter === 1 }"
-        >
-       
-        </button> -->
       </div>
     </div>
+
   </v-col>
 </template>
 <script setup lang="ts">

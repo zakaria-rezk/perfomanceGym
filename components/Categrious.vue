@@ -66,9 +66,7 @@ const stopObserving = () => {
   }
 };
 
-onUnmounted(() => {
- 
-});
+
 </script>
 <style scoped>
 .container {

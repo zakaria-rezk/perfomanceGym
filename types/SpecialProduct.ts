@@ -15,4 +15,12 @@ export type SpecialProduct = {
     compare: boolean;
     wishlist: boolean;
   };
+  next:{
+    name:string,
+    category:string
+  },
+  prev:{
+    name:string,
+    category:string
+  }
 };
