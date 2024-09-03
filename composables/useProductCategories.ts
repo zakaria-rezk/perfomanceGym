@@ -16,28 +16,28 @@ type ProductCategories = Product[];
 const productCategories: ProductCategories = [
   {
     id: 1,
-    title: "PRE WORKOUT",
+    title: "PreWorkout",
     bransh: false,
     img: "/_nuxt/assets/imges/Categrious/1641481364410-860x484.jpeg",
     alt: "Image of Product 1",
   },
   {
     id: 2,
-    title: "CREATINE",
+    title: "Creatine",
     bransh: false,
     img: "/_nuxt/assets/imges/Categrious/young-man-preparing-his-protein-drink-royalty-free-image-618752694-1551094694-700x467.jpeg",
     alt: "Image of Product 2",
   },
   {
     id: 3,
-    title: "WEIGHT GAINER & CARBS",
+    title: "WeightGainerCarbs",
     bransh: true,
     img: "/_nuxt/assets/imges/Categrious/sport-inst-1.jpg",
     alt: "Image of Product 3",
   },
   {
     id: 4,
-    title: "WHEY PROTEIN",
+    title: "WheyProtain",
     bransh: true,
     img: "/_nuxt/assets/imges/Categrious/on-understanding-optimum-nutrition-gold-standard-100-whey-protein_Image_01.jpeg",
     alt: "Image of Product 4",
@@ -51,7 +51,7 @@ const productCategories: ProductCategories = [
   },
   {
     id: 6,
-    title: "ACCESSORIES",
+    title: "Accessories",
     bransh: false,
     img: "/_nuxt/assets/imges/Categrious/best-fitness-equipment-brands_header.jpeg",
     alt: "Image of Product 6",
@@ -65,7 +65,7 @@ const productCategories: ProductCategories = [
   },
   {
     id: 8,
-    title: "RECOVERY",
+    title: "Recovery",
     bransh: true,
     img: "/_nuxt/assets/imges/Categrious/Muscular-Lean-And-Fit-Man-Resting-and-Drinking-Supplement-Drink-After-A-Workout-860x476.webp",
     alt: "Image of Product 8",

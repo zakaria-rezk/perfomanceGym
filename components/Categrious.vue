@@ -3,6 +3,10 @@
     <v-container>
       <SectionTitle title="categrious" SectionContent="product categrious" />
       <v-row class="overflow-hidden container">
+        <!-- :to="{
+                    name: 'ProductCategory-category',
+                    params: { category: item },
+                  }" -->
         <v-col
           v-for="(pro, index) in products"
           :key="pro.id"
@@ -13,14 +17,29 @@
           @mouseleave="lowers(index)"
           class="col rounded flex-grow-1 overflow-hidden text-uppercase position-relative cursor-pointer"
         >
-          <LzyLoadingImg :src="pro.img" :alt="pro.alt" :object="false" v-if="intersecting" :hot="false" />
-          <p
-            class="position text-white text-h5"
-            ref="title"
-            :class="{ title: pro.bransh }"
+          <nuxt-link
+            :to="{
+              name: 'ProductCategory-category',
+              params: { category: pro.title },
+              
+            }"
+            class="text-decoration-none"
           >
-            {{ pro.title }}
-          </p></v-col
+            <LzyLoadingImg
+              :src="pro.img"
+              :alt="pro.alt"
+              :object="false"
+              v-if="intersecting"
+              :hot="false"
+            />
+            <p
+              class="position text-white text-h5 text-uppercase text-decoration-none"
+              ref="title"
+              :class="{ title: pro.bransh }"
+            >
+              {{ pro.title }}
+            </p>
+          </nuxt-link></v-col
         >
       </v-row>
     </v-container>
@@ -28,7 +47,7 @@
 </template>
 <script setup lang="ts">
 const title = ref<HTMLDivElement[]>([]);
-  const { products } = useProductCategories();
+const { products } = useProductCategories();
 const raises = (index: number) => {
   if (!title.value || !title.value[index].closest(".brnach")) return;
 
@@ -42,8 +61,6 @@ const lowers = (index: number) => {
 const observer = ref();
 const intersecting = ref<boolean>(false);
 const obs = (entries: any) => {
-;
-
   entries.forEach((element: any) => {
     if (!element.isIntersecting) return;
     intersecting.value = element.isIntersecting;
@@ -51,7 +68,6 @@ const obs = (entries: any) => {
 };
 const root = ref<HTMLDivElement>();
 onMounted(() => {
-  
   observer.value = new IntersectionObserver(obs, {
     root: null,
     threshold: 0.1,
@@ -62,11 +78,8 @@ const stopObserving = () => {
   if (observer.value && root.value) {
     observer.value.unobserve(root.value);
     observer.value.disconnect();
-    
   }
 };
-
-
 </script>
 <style scoped>
 .container {
@@ -86,6 +99,7 @@ const stopObserving = () => {
   text-align: center;
   border-radius: 10px;
   padding-top: 7px;
+  
 }
 
 .position {

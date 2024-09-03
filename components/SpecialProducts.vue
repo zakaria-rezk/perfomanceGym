@@ -6,7 +6,5 @@
 </template>
 <script setup lang="ts">
 const data = useFetchData();
-
-
 </script>
 

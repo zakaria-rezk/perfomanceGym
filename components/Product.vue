@@ -2,8 +2,8 @@
   <v-row>
     <v-col
       v-for="pro in Props.products"
-      :key="pro.id"
-      cols="12"
+      :key="pro.name"
+      :cols="Props.smCOLS"
       :md="Props.mdCOLS"
       class="col"
     >
@@ -99,6 +99,10 @@
 interface props {
   products: SpecialProduct[];
   mdCOLS: number;
+  smCOLS: {
+    type: number;
+    default: 12;
+  };
 }
 const Props = defineProps<props>();
 const modela = ref<boolean>(false);
@@ -130,7 +134,8 @@ const loading = (val: string, pro: SpecialProduct) => {
 };
 </script>
 <style scoped>
-.offers {
+@import "~/assets/style/Hot&Offer.css";
+/* .offers {
   position: absolute;
   color: #fff;
   bottom: 300px;
@@ -142,7 +147,7 @@ const loading = (val: string, pro: SpecialProduct) => {
   text-align: center;
   vertical-align: middle;
   padding-top: 13px;
-}
+} */
 .text-compare,
 .text-wishlist,
 .text-search {
@@ -168,7 +173,7 @@ const loading = (val: string, pro: SpecialProduct) => {
   top: -25px;
   border-radius: 5px;
   width: fit-content;
-  text-wrap: nowrap;
+  white-space: nowrap;
   font-size: 14px;
 }
 .details {

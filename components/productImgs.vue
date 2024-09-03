@@ -3,7 +3,10 @@
     <div
       class="d-flex flex-md-row-reverse flex-column justify-center align-center"
     >
-      <div class="imgContainer">
+      <div class="imgContainer position-relative">
+        <p :class="{ offers: props.offer }" v-if="props.offer">
+          {{ props.offer }}
+        </p>
         <div class="position-relative d-flex align-center justify-center">
           <v-btn
             :disabled="CurrImgNum === props.imgSrc.length - 1"
@@ -12,7 +15,11 @@
             @click="swap(CurrImgNum + 1)"
             ><v-icon size="30">mdi-arrow-left</v-icon></v-btn
           >
-          <div class="overflow-hidden position-relative" ref="imgContainer">
+          <div
+            class="overflow-hidden position-relative"
+            ref="imgContainer"
+            :class="{ hot: props.hot }"
+          >
             <img
               :src="props.imgSrc[0]"
               alt=""
@@ -34,7 +41,7 @@
       <div class="d-flex flex-column">
         <button
           v-for="(img, index) in props.imgSrc"
-          :key="img"
+          :key="index"
           @click="swap(index)"
           :disabled="CurrImgNum === index"
           :class="{ disabled: CurrImgNum === index }"
@@ -50,6 +57,8 @@ const imgContainer = ref<HTMLDivElement>();
 const mainImg = ref<HTMLImageElement>();
 interface Props {
   imgSrc: string[];
+  hot: boolean;
+  offer: string | boolean;
 }
 const props = defineProps<Props>();
 const CurrImgNum = ref<number>(0);
@@ -103,6 +112,7 @@ const resetAnimation = () => {
 };
 const magnfiy = (e: Event) => {
   if (!imgContainer.value || !mainImg.value) return;
+  console.log("maginfy");
   const x = e.pageX - imgContainer.value.getBoundingClientRect().left,
     imgWidth = mainImg.value.width,
     Xperc = (x / imgWidth) * 100 + "%";
@@ -116,24 +126,27 @@ const magnfiy = (e: Event) => {
 };
 </script>
 <style scoped>
+@import "~/assets/style/left&rightAnimation.css";
+@import "~/assets/style/Hot&Offer.css";
 .disabled {
   transition: all 0.5s ease;
   opacity: 0.5;
 }
 .mainimg {
-  object-fit: fill;
+  object-fit: contain;
   width: 380px;
-  min-height: 50vh;
+  min-height: 100vh;
 
   transition: all 0.3s;
-}
-.imgTH {
-  width: 115px;
 }
 
 .mainimg:hover {
   transform: scale(1.8);
 }
+.imgTH {
+  width: 115px;
+}
+
 .imgContainer:hover .arrow {
   display: block;
 }
@@ -148,18 +161,6 @@ const magnfiy = (e: Event) => {
   display: none;
   z-index: 11;
 }
-.center2right {
-  animation: center2right 0.3s ease-out;
-}
-.right2center {
-  animation: right2center 0.3s ease-out;
-}
-.center2left {
-  animation: center2left 0.3s ease-out;
-}
-.left2center {
-  animation: left2center 0.3s ease-out;
-}
 @media (min-width: 968px) and (max-width: 1280px) {
   .mainimg {
     width: 300px;
@@ -173,40 +174,6 @@ const magnfiy = (e: Event) => {
 @media (min-width: 425px) and (max-width: 950px) {
   img {
     width: 450px !important;
-  }
-}
-@keyframes center2left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes right2center {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes center2right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-@keyframes left2center {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 </style>

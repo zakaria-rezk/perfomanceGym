@@ -151,9 +151,7 @@ onMounted(() => {
   prevProduct.value = store.product[`${Props.product?.prev.category}`].filter(
     (pro: SpecialProduct) => pro.name === Props.product?.prev.name
   )[0];
-  console.log(nextProduct.value?.imgs[0]);
-  console.log("nextProduct.value?.imgs[0]");
-  console.log(prevProduct.value);
+
 });
 </script>
 <style scoped>

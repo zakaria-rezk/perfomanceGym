@@ -20,6 +20,8 @@ interface Props {
 const figure = ref<HTMLDivElement>();
 </script>
 <style scoped>
+
+
 .img {
   width: 100%;
   height: 250px;

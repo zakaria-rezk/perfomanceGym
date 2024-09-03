@@ -18,7 +18,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
           quickview: false,
           icons: {
             quickview: false,
@@ -46,7 +46,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: '-50%',
 
           quickview: false,
           icons: {
@@ -78,7 +78,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: '-1%',
 
           quickview: false,
           icons: {
@@ -111,7 +111,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
 
           quickview: false,
           icons: {
@@ -143,7 +143,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
 
           quickview: false,
           icons: {
@@ -175,7 +175,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
 
           quickview: false,
           icons: {
@@ -292,7 +292,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-8%",
           quickview: false,
           icons: {
             quickview: false,
@@ -319,7 +319,7 @@ export const useUserStore = defineStore("user", {
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
-          offer: null,
+          offer: false,
           OnSale: true,
           InStock: true,
           quickview: false,
@@ -345,7 +345,7 @@ export const useUserStore = defineStore("user", {
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
-          offer: null,
+          offer: false,
           OnSale: true,
           InStock: true,
           quickview: false,
@@ -372,7 +372,7 @@ export const useUserStore = defineStore("user", {
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
-          offer: null,
+          offer: false,
           OnSale: true,
           InStock: true,
           quickview: false,
@@ -405,7 +405,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
 
           quickview: false,
           icons: {
@@ -435,7 +435,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: null,
+          offer: false,
 
           quickview: false,
           icons: {
@@ -472,7 +472,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-11%",
           quickview: false,
           icons: {
             quickview: false,
@@ -498,7 +498,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-11%",
           quickview: false,
           icons: {
             quickview: false,
@@ -506,7 +506,7 @@ export const useUserStore = defineStore("user", {
             wishlist: false,
           },
           next: {
-            name: "ARBO GAINER WATERMELON 1kg",
+            name: "CARBO GAINER WATERMELON 1kg",
             category: "WeightGainerCarbs",
           },
           prev: { name: "CASEIN PROTEIN CHOCOLATE", category: "WheyProtain" },
@@ -527,7 +527,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-10%",
           quickview: false,
           icons: {
             quickview: false,
@@ -553,7 +553,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-3%",
           quickview: false,
           icons: {
             quickview: false,
@@ -579,7 +579,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-15%",
           quickview: false,
           icons: {
             quickview: false,
@@ -611,7 +611,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-25%",
           quickview: false,
           icons: {
             quickview: false,
@@ -637,7 +637,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-30%",
           quickview: false,
           icons: {
             quickview: false,
@@ -663,7 +663,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-7%",
+          offer: "-15%",
           quickview: false,
           icons: {
             quickview: false,

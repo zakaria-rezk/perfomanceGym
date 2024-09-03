@@ -69,17 +69,19 @@ const lastPositionX = ref<number>(0);
 const lastPositionY = ref<number>(0);
 const handelousemove = (e: Event) => {
   if (!hero.value) return;
-  let Xtrans: number = (e.screenX - lastPositionX.value) * 1.1;
-  let Ytrans: number = (e.screenY - lastPositionY.value) * 1.1;
+  let Xtrans: number = e.screenX - lastPositionX.value;
+  let Ytrans: number = e.screenY - lastPositionY.value;
 
-
-  hero.value.style.transform = `translate(${-Xtrans}px, ${Ytrans}px)`;
- 
+  if (Xtrans > 50) Xtrans = 50;
+  else if (Xtrans < -50) Xtrans = -50;
+  if (Ytrans > 50) Ytrans = 50;
+  else if (Ytrans < -50) Ytrans = -50;
+  console.log(Xtrans, Ytrans);
+  hero.value.style.transform = `translate(${Xtrans}px, ${Ytrans}px)`;
 
   lastPositionX.value = e.screenX;
   lastPositionY.value = e.screenY;
 };
-
 </script>
 <style scoped>
 .hero {
@@ -92,6 +94,7 @@ const handelousemove = (e: Event) => {
   background: linear-gradient(to top, #ef6c00, #ffa726);
   width: 100%;
   height: 100vh;
+  transition: all 0.5s;
 }
 .hero-imag {
   cursor: pointer !important;
