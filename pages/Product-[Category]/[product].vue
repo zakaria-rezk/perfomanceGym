@@ -4,8 +4,8 @@
       ><v-row class="no-wrap" v-if="!isloading">
         <productImgs
           :imgSrc="arr"
-          :offer="prodcutDetails.offer"
-          :hot="prodcutDetails.isHot"
+          :offer="prodcutDetails?.offer"
+          :hot="prodcutDetails?.isHot"
           v-if="arr.length > 0"
         />
         <productDetails :product="prodcutDetails" />
@@ -21,8 +21,18 @@
     <v-container class="position-relative my-10 text-center">
       <SectionTitle title="Related" SectionContent="Related Products" />
       <div ref="productContainer">
-        <Product :products="Products" :mdCOLS="3"  smCOLS="6" class="d-none d-md-flex"/>
-        <Product :products="ProductSm" :mdCOLS="3" class="d-flex d-md-none" smCOLS="6" />
+        <Product
+          :products="Products"
+          :mdCOLS="3"
+          :smCOLS="6"
+          class="d-none d-md-flex"
+        />
+        <Product
+          :products="ProductSm"
+          :mdCOLS="3"
+          class="d-flex d-md-none"
+          :smCOLS="6"
+        />
       </div>
       <button
         size="10"
@@ -72,7 +82,6 @@
       >
         O
       </button>
-      
     </v-container>
   </div>
 </template>
@@ -85,8 +94,8 @@ import type { SpecialProduct } from "~/types/SpecialProduct";
 const selected = ref<boolean>(false);
 const productContainer = ref<HTMLDivElement>();
 const data = useFetchData();
-const Products = ref<SpecialProduct>(data.slice(0, 4));
-const ProductSm = ref<SpecialProduct>(data.slice(0, 2));
+const Products = ref<SpecialProduct[]>(data.slice(0, 4));
+const ProductSm = ref<SpecialProduct[]>(data.slice(0, 2));
 
 const prodcutDetails = ref<SpecialProduct>();
 const isloading = ref<boolean>(true);
@@ -104,10 +113,9 @@ const moveRight = () => {
   productContainer.value?.classList.remove("right2center");
   productContainer.value.classList.add("center2right");
   setTimeout(() => {
-    
     Products.value = data.slice(4, 8);
-    ProductSm.value=data.slice(6,8)
-    console.log(Products.value)
+    ProductSm.value = data.slice(6, 8);
+    console.log(Products.value);
     productContainer.value?.classList.remove("center2right");
     productContainer.value?.classList.add("left2center");
   }, 300);
@@ -120,8 +128,8 @@ const moveLeft = () => {
   productContainer.value.classList.add("center2left");
   setTimeout(() => {
     Products.value = data.slice(0, 4);
-    ProductSm.value=data.slice(0,2)
-    console.log(Products.value)
+    ProductSm.value = data.slice(0, 2);
+    console.log(Products.value);
     productContainer.value?.classList.remove("center2left");
     productContainer.value?.classList.add("right2center");
   }, 300);

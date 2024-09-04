@@ -27,7 +27,7 @@
         <v-icon size="large">mdi-view-comfy</v-icon></v-btn
       >
     </div>
-    <div class="d-flex select" justify="start" >
+    <div class="d-flex select" justify="start">
       <v-select
         class="mt-3"
         density="compact"
@@ -59,10 +59,10 @@ const emits = defineEmits<{
   (event: "controlPageCol", payload: number): void;
 }>();
 interface props {
-  routeParams: string;
+  routeParams: string | string[];
 }
-const Props = defineProps<props>() as props;
-const items = ref<string[]>(["Home", Props.routeParams]);
+const Props = defineProps<props>();
+const items = ref<string[]>(["Home", Props.routeParams as string]);
 </script>
 <style scoped>
 .select {

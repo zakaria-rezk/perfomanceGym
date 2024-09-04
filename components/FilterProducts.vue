@@ -10,7 +10,7 @@
       strict
     ></v-range-slider>
     <div class="d-flex mb-10">
-      <p>Price {{ priceMin }} from to {{ priceMax }} $</p>
+      <p>Price {{ priceMin || 0 }} from to {{ priceMax || 0 }} $</p>
       <v-btn @click="search" class="mx-4 my-n1">search</v-btn>
     </div>
     <v-divider></v-divider>
@@ -41,12 +41,13 @@
 <script setup lang="ts">
 const router = useRouter();
 const route = useRoute();
+type price = { minPrice: number; maxPrice: number; onSale: boolean };
 const emit = defineEmits<{
-  (event: "loadingSpinner"): void;
+  (event: "filterProducts", payload: price): void;
 }>();
 interface prop {
-  minPrice: number;
-  maxPrice: number;
+  minPrice: number | undefined;
+  maxPrice: number | undefined;
 }
 const props = defineProps<prop>();
 const value = ref<number[]>([
@@ -58,17 +59,15 @@ const onstock = ref<boolean>(route.query.onstock === "true");
 const onsale = ref<boolean>(route.query.onsale === "true");
 const priceMin = computed(() => Math.floor(value.value[0]));
 const priceMax = computed(() => Math.floor(value.value[1]));
-onMounted(() => {
- 
-  nextTick(() => {
-    value.value = [
-      +(route.query.minprice as string) || props.minPrice,
-      +(route.query.maxprice as string) || props.maxPrice,
-    ];
+const fireFilterEvent = () => {
+  emit("filterProducts", {
+    minPrice: priceMin.value,
+    maxPrice: priceMax.value,
+    onSale: onsale.value,
   });
-});
+};
 const search = () => {
-  emit("loadingSpinner");
+  fireFilterEvent();
   router.push({
     query: {
       ...route.query,
@@ -81,12 +80,21 @@ const search = () => {
 const { addQuery, deleteQuery } = useRouteQuery();
 const onStockQuery = (val: string) => {
   if (onstock.value) {
-    addQuery(val,'true');
+    addQuery(val, "true");
   } else deleteQuery(val);
 };
 const onSaleQuery = (val: string) => {
   if (onsale.value) {
-    addQuery(val,'true');
+    addQuery(val, "true");
   } else deleteQuery(val);
+  fireFilterEvent();
 };
+onMounted(() => {
+  nextTick(() => {
+    value.value = [
+      +(route.query.minprice as string) || props.minPrice,
+      +(route.query.maxprice as string) || props.maxPrice,
+    ];
+  });
+});
 </script>

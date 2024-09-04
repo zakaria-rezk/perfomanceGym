@@ -97,12 +97,10 @@
 </template>
 <script setup lang="ts">
 interface props {
-  products: SpecialProduct[];
+  products: SpecialProduct[] | undefined;
   mdCOLS: number;
-  smCOLS: {
-    type: number;
-    default: 12;
-  };
+  smCOLS: number
+    
 }
 const Props = defineProps<props>();
 const modela = ref<boolean>(false);
@@ -135,19 +133,7 @@ const loading = (val: string, pro: SpecialProduct) => {
 </script>
 <style scoped>
 @import "~/assets/style/Hot&Offer.css";
-/* .offers {
-  position: absolute;
-  color: #fff;
-  bottom: 300px;
-  right: 10px;
-  background-color: rgb(255, 187, 0);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 13px;
-} */
+
 .text-compare,
 .text-wishlist,
 .text-search {

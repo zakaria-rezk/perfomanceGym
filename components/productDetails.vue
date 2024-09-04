@@ -37,9 +37,19 @@
           @click="goBack"
           ><v-icon size="small" class="mr-n5">mdi-arrow-left</v-icon></v-btn
         >
-        <v-btn variant="text" class="" size="xx-small"
-          ><v-icon>mdi-view-grid-outline</v-icon></v-btn
+        <nuxt-link
+          :to="{
+            name: 'ProductCategory-category',
+            params: { category: 'SHOP' },
+          }"
+          color="black"
+          class="shop-link"
+          ><v-icon>mdi-view-grid-outline</v-icon></nuxt-link
         >
+        <p class="position-absolute shop text-caption bg-black rounded">
+          Back to shop
+        </p>
+
         <v-btn
           size="small"
           variant="text"
@@ -151,7 +161,6 @@ onMounted(() => {
   prevProduct.value = store.product[`${Props.product?.prev.category}`].filter(
     (pro: SpecialProduct) => pro.name === Props.product?.prev.name
   )[0];
-
 });
 </script>
 <style scoped>
@@ -171,6 +180,21 @@ onMounted(() => {
 .no-hover-effect:hover {
   background-color: transparent !important;
   box-shadow: none !important;
+}
+.shop {
+  background-color: black;
+
+  top: -20px;
+  right: 80%;
+  transform: translate(100%);
+  white-space: nowrap;
+  display: none;
+}
+.shop-link {
+  color: black;
+}
+.shop-link:hover + .shop {
+  display: inline !important;
 }
 /* Show the last breadcrumb item on large screens (e.g., 1024px and up) */
 @media (min-width: 1280px) {

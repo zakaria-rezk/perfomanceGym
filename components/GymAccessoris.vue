@@ -6,7 +6,7 @@
       </h1>
     </div>
     <v-container fluid class="my-10 bg-grey-lighten-4">
-      <Product :mdCOLS="3" :products="data" />
+      <Product :mdCOLS="3" :products="data" :smCOLS="12" />
       <!-- <img src="/assets/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg" alt=""> -->
     </v-container>
     <div class="d-flex justify-center w-100">

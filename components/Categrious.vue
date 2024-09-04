@@ -3,16 +3,14 @@
     <v-container>
       <SectionTitle title="categrious" SectionContent="product categrious" />
       <v-row class="overflow-hidden container">
-        <!-- :to="{
-                    name: 'ProductCategory-category',
-                    params: { category: item },
-                  }" -->
+       
         <v-col
           v-for="(pro, index) in products"
           :key="pro.id"
           :class="{ brnach: pro.bransh }"
           md="3"
           cols="12"
+          sm="6"
           @mouseenter="raises(index)"
           @mouseleave="lowers(index)"
           class="col rounded flex-grow-1 overflow-hidden text-uppercase position-relative cursor-pointer"

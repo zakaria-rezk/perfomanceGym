@@ -12,10 +12,9 @@ export function useGymAccessoires() {
         "/_nuxt/assets/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
       ],
       category: "Accessories",
-      details:
-        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
-      offer: null,
+      offer: false,
       OnSale: true,
       InStock: true,
       quickview: false,
@@ -24,19 +23,23 @@ export function useGymAccessoires() {
         compare: false,
         wishlist: false,
       },
+      next: { name: "CASEIN PROTEIN STRWPERRY", category: "WheyProtain" },
+      prev: {
+        name: "CITRULLINE MALATE 60 SERVING",
+        category: "PreWorkout",
+      },
     },
     {
-      id: 1,
+      id: 2,
       name: "LIFTING LETING",
       price: 1206,
       imgs: [
         "/_nuxt/assets/imges/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
       ],
       category: "Accessories",
-      details:
-        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
-      offer: null,
+      offer: false,
       OnSale: true,
       InStock: true,
       quickview: false,
@@ -45,6 +48,11 @@ export function useGymAccessoires() {
         compare: false,
         wishlist: false,
       },
+      next: {
+        name: "WHEY STROPERRY CHEESE CAKE 1kg",
+        category: "WheyProtain",
+      },
+      prev: { name: "BULK GAINER MANGO", category: "WeightGainerCarbs" },
     },
     {
       id: 3,
@@ -55,10 +63,9 @@ export function useGymAccessoires() {
         "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
       ],
       category: "Accessories",
-      details:
-        "Lorem ipsum is placeholder text commonly used in the graphic.",
+      details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
-      offer: null,
+      offer: false,
       OnSale: true,
       InStock: true,
       quickview: false,
@@ -66,6 +73,14 @@ export function useGymAccessoires() {
         quickview: false,
         compare: false,
         wishlist: false,
+      },
+      next: {
+        name: "BULK GAINER VANILLA 4KG",
+        category: "WeightGainerCarbs",
+      },
+      prev: {
+        name: "WHEY STROPERRY CHEESE CAKE 1kg",
+        category: "WheyProtain",
       },
     },
   ];

@@ -57,8 +57,8 @@ const imgContainer = ref<HTMLDivElement>();
 const mainImg = ref<HTMLImageElement>();
 interface Props {
   imgSrc: string[];
-  hot: boolean;
-  offer: string | boolean;
+  hot: boolean | undefined;
+  offer: string | boolean | undefined;
 }
 const props = defineProps<Props>();
 const CurrImgNum = ref<number>(0);

@@ -26,6 +26,7 @@ const figure = ref<HTMLDivElement>();
   width: 100%;
   height: 250px;
   border-radius: 30px;
+  object-fit: fill;
 }
 .default {
  

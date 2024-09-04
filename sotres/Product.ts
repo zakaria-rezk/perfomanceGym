@@ -17,7 +17,7 @@ export const useUserStore = defineStore("user", {
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
           OnSale: true,
-          InStock: true,
+          InStock: false,
           offer: false,
           quickview: false,
           icons: {
@@ -34,7 +34,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "CASEIN PROTEIN STRWPERRY",
-          price: 1000,
+          price: 1250,
           imgs: [
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240126_055846.png",
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240208_160203.png",
@@ -66,7 +66,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "WHEY OREO 1kg",
-          price: 1000,
+          price: 1500,
           imgs: [
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
@@ -98,7 +98,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 4,
           name: "CASEIN PROTEIN CHOCOLATE",
-          price: 1000,
+          price: 1800,
           imgs: [
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240126_061031.png",
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
@@ -163,7 +163,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 6,
           name: "WHEY STROPERRY CHEESE CAKE 1kg",
-          price: 1000,
+          price: 2500,
           imgs: [
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240126_054636.png",
             "/_nuxt/assets/imges/products/WheyPortain/IMG_20240208_160203.png",
@@ -191,7 +191,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "CITRULLINE MALATE 60 SERVING",
-          price: 500,
+          price: 750,
           imgs: [
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
@@ -219,7 +219,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "BETA-ALANINE 60 SERVING",
-          price: 500,
+          price: 800,
           imgs: [
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-02-23_22-09-52-372.png",
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
@@ -249,7 +249,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "RUSH PUMP LEMON MINT 30 SERVING",
-          price: 750,
+          price: 850,
           imgs: [
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_05-03-50-535.png",
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
@@ -279,7 +279,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 4,
           name: "RUSH PUMP WATERMELON 30 SERVING",
-          price: 500,
+          price: 1000,
           imgs: [
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_04-57-48-902-430x645.png",
             "/_nuxt/assets/imges/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
@@ -310,7 +310,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "HANDLITING",
-          price: 1206,
+          price: 150,
           imgs: [
             "/_nuxt/assets/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
             "/_nuxt/assets/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
@@ -337,7 +337,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "LIFTING LETING",
-          price: 1206,
+          price: 250,
           imgs: [
             "/_nuxt/assets/imges/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
           ],
@@ -363,7 +363,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "SHAKER 70ML",
-          price: 2500,
+          price: 200,
           imgs: [
             "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
             "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
@@ -395,7 +395,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "CREATINE MONOHYDRATE 60 SERVING",
-          price: 350,
+          price: 1250,
           imgs: [
             "/_nuxt/assets/imges/products/Creatine/Picsart_24-08-12_09-45-27-894.png",
           ],
@@ -405,7 +405,7 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: false,
+          offer: "-1%",
 
           quickview: false,
           icons: {
@@ -425,7 +425,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "CREATINE MONOHYDRATE 30 SERVING",
-          price: 350,
+          price: 1200,
           imgs: [
             "/_nuxt/assets/imges/products/Creatine/Picsart_24-08-12_09-46-11-258.png",
           ],
@@ -498,7 +498,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-11%",
+          offer: false,
           quickview: false,
           icons: {
             quickview: false,
@@ -527,7 +527,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-10%",
+          offer: false,
           quickview: false,
           icons: {
             quickview: false,
@@ -611,7 +611,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-25%",
+          offer: false,
           quickview: false,
           icons: {
             quickview: false,
@@ -663,7 +663,7 @@ export const useUserStore = defineStore("user", {
           isHot: true,
           OnSale: true,
           InStock: true,
-          offer: "-15%",
+          offer: false,
           quickview: false,
           icons: {
             quickview: false,
