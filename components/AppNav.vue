@@ -87,7 +87,7 @@
             <v-icon size="x-large">mdi-cart-plus</v-icon></v-btn
           >
 
-          <v-btn variant="text" class="" size="small">
+          <v-btn @click="router.replace('/wishlist')" variant="text" class="" size="small">
             <v-icon size="x-large">mdi-heart-outline</v-icon></v-btn
           >
 
@@ -141,6 +141,7 @@ const drawer = ref<boolean>(false);
 const modela = ref<boolean>(false);
 const computedTopValue = ref<string>();
 const onTop = ref<boolean>(false);
+const router=useRouter()
 const Menu = ref<boolean>(false);
 const RouterItems = ref<string[]>([
   "Whey Protain",

@@ -1,18 +1,6 @@
 <template>
   <div>
-    <div class="text-center container d-flex position-relative">
-      <img
-        src="/assets/imges/sport-page-title.jpg"
-        width="100%"
-        height="60vh"
-        alt=""
-      />
-      <p
-        class="text-md-h2 text-h3 position-absolute title text-white my-4 w-100"
-      >
-        {{ route.params.category }}
-      </p>
-
+    <pageTitle>
       <v-list
         rounded
         class="position-absolute W-100 d-none d-lg-flex list bg-transparent"
@@ -53,8 +41,8 @@
             </nuxt-link></v-list-item
           ></v-list-group
         ></v-list
-      >
-    </div>
+      ></pageTitle
+    >
     <v-container>
       <v-row>
         <v-col cols="3" class="bg-">
@@ -84,7 +72,8 @@
               :mdCOLS="mdCOLS"
               :products="Products"
               :smCOLS="smCOLS"
-              v-if="Products"
+               :wishlist="false"
+              v-if="Products.length > 0"
             />
             <div v-else class="w-100 bg-blue rounded-xl pa-2">
               <p class="text-h3 text-upper-case">No products found</p>
@@ -110,6 +99,7 @@ const handleCol = (payload: number) => {
 };
 import type { SpecialProduct } from "~/types/SpecialProduct";
 import { useUserStore } from "~/sotres/Product";
+
 const data = ref<SpecialProduct[]>();
 const Products = ref<SpecialProduct[]>();
 const state = useUserStore();
@@ -158,42 +148,8 @@ const filterProducts = (payload: {
     } else return pro.price >= minPrice && pro.price <= maxPrice;
   });
 };
-const filterByStock = (payload: boolean) => {
-  Products.value = data.value;
-  loadingSpinner();
-  if (!Products.value || !payload) return;
-
-  Products.value = Products.value?.filter(
-    (pro: SpecialProduct) => pro.InStock === true
-  );
-};
-const filterBySale = (payload: boolean) => {
-  Products.value = data.value;
-  c;
-
-  if (!route.query.minprice && !route.query.maxprice) getMinAndMaxPrice();
-
-  loadingSpinner();
-  if (!Products.value || !payload) return;
-
-  Products.value = Products.value?.filter((pro: SpecialProduct) => {
-    return (
-      pro.offer &&
-      pro.price >= +(route.query.minprice || 0) &&
-      pro.price <= +(route.query.maxprice || 500000)
-    );
-  });
-};
 const proCategory = computed(() => {
   return category.value.replace(/[&\s]/g, "");
-});
-
-onMounted(() => {
-  data.value =
-    route.params.category === "SHOP"
-      ? shop
-      : state.product[`${proCategory.value}`];
-  getMinAndMaxPrice();
 });
 const RouterItems = ref<string[]>([
   "Whey Protain",
@@ -203,6 +159,13 @@ const RouterItems = ref<string[]>([
   "Recovery",
   "Accessories",
 ]);
+onMounted(() => {
+  data.value =
+    route.params.category === "SHOP"
+      ? shop
+      : state.product[`${proCategory.value}`];
+  getMinAndMaxPrice();
+});
 </script>
 <style scoped>
 .ma {
@@ -222,11 +185,6 @@ const RouterItems = ref<string[]>([
 
   text-decoration: underline #e65100 solid 1px !important;
 }
-img {
-  width: 100%;
-  height: 60vh;
-  object-fit: fill;
-}
 .list {
   width: 950px;
   overflow: hidden;
@@ -234,15 +192,5 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.title {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
-@media (max-width: 680px) {
-  img {
-    object-fit: cover;
-  }
-}
 </style>

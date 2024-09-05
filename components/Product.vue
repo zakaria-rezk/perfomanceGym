@@ -5,7 +5,7 @@
       :key="pro.name"
       :cols="Props.smCOLS"
       :md="Props.mdCOLS"
-      class="col"
+      class="position-relative col"
     >
       <ModalQuickView
         class="text-center"
@@ -16,8 +16,25 @@
         @closeModal="pro.quickview = false"
         v-if="pro.quickview"
       />
+      <div
+        class="d-flex justify-space-between wishlistbnt"
+        v-if="Props.wishlist"
+      >
+        <label>
+          <input
+            type="checkbox"
+            class="custom-checkbox"
+            v-model="pro.selected"
+            @click="
+              pro.selected = !pro.selected;
+              emit('select');
+            "
+          />
+        </label>
 
-      <div>
+        <v-btn variant="text" size="x-small">remove ❌</v-btn>
+      </div>
+      <div class="">
         <div
           class="position-absolute product-icons d-flex flex-column align-center"
         >
@@ -73,6 +90,7 @@
             alt="pro.alt"
             :object="true"
             :hot="pro.isHot"
+            class="ma-3"
           />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
@@ -96,16 +114,19 @@
   </v-row>
 </template>
 <script setup lang="ts">
+import type { SpecialProduct } from "~/types/SpecialProduct";
 interface props {
   products: SpecialProduct[] | undefined;
   mdCOLS: number;
-  smCOLS: number
-    
+  smCOLS: number;
+  wishlist: boolean;
 }
 const Props = defineProps<props>();
+const emit = defineEmits<{
+  (event: "select"): void;
+}>();
 const modela = ref<boolean>(false);
 
-import type { SpecialProduct } from "~/types/SpecialProduct";
 const loading = (val: string, pro: SpecialProduct) => {
   switch (val) {
     case "compare":
@@ -145,6 +166,7 @@ const loading = (val: string, pro: SpecialProduct) => {
   opacity: 1 !important;
 }
 .product-icons {
+  top: 50px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 50px;
@@ -189,11 +211,16 @@ const loading = (val: string, pro: SpecialProduct) => {
   position: relative;
   background-color: #fff;
   transform: scaleY(1.1);
+  box-shadow: 100px black;
   z-index: 10;
 }
 .btn {
   height: 50px;
   border-radius: 30px;
+}
+.wishlistbnt {
+  position: relative;
+  top: -5px;
 }
 .col:hover .details {
   display: block !important;
@@ -203,6 +230,9 @@ const loading = (val: string, pro: SpecialProduct) => {
   transform: translateY(100%);
   opacity: 0;
   transition: all 0.5s;
+}
+.custom-checkbox:hover {
+  cursor: pointer;
 }
 .cart {
   transform: translateY(10px);

@@ -1,7 +1,7 @@
 .offers {
   position: absolute;
   color: #fff;
-  top: 80px;
+  top: 110px;
   right: 10px;
   background-color: rgb(255, 187, 0);
   width: 50px;
@@ -16,7 +16,7 @@
   content: "HOT";
   position: absolute;
   color: #fff;
-  top: 25px;
+  top: 50px;
   right: 10px;
   background-color: rgb(255, 12, 12);
   width: 50px;
