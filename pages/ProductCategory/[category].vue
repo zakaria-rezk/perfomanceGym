@@ -72,8 +72,8 @@
               :mdCOLS="mdCOLS"
               :products="Products"
               :smCOLS="smCOLS"
-               :wishlist="false"
-              v-if="Products.length > 0"
+              :wishlist="false"
+              v-if="Products?.length > 0"
             />
             <div v-else class="w-100 bg-blue rounded-xl pa-2">
               <p class="text-h3 text-upper-case">No products found</p>
@@ -99,6 +99,7 @@ const handleCol = (payload: number) => {
 };
 import type { SpecialProduct } from "~/types/SpecialProduct";
 import { useUserStore } from "~/sotres/Product";
+import { throwDeprecation } from "process";
 
 const data = ref<SpecialProduct[]>();
 const Products = ref<SpecialProduct[]>();
@@ -160,10 +161,15 @@ const RouterItems = ref<string[]>([
   "Accessories",
 ]);
 onMounted(() => {
-  data.value =
-    route.params.category === "SHOP"
-      ? shop
-      : state.product[`${proCategory.value}`];
+  try {
+    data.value =
+      route.params.category === "SHOP"
+        ? shop
+        : state.product[`${proCategory.value}`];
+    console.log("dsfds");
+  } catch (err) {
+    throw err;
+  }
   getMinAndMaxPrice();
 });
 </script>
@@ -192,5 +198,4 @@ onMounted(() => {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 </style>

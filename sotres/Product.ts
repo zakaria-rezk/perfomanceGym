@@ -16,10 +16,13 @@ export const useUserStore = defineStore("user", {
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
           isHot: false,
+          selected: false,
           OnSale: true,
           InStock: false,
           offer: false,
           quickview: false,
+          compare: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -46,9 +49,12 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: '-50%',
+          offer: "-50%",
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -78,9 +84,12 @@ export const useUserStore = defineStore("user", {
           isHot: false,
           OnSale: true,
           InStock: true,
-          offer: '-1%',
+          offer: "-1%",
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -114,6 +123,9 @@ export const useUserStore = defineStore("user", {
           offer: false,
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -146,6 +158,9 @@ export const useUserStore = defineStore("user", {
           offer: false,
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -178,6 +193,9 @@ export const useUserStore = defineStore("user", {
           offer: false,
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -205,6 +223,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-7%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -232,6 +253,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-7%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -262,6 +286,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-7%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -294,6 +321,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-8%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -323,6 +353,9 @@ export const useUserStore = defineStore("user", {
           OnSale: true,
           InStock: true,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -349,6 +382,9 @@ export const useUserStore = defineStore("user", {
           OnSale: true,
           InStock: true,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -376,6 +412,9 @@ export const useUserStore = defineStore("user", {
           OnSale: true,
           InStock: true,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -408,6 +447,9 @@ export const useUserStore = defineStore("user", {
           offer: "-1%",
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -438,6 +480,9 @@ export const useUserStore = defineStore("user", {
           offer: false,
 
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -474,6 +519,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-11%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -500,6 +548,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: false,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -529,6 +580,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: false,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -555,6 +609,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-3%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -581,6 +638,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-15%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -613,6 +673,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: false,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -639,6 +702,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: "-30%",
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,
@@ -665,6 +731,9 @@ export const useUserStore = defineStore("user", {
           InStock: true,
           offer: false,
           quickview: false,
+          compare: false,
+          selected: false,
+          wishlist: false,
           icons: {
             quickview: false,
             compare: false,

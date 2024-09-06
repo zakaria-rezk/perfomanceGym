@@ -1,5 +1,3 @@
-import type { BlobOptions } from "buffer";
-
 export type SpecialProduct = {
   id: number;
   name: string;
@@ -12,6 +10,9 @@ export type SpecialProduct = {
   InStock: boolean;
   offer: string | boolean;
   quickview: boolean;
+  compare: boolean;
+  wishlist: boolean;
+  selected: boolean;
   icons: {
     quickview: boolean;
     compare: boolean;

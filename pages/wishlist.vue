@@ -14,7 +14,7 @@
     </pageTitle>
     <v-container>
       <v-row class="text-center">
-        <v-col v-if="!data"
+        <v-col v-if="wishlist.wishlist.length === 0"
           ><v-icon
             class="w-100 custom-icon text-grey-lighten-2"
             size="xxx-large"
@@ -37,23 +37,29 @@
         >
         <v-col v-else>
           <div class="position-relative">
-            <p class="text-uppercase text-h6 text-{md}-h4">your wishlist product</p>
-            <v-divider ></v-divider>
+            <p class="text-h6 text-{md}-h4">your wishlist product</p>
+            <v-divider></v-divider>
             <div
               class="d-flex justify-end bg-grey-lighten-3 bar"
               v-if="bar"
               ref="barcontainer"
             >
-              <v-btn variant="text">Select all ✅</v-btn>
-              <v-btn variant="text">Remove ❌</v-btn>
+              <v-btn variant="text" @click="selectAll" v-if="!allSeltected"
+                >Select all ✅</v-btn
+              >
+              <v-btn variant="text" @click="desSelectAll" v-else
+                >DesSelect all ✅</v-btn
+              >
+              <v-btn variant="text" @click="removeProducts">Remove ❌</v-btn>
             </div>
             <Product
               :smCOLS="6"
               :mdCOLS="4"
-              :products="data"
+              :products="wishlist.wishlist"
               :wishlist="true"
               class="my-10"
               @select="select"
+              @removeProduct="removeProduct"
             />
           </div>
         </v-col>
@@ -62,28 +68,50 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useWishlistStore } from "~/sotres/wishLIst";
 import type { SpecialProduct } from "~/types/SpecialProduct";
+const wishlist = useWishlistStore();
 const bar = ref<boolean>();
 const barcontainer = ref<HTMLDivElement>();
-const data = useFetchData();
+const allSeltected = ref<boolean>(false);
 const route = useRoute();
 const router = useRouter();
-const select = () => {
+const removeProduct = (payload: SpecialProduct) => {
+  wishlist.wishlist = wishlist.wishlist.filter(
+    (pro: SpecialProduct) => pro.name !== payload.name
+  );
+};
+const selectAll = () => {
+  allSeltected.value = true;
+  wishlist.wishlist.forEach((pro: SpecialProduct) => {
+    pro.selected = true;
+  });
+};
+const desSelectAll = () => {
+  allSeltected.value = false;
+  wishlist.wishlist.forEach((pro: SpecialProduct) => {
+    pro.selected = false;
+  });
+};
+const removeProducts = () => {
+  wishlist.wishlist = wishlist.wishlist.filter((pro: SpecialProduct) => {
+    return pro.selected !== true;
+  });
+};
+const select = (payload: SpecialProduct) => {
   bar.value = false;
-
-  data.forEach((pro: SpecialProduct) => {
+  allSeltected.value = true;
+  console.log(wishlist.wishlist);
+  wishlist.wishlist.forEach((pro: SpecialProduct) => {
     if (pro.selected) {
       bar.value = true;
-
+    } else {
+      allSeltected.value = false;
       return;
     }
   });
 };
-onMounted(() => {
-  data.forEach((element: SpecialProduct) => {
-    element.selected = false;
-  });
-});
+onMounted(() => {});
 </script>
 <style scoped>
 .bar {

@@ -27,56 +27,74 @@
             v-model="pro.selected"
             @click="
               pro.selected = !pro.selected;
-              emit('select');
+              emit('select', pro);
             "
           />
         </label>
 
-        <v-btn variant="text" size="x-small">remove ❌</v-btn>
+        <v-btn variant="text" size="x-small" @click="emit('removeProduct',pro)">remove ❌</v-btn>
       </div>
       <div class="">
         <div
           class="position-absolute product-icons d-flex flex-column align-center"
         >
-          <v-btn
-            class="compare"
-            variant="plain"
-            :loading="pro.icons.compare"
-            @click="loading('compare', pro)"
-          >
-            <v-icon size="x-large" class=""
-              >mdi-compare-horizontal</v-icon
-            ></v-btn
-          >
-          <p
-            class="position-relative icon-link bg-black text-compare ml-n7 px-2"
-          >
-            compare
-          </p>
-          <v-btn
-            class="search"
-            :loading="pro.icons.quickview"
-            variant="plain"
-            @click="loading('quickview', pro)"
-          >
-            <v-icon size="x-large" class="view">mdi-magnify </v-icon></v-btn
-          >
-          <p
-            class="position-relative icon-link bg-black ml-n5 px-2 text-search"
-          >
-            Quick View
-          </p>
-          <v-btn
-            :loading="pro.icons.wishlist"
-            class="wishlist"
-            variant="plain"
-            @click="loading('wishlist', pro)"
-          >
-            <v-icon size="x-large">mdi-heart-outline</v-icon></v-btn
-          >
-          <p class="position-relative icon-link bg-black px-2 text-wishlist">
-            Add to wishlist
-          </p>
+          <div>
+            <v-btn
+              class="compare"
+              variant="plain"
+              :loading="pro.icons.compare"
+              @click="loading('compare', pro)"
+            >
+              <v-icon size="x-large" class=""
+                >mdi-compare-horizontal</v-icon
+              ></v-btn
+            >
+            <p
+              class="position-relative icon-link bg-black text-compare ml-n7 px-2"
+            >
+              compare
+            </p>
+          </div>
+          <div>
+            <v-btn
+              class="search"
+              :loading="pro.icons.quickview"
+              variant="plain"
+              @click="loading('quickview', pro)"
+            >
+              <v-icon size="x-large" class="view">mdi-magnify </v-icon></v-btn
+            >
+            <p
+              class="position-relative icon-link bg-black ml-n5 px-2 text-search"
+            >
+              Quick View
+            </p>
+          </div>
+          <div v-if="!pro.wishlist">
+            <v-btn
+              :loading="pro.icons.wishlist"
+              class="wishlist"
+              variant="plain"
+              @click="loading('wishlist', pro)"
+            >
+              <v-icon size="x-large">mdi-heart-outline</v-icon></v-btn
+            >
+            <p class="position-relative icon-link bg-black px-2 text-wishlist">
+              Add to wishlist
+            </p>
+          </div>
+          <div v-if="pro.wishlist && !Props.wishlist">
+            <v-btn
+              @click="router.replace('/wishlist')"
+              class="wishlist"
+              variant="plain"
+            >
+              <v-icon size="x-large">mdi-check</v-icon></v-btn
+            >
+            <p class="position-relative icon-link bg-black px-2 text-wishlist">
+              Browse wishlist
+            </p>
+          </div>
         </div>
         <nuxt-link
           :to="{
@@ -114,6 +132,9 @@
   </v-row>
 </template>
 <script setup lang="ts">
+import { useWishlistStore } from "~/sotres/wishLIst";
+const Wishlist = useWishlistStore();
+const router = useRouter();
 import type { SpecialProduct } from "~/types/SpecialProduct";
 interface props {
   products: SpecialProduct[] | undefined;
@@ -123,7 +144,8 @@ interface props {
 }
 const Props = defineProps<props>();
 const emit = defineEmits<{
-  (event: "select"): void;
+  (event: "select", payload: SpecialProduct): void;
+  (event: "removeProduct", payload: SpecialProduct): void;
 }>();
 const modela = ref<boolean>(false);
 
@@ -138,6 +160,11 @@ const loading = (val: string, pro: SpecialProduct) => {
     case "wishlist":
       pro.icons.wishlist = true;
       setTimeout(() => {
+        pro.wishlist = true;
+        const exists = Wishlist.wishlist.find(
+          (payload: SpecialProduct) => pro.name === payload.name
+        );
+        if (!exists) Wishlist.wishlist.push(pro);
         pro.icons.wishlist = false;
       }, 1000);
       break;
@@ -154,7 +181,10 @@ const loading = (val: string, pro: SpecialProduct) => {
 </script>
 <style scoped>
 @import "~/assets/style/Hot&Offer.css";
-
+.wishlist {
+  position: relative;
+  left: 22px;
+}
 .text-compare,
 .text-wishlist,
 .text-search {
