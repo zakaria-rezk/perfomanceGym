@@ -32,16 +32,18 @@
           />
         </label>
 
-        <v-btn variant="text" size="x-small" @click="emit('removeProduct',pro)">remove ❌</v-btn>
+        <v-btn variant="text" size="x-small" @click="emit('removeProduct', pro)"
+          >remove ❌</v-btn
+        >
       </div>
       <div class="">
         <div
-          class="position-absolute product-icons d-flex flex-column align-center"
+          class="icons bg-grey-lighten-5 elevation-1 position-absolute d-flex flex-column justify-space-around flex-column-end"
         >
-          <div>
+          <div v-if="!pro.compare">
             <v-btn
               class="compare"
-              variant="plain"
+              variant="text"
               :loading="pro.icons.compare"
               @click="loading('compare', pro)"
             >
@@ -49,23 +51,33 @@
                 >mdi-compare-horizontal</v-icon
               ></v-btn
             >
-            <p
-              class="position-relative icon-link bg-black text-compare ml-n7 px-2"
+            <p class="position-relative icon-link bg-black text-compare ml-n3">
+              Compare
+            </p>
+          </div>
+          <div v-else>
+            <v-btn
+              @click="router.replace('/compare')"
+              class="compare"
+              variant="text"
             >
-              compare
+              <v-icon size="x-large">mdi-check</v-icon></v-btn
+            >
+            <p class="position-relative icon-link bg-black text-compare ml-n3">
+              Compare Products
             </p>
           </div>
           <div>
             <v-btn
               class="search"
               :loading="pro.icons.quickview"
-              variant="plain"
+              variant="text"
               @click="loading('quickview', pro)"
             >
               <v-icon size="x-large" class="view">mdi-magnify </v-icon></v-btn
             >
             <p
-              class="position-relative icon-link bg-black ml-n5 px-2 text-search"
+              class="position-relative icon-link bg-black ml-n4 px-2 text-search"
             >
               Quick View
             </p>
@@ -74,24 +86,28 @@
             <v-btn
               :loading="pro.icons.wishlist"
               class="wishlist"
-              variant="plain"
+              variant="text"
               @click="loading('wishlist', pro)"
             >
               <v-icon size="x-large">mdi-heart-outline</v-icon></v-btn
             >
-            <p class="position-relative icon-link bg-black px-2 text-wishlist">
+            <p
+              class="position-relative text-wishlist icon-link bg-black ml-n4 px-2"
+            >
               Add to wishlist
             </p>
           </div>
           <div v-if="pro.wishlist && !Props.wishlist">
             <v-btn
               @click="router.replace('/wishlist')"
-              class="wishlist"
-              variant="plain"
+              class="position-relative wishlist"
+              variant="text"
             >
               <v-icon size="x-large">mdi-check</v-icon></v-btn
             >
-            <p class="position-relative icon-link bg-black px-2 text-wishlist">
+            <p
+              class="position-relative text-wishlist icon-link bg-black ml-n4 px-2"
+            >
               Browse wishlist
             </p>
           </div>
@@ -131,9 +147,10 @@
     </v-col>
   </v-row>
 </template>
+
 <script setup lang="ts">
-import { useWishlistStore } from "~/sotres/wishLIst";
-const Wishlist = useWishlistStore();
+import { useProductStore } from "~/sotres/ProductSotre";
+const productStore = useProductStore();
 const router = useRouter();
 import type { SpecialProduct } from "~/types/SpecialProduct";
 interface props {
@@ -154,6 +171,11 @@ const loading = (val: string, pro: SpecialProduct) => {
     case "compare":
       pro.icons.compare = true;
       setTimeout(() => {
+        pro.compare = true;
+        const exists = productStore.compare.find(
+          (payload: SpecialProduct) => pro.name === payload.name
+        );
+        if (!exists) productStore.compare.push(pro);
         pro.icons.compare = false;
       }, 1000);
       break;
@@ -161,10 +183,10 @@ const loading = (val: string, pro: SpecialProduct) => {
       pro.icons.wishlist = true;
       setTimeout(() => {
         pro.wishlist = true;
-        const exists = Wishlist.wishlist.find(
+        const exists = productStore.wishlist.find(
           (payload: SpecialProduct) => pro.name === payload.name
         );
-        if (!exists) Wishlist.wishlist.push(pro);
+        if (!exists) productStore.wishlist.push(pro);
         pro.icons.wishlist = false;
       }, 1000);
       break;
@@ -181,54 +203,6 @@ const loading = (val: string, pro: SpecialProduct) => {
 </script>
 <style scoped>
 @import "~/assets/style/Hot&Offer.css";
-.wishlist {
-  position: relative;
-  left: 22px;
-}
-.text-compare,
-.text-wishlist,
-.text-search {
-  opacity: 0;
-}
-.compare:hover + .text-compare,
-.search:hover + .text-search,
-.wishlist:hover + .text-wishlist {
-  opacity: 1 !important;
-}
-.product-icons {
-  top: 50px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 50px;
-  border-radius: 10px;
-  opacity: 0;
-}
-.col:hover .product-icons {
-  animation: left2right 0.3s ease-in-out forwards;
-}
-.icon-link {
-  left: 80px;
-  top: -25px;
-  border-radius: 5px;
-  width: fit-content;
-  white-space: nowrap;
-  font-size: 14px;
-}
-.details {
-  margin: 1px;
-  position: absolute;
-  z-index: 10000;
-  display: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  left: 0;
-  background-color: rgb(252, 249, 249);
-  border-radius: 0 0 10px 10px;
-  transition: all 0.5s;
-}
-.position-relative {
-  position: sticky;
-}
 .col {
   background-color: rgb(252, 252, 252);
   cursor: pointer;
@@ -244,6 +218,40 @@ const loading = (val: string, pro: SpecialProduct) => {
   box-shadow: 100px black;
   z-index: 10;
 }
+.icons {
+  display: none !important;
+  width: 60px !important;
+}
+.text-compare,
+.text-wishlist,
+.text-search {
+  opacity: 0;
+}
+.text-wishlist {
+}
+.compare:hover + .text-compare,
+.search:hover + .text-search,
+.wishlist:hover + .text-wishlist {
+  opacity: 1 !important;
+}
+.product-icons {
+  top: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50px;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.icon-link {
+  left: 80px;
+  top: -25px;
+  border-radius: 5px;
+  width: fit-content;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
 .btn {
   height: 50px;
   border-radius: 30px;
@@ -252,10 +260,13 @@ const loading = (val: string, pro: SpecialProduct) => {
   position: relative;
   top: -5px;
 }
-.col:hover .details {
-  display: block !important;
+.col:hover .icons {
+  display: flex !important;
+  animation: left2right 0.3s ease-in-out forwards;
 }
-
+.col:hover .details {
+  display: inline !important;
+}
 .icon {
   transform: translateY(100%);
   opacity: 0;
@@ -266,6 +277,20 @@ const loading = (val: string, pro: SpecialProduct) => {
 }
 .cart {
   transform: translateY(10px);
+  transition: all 0.5s;
+}
+.details {
+  margin: 1px;
+  position: absolute;
+  z-index: 10000;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  left: 0;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+  background-color: rgb(252, 249, 249);
+  border-radius: 0 0 10px 10px;
   transition: all 0.5s;
 }
 button:hover .icon {

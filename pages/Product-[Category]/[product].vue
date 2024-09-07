@@ -28,13 +28,13 @@
           class="d-none d-md-flex"
           :wishlist="false"
         />
-        <Product
+        <!-- <Product
           :products="ProductSm"
           :mdCOLS="3"
           class="d-flex d-md-none"
           :smCOLS="6"
           :wishlist="false"
-        />
+        /> -->
       </div>
       <button
         size="10"

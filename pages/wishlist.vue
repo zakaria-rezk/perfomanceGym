@@ -2,7 +2,7 @@
   <div>
     <pageTitle
       ><div
-        class="position-absolute W-100 d-none d-lg-flex list bg-transparent list text-center text-h6"
+        class="position-absolute W-100 d-none d-lg-flex list bg-transparent text-center text-h6"
       >
         <nuxt-link
           to="/"
@@ -14,17 +14,23 @@
     </pageTitle>
     <v-container>
       <v-row class="text-center">
-        <v-col v-if="wishlist.wishlist.length === 0"
+        <v-col v-if="productStore.wishlist.length === 0"
           ><v-icon
             class="w-100 custom-icon text-grey-lighten-2"
             size="xxx-large"
             >mdi-heart-outline</v-icon
           >
-          <p class="text-uppercase text-h1">.this wishlist is empty</p>
-          <p class="text-h4 text-grey-lighten-1">
+          <p class="text-uppercase text-h4 text-md-h1">
+            .this wishlist is empty
+          </p>
+          <p
+            class="text-h4 text-grey-lighten-1 text-uppercase text-h4 text-md-h4"
+          >
             You don't have any products in the wishlist yet.
           </p>
-          <p class="text-h6 text-grey-lighten-1">
+          <p
+            class="text-h6 text-grey-lighten-1 text-uppercase text-h6 text-md-h4"
+          >
             You will find a lot of interesting products on our "Shop" page.
           </p>
           <v-btn
@@ -55,7 +61,7 @@
             <Product
               :smCOLS="6"
               :mdCOLS="4"
-              :products="wishlist.wishlist"
+              :products="productStore.wishlist"
               :wishlist="true"
               class="my-10"
               @select="select"
@@ -68,41 +74,44 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useWishlistStore } from "~/sotres/wishLIst";
+import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
-const wishlist = useWishlistStore();
+const productStore = useProductStore();
 const bar = ref<boolean>();
 const barcontainer = ref<HTMLDivElement>();
 const allSeltected = ref<boolean>(false);
 const route = useRoute();
 const router = useRouter();
 const removeProduct = (payload: SpecialProduct) => {
-  wishlist.wishlist = wishlist.wishlist.filter(
+  productStore.wishlist = productStore.wishlist.filter(
     (pro: SpecialProduct) => pro.name !== payload.name
   );
 };
 const selectAll = () => {
   allSeltected.value = true;
-  wishlist.wishlist.forEach((pro: SpecialProduct) => {
+  productStore.wishlist.forEach((pro: SpecialProduct) => {
     pro.selected = true;
   });
 };
 const desSelectAll = () => {
   allSeltected.value = false;
-  wishlist.wishlist.forEach((pro: SpecialProduct) => {
+  bar.value = false;
+  productStore.wishlist.forEach((pro: SpecialProduct) => {
     pro.selected = false;
   });
 };
 const removeProducts = () => {
-  wishlist.wishlist = wishlist.wishlist.filter((pro: SpecialProduct) => {
-    return pro.selected !== true;
-  });
+  productStore.wishlist = productStore.wishlist.filter(
+    (pro: SpecialProduct) => {
+      return pro.selected !== true;
+    }
+  );
 };
 const select = (payload: SpecialProduct) => {
   bar.value = false;
   allSeltected.value = true;
-  console.log(wishlist.wishlist);
-  wishlist.wishlist.forEach((pro: SpecialProduct) => {
+  console.log(productStore.wishlist);
+  productStore.wishlist.forEach((pro: SpecialProduct) => {
     if (pro.selected) {
       bar.value = true;
     } else {
@@ -133,6 +142,12 @@ onMounted(() => {});
   left: 50%;
 
   transform: translate(-80%, -50%);
+}
+@media (max-width:425px) {
+  .custom-icon {
+  font-size: 150px !important;
+}
+  
 }
 @keyframes bar {
   0% {
