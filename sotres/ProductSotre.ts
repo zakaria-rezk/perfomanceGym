@@ -5,5 +5,6 @@ export const useProductStore = defineStore("ProductStore", {
   state: () => ({
     wishlist: [] as SpecialProduct[],
     compare: [] as SpecialProduct[],
+    cart: [] as SpecialProduct[],
   }),
 });

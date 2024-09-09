@@ -134,7 +134,10 @@
           </div>
         </nuxt-link>
       </div>
-      <v-btn class="btn w-100 h bg-orange-accent-4"
+      <v-btn
+        class="btn w-100 h bg-orange-accent-4"
+        :loading="pro.icons.cart"
+        @click="addToCart(pro)"
         ><div>
           <p class="cart">add to cart</p>
           <v-icon class="icon">mdi-cart-outline</v-icon>
@@ -199,6 +202,21 @@ const loading = (val: string, pro: SpecialProduct) => {
       }, 500);
       break;
   }
+};
+const addToCart = (pro: SpecialProduct) => {
+  pro.icons.cart = true;
+  setTimeout(() => {
+    const exists = productStore.cart.find(
+      (payload: SpecialProduct) => pro.name === payload.name
+    );
+    if (!exists) {
+      pro.cartQuanity++;
+      productStore.cart.push(pro);
+      console.log(pro.cartQuanity);
+    } else pro.cartQuanity++;
+    pro.icons.cart = false;
+    router.replace("/cart");
+  }, 500);
 };
 </script>
 <style scoped>

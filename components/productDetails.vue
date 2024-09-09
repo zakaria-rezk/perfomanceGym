@@ -25,6 +25,45 @@
         <p>
           {{ Props.product?.details }}
         </p>
+        <div class="d-flex my-2">
+          <div
+            class="mx-2 ml-n3"
+            v-if="!Props.product?.wishlist"
+            @click="loading('wishlist', Props.product)"
+          >
+            <v-btn
+              variant="text"
+              size="small"
+              :loading="Props.product?.icons.wishlist"
+              >Add to wishlist
+              <v-icon class="px-4">mdi-heart-outline</v-icon></v-btn
+            >
+          </div>
+          <div v-else class="mx-2 ml-n3">
+            <v-btn variant="text" size="small"
+              >Broswe wishlist <v-icon class="px-4">mdi-check</v-icon></v-btn
+            >
+          </div>
+          <div
+            class="mx-2"
+            v-if="!Props.product?.compare"
+            @click="loading('compare', Props.product)"
+          >
+            <v-btn
+              variant="text"
+              size="small"
+              :loading="Props.product?.icons.compare"
+              >Compare<v-icon class="px-4" loading="true"
+                >mdi-compare-horizontal</v-icon
+              ></v-btn
+            >
+          </div>
+          <div v-else class="mx-2 ml-n3">
+            <v-btn variant="text" size="small"
+              >Compare Products <v-icon class="px-4">mdi-check</v-icon></v-btn
+            >
+          </div>
+        </div>
         <Cart />
       </div>
       <div class="mt-4 swap position-absolute">
@@ -120,6 +159,7 @@
 </template>
 <script setup lang="ts">
 import { useUserStore } from "~/sotres/Product";
+import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
 const router = useRouter();
 interface props {
@@ -152,6 +192,35 @@ const goBack = () => {
       product: prevProduct.value?.name,
     },
   });
+};
+const productStore = useProductStore();
+const loading = (val: string, pro: SpecialProduct) => {
+  switch (val) {
+    case "compare":
+      pro.icons.compare = true;
+      setTimeout(() => {
+        pro.compare = true;
+        const exists = productStore.compare.find(
+          (payload: SpecialProduct) => pro.name === payload.name
+        );
+        if (!exists) productStore.compare.push(pro);
+        pro.icons.compare = false;
+        router.replace("/compare");
+      }, 1000);
+      break;
+    case "wishlist":
+      pro.icons.wishlist = true;
+      setTimeout(() => {
+        pro.wishlist = true;
+        const exists = productStore.wishlist.find(
+          (payload: SpecialProduct) => pro.name === payload.name
+        );
+        if (!exists) productStore.wishlist.push(pro);
+        pro.icons.wishlist = false;
+        router.replace("/wishlist");
+      }, 1000);
+      break;
+  }
 };
 onMounted(() => {
   const store = useUserStore();

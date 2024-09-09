@@ -13,10 +13,12 @@ export type SpecialProduct = {
   compare: boolean;
   wishlist: boolean;
   selected: boolean;
+  cartQuanity:number,
   icons: {
     quickview: boolean;
     compare: boolean;
     wishlist: boolean;
+    cart:boolean,
   };
   next: {
     name: string;
