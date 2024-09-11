@@ -1,18 +1,14 @@
 <template>
   <div>
-    <pageTitle
-      ><div
-        class="position-absolute W-100 d-none d-lg-flex list bg-transparent text-center text-h6"
-      >
-        <nuxt-link
-          to="/"
-          class="text-decoration-none text-grey-lighten-2 d-flex px-1"
-          >Home <span class="mx-2"> / </span></nuxt-link
-        >
-        <p class="text-grey-lighten-1">{{ route.name }}</p>
-      </div>
-    </pageTitle>
+    <CartPageTitle />
     <v-container>
+      <div>
+        <Warn
+          text="You Cann't go to checkout while your cart is empty"
+          class="my-4"
+          v-if="nagigationWarn"
+        />
+      </div>
       <v-row
         v-if="productStore.cart.length > 0"
         class="d-flex flex-column flex-md-row"
@@ -59,68 +55,70 @@
             >Upadte Cart</v-btn
           >
         </v-col>
-        <v-col cols="12" md="3" class="position-relative">
-          <div ref="progress" class="position-absolute progress display-none">
-            <v-progress-circular indeterminate></v-progress-circular>
-          </div>
-          <div ref="parent">
-            <v-card class="pa-3 border w-100"
-              ><p class="text-h6">Shopping Cart Total</p>
-              <div class="d-flex justify-space-between my-2 text-body-1">
-                <p>Total</p>
-                <p class="text-grey">{{ totalPrice }} USD</p>
-              </div>
-              <v-divider></v-divider>
-              <div
-                class="shopping d-flex justify-space-between align-center py-2"
-              >
-                <p>Shopping</p>
-                <div>
-                  <p>Order Price:20</p>
-                  <p>Order to :</p>
-                  <button
-                    variant="text"
-                    class="text-orange-accent-4"
-                    @click="loactionvisibality()"
-                  >
-                    Change Order
-                  </button>
-                  <div
-                    :style="{ display: location ? 'flex' : 'none' }"
-                    class="location"
-                    ref="locationDiv"
-                  >
-                    <v-select
-                      :items="['Option 1', 'Option 2', 'Option 3']"
-                      label="Country"
-                      density="compact"
-                      class="rounded"
-                    ></v-select>
-                    <v-select
-                      :items="['Cairo', 'Option 2', 'Option 3']"
-                      label="City"
-                      density="compact"
-                    ></v-select>
-                    <v-text-field
-                      label="Enter Zip Code"
-                      density="compact"
-                      placeholder="Type something..."
-                      class="rounded"
-                    ></v-text-field>
+        <v-col cols="12" md="3">
+          <div class="position-relative">
+            <div ref="progress" class="position-absolute progress display-none">
+              <v-progress-circular indeterminate></v-progress-circular>
+            </div>
+            <div ref="parent">
+              <v-card class="pa-3 border w-100"
+                ><p class="text-h6">Shopping Cart Total</p>
+                <div class="d-flex justify-space-between my-2 text-body-1">
+                  <p>Total</p>
+                  <p class="text-grey">{{ totalPrice }} USD</p>
+                </div>
+                <v-divider></v-divider>
+                <div
+                  class="shopping d-flex justify-space-between align-center py-2"
+                >
+                  <p>Shopping</p>
+                  <div>
+                    <p>Order Price:20</p>
+                    <p>Order to :</p>
+                    <button
+                      variant="text"
+                      class="text-orange-accent-4"
+                      @click="loactionvisibality()"
+                    >
+                      Change Order
+                    </button>
+                    <div
+                      :style="{ display: location ? 'flex' : 'none' }"
+                      class="location"
+                      ref="locationDiv"
+                    >
+                      <v-select
+                        :items="['Option 1', 'Option 2', 'Option 3']"
+                        label="Country"
+                        density="compact"
+                        class="rounded"
+                      ></v-select>
+                      <v-select
+                        :items="['Cairo', 'Option 2', 'Option 3']"
+                        label="City"
+                        density="compact"
+                      ></v-select>
+                      <v-text-field
+                        label="Enter Zip Code"
+                        density="compact"
+                        placeholder="Type something..."
+                        class="rounded"
+                      ></v-text-field>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <v-divider></v-divider>
-              <div class="d-flex justify-space-between my-2">
-                <p class="text-h6">The total</p>
-                <p class="text-orange-accent-4 boold">
-                  {{ totalPrice + 20 }} USD
-                </p>
-              </div>
-              <v-btn class="w-100 bg-orange-accent-4" @click="updateTotal"
-                >Complate Order</v-btn
-              ></v-card
-            >
+                <v-divider></v-divider>
+                <div class="d-flex justify-space-between my-2">
+                  <p class="text-h6">The total</p>
+                  <p class="text-orange-accent-4 boold">
+                    {{ totalPrice + 20 }} USD
+                  </p>
+                </div>
+                <v-btn class="w-100 bg-orange-accent-4" @click="updateTotal"
+                  >Complate Order</v-btn
+                ></v-card
+              >
+            </div>
           </div></v-col
         >
       </v-row>
@@ -133,6 +131,7 @@
 <script setup lang="ts">
 import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
+const nagigationWarn = ref<boolean>(false);
 const parent = ref<any>(null);
 const progress = ref<HTMLDivElement>();
 const location = ref<boolean>(false);
@@ -145,9 +144,7 @@ const removeProduct = (payload: SpecialProduct) => {
 const totalPrice = ref<number>(0);
 const route = useRoute();
 const productStore = useProductStore();
-const TotalPrice = computed(() => {
-  console.log(totalPrice.value);
-});
+
 const updateProductQuantity = (payload: SpecialProduct, counter: number) => {
   payload.cartQuanity = counter;
 };
@@ -169,7 +166,7 @@ const loactionvisibality = () => {
 const updateTotal = () => {
   if (!parent.value || !progress.value) return;
   parent.value?.classList.add("opictiy");
-  console.log(progress.value.classList);
+
   progress.value.classList.remove("display-none");
   setTimeout(() => {
     parent.value?.classList.remove("opictiy");
@@ -180,6 +177,12 @@ const updateTotal = () => {
     });
   }, 500);
 };
+onBeforeRouteLeave((to: any, from: any, next: any) => {
+  if (to.name === "checkout" && productStore.cart.length === 0) {
+    nagigationWarn.value = true;
+    next(false);
+  } else next(true);
+});
 </script>
 <style scoped>
 .location {
@@ -202,6 +205,12 @@ const updateTotal = () => {
   top: 50%;
   left: 50%;
   z-index: 1111;
+}
+
+.router-link-active,
+.router-link-exact-active {
+  text-decoration: underline !important;
+  text-decoration-color: orange !important;
 }
 @keyframes slide-downup {
   from {

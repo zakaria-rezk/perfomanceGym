@@ -75,8 +75,8 @@
               :wishlist="false"
               v-if="Products?.length > 0"
             />
-            <div v-else class="w-100 bg-blue rounded-xl pa-2">
-              <p class="text-h3 text-upper-case">No products found</p>
+            <div v-else>
+              <Warn text="NO Products Found" />
             </div>
           </keep-alive>
         </v-col>
@@ -166,7 +166,7 @@ onMounted(() => {
       route.params.category === "SHOP"
         ? shop
         : state.product[`${proCategory.value}`];
-    console.log("dsfds");
+   
   } catch (err) {
     throw err;
   }

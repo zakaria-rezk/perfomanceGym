@@ -6,5 +6,6 @@ export const useProductStore = defineStore("ProductStore", {
     wishlist: [] as SpecialProduct[],
     compare: [] as SpecialProduct[],
     cart: [] as SpecialProduct[],
+    navWarn: false as boolean,
   }),
 });

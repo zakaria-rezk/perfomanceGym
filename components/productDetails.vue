@@ -40,7 +40,10 @@
             >
           </div>
           <div v-else class="mx-2 ml-n3">
-            <v-btn variant="text" size="small"
+            <v-btn
+              variant="text"
+              size="small"
+              @click="router.replace('/wishlist')"
               >Broswe wishlist <v-icon class="px-4">mdi-check</v-icon></v-btn
             >
           </div>
@@ -59,7 +62,10 @@
             >
           </div>
           <div v-else class="mx-2 ml-n3">
-            <v-btn variant="text" size="small"
+            <v-btn
+              variant="text"
+              size="small"
+              @click="router.replace('/compare')"
               >Compare Products <v-icon class="px-4">mdi-check</v-icon></v-btn
             >
           </div>

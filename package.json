@@ -15,9 +15,12 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.3",
+    "@vue-stripe/vue-stripe": "^4.5.0",
     "nuxt": "^3.12.4",
     "pinia": "^2.2.1",
-    "vue": "latest"
+    "vee-validate": "^4.13.2",
+    "vue": "latest",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^3.0.2",
