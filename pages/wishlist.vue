@@ -143,11 +143,10 @@ onMounted(() => {});
 
   transform: translate(-80%, -50%);
 }
-@media (max-width:425px) {
+@media (max-width: 425px) {
   .custom-icon {
-  font-size: 150px !important;
-}
-  
+    font-size: 150px !important;
+  }
 }
 @keyframes bar {
   0% {

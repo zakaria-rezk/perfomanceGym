@@ -6,7 +6,7 @@
         <Warn
           text="You Cann't go to checkout while your cart is empty"
           class="my-4"
-          v-if="nagigationWarn"
+          v-if="navigationWarn"
         />
       </div>
       <v-row
@@ -82,11 +82,7 @@
                     >
                       Change Order
                     </button>
-                    <div
-                      :style="{ display: location ? 'flex' : 'none' }"
-                      class="location"
-                      ref="locationDiv"
-                    >
+                    <div v-if="location" class="location" ref="locationDiv">
                       <v-select
                         :items="['Option 1', 'Option 2', 'Option 3']"
                         label="Country"
@@ -131,7 +127,7 @@
 <script setup lang="ts">
 import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
-const nagigationWarn = ref<boolean>(false);
+const navigationWarn = ref<boolean>(false);
 const parent = ref<any>(null);
 const progress = ref<HTMLDivElement>();
 const location = ref<boolean>(false);
@@ -142,7 +138,7 @@ const removeProduct = (payload: SpecialProduct) => {
   );
 };
 const totalPrice = ref<number>(0);
-const route = useRoute();
+
 const productStore = useProductStore();
 
 const updateProductQuantity = (payload: SpecialProduct, counter: number) => {
@@ -150,6 +146,7 @@ const updateProductQuantity = (payload: SpecialProduct, counter: number) => {
 };
 const loactionvisibality = () => {
   if (!location.value) {
+   
     location.value = !location.value;
     locationDiv.value?.classList.add("slide-downup");
     setTimeout(() => {
@@ -179,7 +176,7 @@ const updateTotal = () => {
 };
 onBeforeRouteLeave((to: any, from: any, next: any) => {
   if (to.name === "checkout" && productStore.cart.length === 0) {
-    nagigationWarn.value = true;
+    navigationWarn.value = true;
     next(false);
   } else next(true);
 });

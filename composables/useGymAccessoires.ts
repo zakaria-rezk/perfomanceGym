@@ -6,7 +6,7 @@ export function useGymAccessoires() {
     {
       id: 1,
       name: "HANDLITING",
-      price: 1206,
+      price: 150,
       imgs: [
         "/_nuxt/assets/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
         "/_nuxt/assets/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
@@ -18,11 +18,16 @@ export function useGymAccessoires() {
       OnSale: true,
       InStock: true,
       quickview: false,
+      compare: false,
+      selected: false,
+      wishlist: false,
       icons: {
         quickview: false,
         compare: false,
         wishlist: false,
+        cart: false,
       },
+      cartQuanity: 0,
       next: { name: "CASEIN PROTEIN STRWPERRY", category: "WheyProtain" },
       prev: {
         name: "CITRULLINE MALATE 60 SERVING",
@@ -32,7 +37,7 @@ export function useGymAccessoires() {
     {
       id: 2,
       name: "LIFTING LETING",
-      price: 1206,
+      price: 250,
       imgs: [
         "/_nuxt/assets/imges/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
       ],
@@ -43,11 +48,16 @@ export function useGymAccessoires() {
       OnSale: true,
       InStock: true,
       quickview: false,
+      compare: false,
+      selected: false,
+      wishlist: false,
       icons: {
         quickview: false,
         compare: false,
         wishlist: false,
+        cart: false,
       },
+      cartQuanity: 0,
       next: {
         name: "WHEY STROPERRY CHEESE CAKE 1kg",
         category: "WheyProtain",
@@ -57,7 +67,7 @@ export function useGymAccessoires() {
     {
       id: 3,
       name: "SHAKER 70ML",
-      price: 2500,
+      price: 200,
       imgs: [
         "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
         "/_nuxt/assets/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
@@ -69,11 +79,16 @@ export function useGymAccessoires() {
       OnSale: true,
       InStock: true,
       quickview: false,
+      compare: false,
+      selected: false,
+      wishlist: false,
       icons: {
         quickview: false,
         compare: false,
         wishlist: false,
+        cart: false,
       },
+      cartQuanity: 0,
       next: {
         name: "BULK GAINER VANILLA 4KG",
         category: "WeightGainerCarbs",
