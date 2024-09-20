@@ -10,8 +10,8 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "/_nuxt/static/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
-            "/_nuxt/static/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
+            "https://master--precious-medovik-187566.netlify.app/_nuxt/_nuxt/static/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
+            "https://master--precious-medovik-187566.netlify.app/_nuxt/_nuxt/static/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
           details:
@@ -42,9 +42,9 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN STRWPERRY",
           price: 1250,
           imgs: [
-            "/_nuxt/static/imges/products/WheyPortain/IMG_20240126_055846.png",
-            "/_nuxt/static/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/_nuxt/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "https://master--precious-medovik-187566.netlify.app/_nuxt/_nuxt/static/imges/products/WheyPortain/IMG_20240126_055846.png",
+            "https://master--precious-medovik-187566.netlify.app/_nuxt/_nuxt/static/imges/products/WheyPortain/IMG_20240208_160203.png",
+            "https://master--precious-medovik-187566.netlify.app/_nuxt/_nuxt/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
