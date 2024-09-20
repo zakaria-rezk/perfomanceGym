@@ -10,7 +10,7 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "https://master--precious-medovik-187566.netlify.app/_nuxt/static/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
+            "437523928_403353212455742_52635376963353824_n.jpg",
             "https://master--precious-medovik-187566.netlify.app/_nuxt/static/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
