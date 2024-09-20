@@ -10,8 +10,8 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "/static/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
-            "/static/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
+            "static/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
+            "static/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
           details:
@@ -42,9 +42,9 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN STRWPERRY",
           price: 1250,
           imgs: [
-            "/static/imges/products/WheyPortain/IMG_20240126_055846.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "static/imges/products/WheyPortain/IMG_20240126_055846.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160203.png",
+            "static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -79,9 +79,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY OREO 1kg",
           price: 1500,
           imgs: [
-            "/static/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
-            "/static/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
-            "/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "static/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
+            "static/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
+            "static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -116,10 +116,10 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN CHOCOLATE",
           price: 1800,
           imgs: [
-            "/static/imges/products/WheyPortain/IMG_20240126_061031.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "static/imges/products/WheyPortain/IMG_20240126_061031.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
           ],
           category: "WheyProtain",
           details:
@@ -154,9 +154,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN STRWPERRY 1.5kg",
           price: 1000,
           imgs: [
-            "/static/imges/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "static/imges/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160203.png",
+            "static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -191,9 +191,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY STROPERRY CHEESE CAKE 1kg",
           price: 2500,
           imgs: [
-            "/static/imges/products/WheyPortain/IMG_20240126_054636.png",
-            "/static/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "static/imges/products/WheyPortain/IMG_20240126_054636.png",
+            "static/imges/products/WheyPortain/IMG_20240208_160203.png",
+            "static/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -224,9 +224,9 @@ export const useUserStore = defineStore("user", {
           name: "CITRULLINE MALATE 60 SERVING",
           price: 750,
           imgs: [
-            "/static/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
-            "/static/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
-            "/static/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
+            "static/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
+            "static/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
+            "static/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
           category: "PreWorkout",
           details:
@@ -426,8 +426,8 @@ export const useUserStore = defineStore("user", {
           name: "SHAKER 70ML",
           price: 200,
           imgs: [
-            "/static/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
-            "/static/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
+            "static/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
+            "static/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
           ],
           category: "Accessories",
           details:
