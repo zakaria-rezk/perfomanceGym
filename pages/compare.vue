@@ -59,7 +59,7 @@
             <p class="ma-1">{{ pro.name }}</p>
 
             <p class="ma-1">{{ pro.price }}USD</p>
-            <v-btn class="bg-orange">Add to cart</v-btn>
+            <v-btn class="bg-orange" @click="addTocart(pro)">Add to cart</v-btn>
           </td>
         </tr>
         <tr class="pa-4">
@@ -98,11 +98,16 @@ const removeProducts = (payload: SpecialProduct) => {
     return pro.name !== payload.name;
   });
 };
-onMounted(() => {
-  const productStore = useProductStore();
-  console.log(productStore.compare);
-  console.log(trWidth.value);
-});
+const addTocart = (payload: SpecialProduct) => {
+  const exist = productStore.cart.find((el: SpecialProduct) => {
+    el.name === payload.name;
+  });
+  payload.cartQuanity++;
+  if (!exist) productStore.cart.push(payload);
+  
+  router.replace("/cart");
+};
+onMounted(() => {});
 </script>
 <style scoped>
 .custom-icon {

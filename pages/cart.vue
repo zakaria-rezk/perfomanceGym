@@ -146,7 +146,6 @@ const updateProductQuantity = (payload: SpecialProduct, counter: number) => {
 };
 const loactionvisibality = () => {
   if (!location.value) {
-   
     location.value = !location.value;
     locationDiv.value?.classList.add("slide-downup");
     setTimeout(() => {

@@ -76,7 +76,7 @@ const handelousemove = (e: Event) => {
   else if (Xtrans < -50) Xtrans = -50;
   if (Ytrans > 50) Ytrans = 50;
   else if (Ytrans < -50) Ytrans = -50;
-  console.log(Xtrans, Ytrans);
+
   hero.value.style.transform = `translate(${Xtrans}px, ${Ytrans}px)`;
 
   lastPositionX.value = e.screenX;

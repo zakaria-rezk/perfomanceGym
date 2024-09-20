@@ -9,10 +9,7 @@
     >
       <ModalQuickView
         class="text-center"
-        :imgSrc="pro.imgs[0]"
-        :ProName="pro.name"
-        :ProPrice="pro.price"
-        :ProCategory="pro.category"
+        :product="pro"
         @closeModal="pro.quickview = false"
         v-if="pro.quickview"
       />
@@ -212,7 +209,6 @@ const addToCart = (pro: SpecialProduct) => {
     if (!exists) {
       pro.cartQuanity++;
       productStore.cart.push(pro);
-      console.log(pro.cartQuanity);
     } else pro.cartQuanity++;
     pro.icons.cart = false;
     router.replace("/cart");

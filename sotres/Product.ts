@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import type { product } from "~/types/Product";
+import type { SpecialProduct } from "~/types/SpecialProduct";
 export const useUserStore = defineStore("user", {
   state: (): product => ({
     product: {
@@ -792,5 +793,9 @@ export const useUserStore = defineStore("user", {
     },
   }),
   getters: {},
-  actions: {},
+  actions: {
+    updateCartCountity(pro: SpecialProduct, counter: number) {
+      pro.cartQuanity += counter;
+    },
+  },
 });

@@ -206,12 +206,11 @@ const formData = ref<formSchema>({
 });
 
 const submit = () => {
-  stripe.value = true;
-
   const valid = userSchema.safeParse(formData.value);
   error.value = valid.error?.format();
   console.log(valid.success);
   if (!valid.success) return;
+  stripe.value = true;
   setTimeout(() => {
     (checkoutRef.value as any).redirectToCheckout();
     stripe.value = false;

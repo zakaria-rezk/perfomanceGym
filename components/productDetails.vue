@@ -70,7 +70,7 @@
             >
           </div>
         </div>
-        <Cart />
+        <Cart :product="Props.product" />
       </div>
       <div class="mt-4 swap position-absolute">
         <v-btn
@@ -169,7 +169,7 @@ import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
 const router = useRouter();
 interface props {
-  product: SpecialProduct | undefined;
+  product: SpecialProduct ;
 }
 const Props = defineProps<props>();
 const nextProduct = ref<SpecialProduct>();
@@ -211,7 +211,6 @@ const loading = (val: string, pro: SpecialProduct) => {
         );
         if (!exists) productStore.compare.push(pro);
         pro.icons.compare = false;
-        router.replace("/compare");
       }, 1000);
       break;
     case "wishlist":
@@ -223,7 +222,6 @@ const loading = (val: string, pro: SpecialProduct) => {
         );
         if (!exists) productStore.wishlist.push(pro);
         pro.icons.wishlist = false;
-        router.replace("/wishlist");
       }, 1000);
       break;
   }

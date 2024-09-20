@@ -4,19 +4,20 @@
       <v-container class="content rounded-xl position-relative w-75">
         <v-row>
           <v-col cols="6">
-            <img :src="Props.imgSrc" class="img" />
+            <img :src="Props.product.imgs[0]" class="img" />
           </v-col>
           <v-col cols="6">
-            <div  class="text-right">
-            <v-btn variant="plain" size="xx-l" ref="emitBtn" 
-              ><v-icon>mdi-close</v-icon></v-btn
-            ></div>
-            <div >
-              <p class="my-4 text-h5">{{ Props.ProName }}</p>
-              <p class="text-red text-h4">{{ Props.ProPrice }} USD</p>
-              <Cart />
+            <div class="text-right">
+              <v-btn variant="plain" size="xx-l" ref="emitBtn"
+                ><v-icon>mdi-close</v-icon></v-btn
+              >
+            </div>
+            <div>
+              <p class="my-4 text-h5">{{ Props.product.name }}</p>
+              <p class="text-red text-h4">{{ Props.product.price }} USD</p>
+              <Cart :product="Props.product" />
               <v-divider class="my-5"></v-divider>
-              <p class="text-left">Category: {{ Props.ProCategory }}</p>
+              <p class="text-left">Category: {{ Props.product.category }}</p>
             </div>
           </v-col>
         </v-row>
@@ -25,12 +26,11 @@
   </teleport>
 </template>
 <script setup lang="ts">
+import type { SpecialProduct } from "~/types/SpecialProduct";
+
 const container = ref<HTMLDivElement>();
 interface props {
-  imgSrc: string;
-  ProName: string;
-  ProPrice: number;
-  ProCategory: string;
+  product: SpecialProduct;
 }
 
 const emit = defineEmits<{
