@@ -2,7 +2,7 @@
   <div class="hero d-flex" @mousemove="handelousemove">
     <div class="d-flex hero-imag">
       <div class="">
-        <img src="../assets/imges/sport-men-slider-1.png" alt="" ref="hero" />
+        <img src="../static/imges/sport-men-slider-1.png" alt="" ref="hero" />
       </div>
       <div class="text-white align-self-center overflow">
         <p class="text-h2 text-uppercase font-weight-medium line-break title">

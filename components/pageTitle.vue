@@ -1,7 +1,7 @@
 <template>
   <div class="text-center container d-flex position-relative">
     <img
-      src="/assets/imges/sport-page-title.jpg"
+      src="/static/imges/sport-page-title.jpg"
       width="100%"
       height="60vh"
       alt=""
