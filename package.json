@@ -16,6 +16,7 @@
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.3",
     "@vue-stripe/vue-stripe": "^4.5.0",
+    "leaflet": "^1.9.4",
     "nuxt": "^3.12.4",
     "pinia": "^2.2.1",
     "vee-validate": "^4.13.2",

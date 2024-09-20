@@ -535,7 +535,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 1,
           name: "CARPOTINE STRAWPERRY 1.5kg",
-          price: 1500,
+          price: 650,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-07-10-921.png",
 
@@ -566,7 +566,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 2,
           name: "BULK GAINER CHOCOLATE ICE CREAM 4KG",
-          price: 1500,
+          price: 750,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-01-26_07-47-00-836.png",
             "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
@@ -600,7 +600,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 3,
           name: "CARPOTINE MANGO",
-          price: 1500,
+          price: 950,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-02-13-476.png",
             "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
@@ -634,7 +634,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 4,
           name: "CARBO GAINER WATERMELON 1kg",
-          price: 1500,
+          price: 1150,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png",
           ],
@@ -665,7 +665,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 5,
           name: "CARBO GAINER STRAWPERRY 1kg",
-          price: 1500,
+          price: 1200,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_23-02-08_13-47-57-062.png",
           ],
@@ -699,7 +699,7 @@ export const useUserStore = defineStore("user", {
         {
           id: 6,
           name: "CARPOTINE CHOCOLATE 1.5kg",
-          price: 1500,
+          price: 800,
           imgs: [
             "/_nuxt/assets/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-00-04-216.png",
             "/_nuxt/assets/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",

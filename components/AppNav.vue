@@ -73,7 +73,12 @@
               </v-list-item>
             </v-list>
           </div>
-          <v-btn variant="text" class="mx-n5">Contact US</v-btn></v-col
+          <v-btn
+            variant="text"
+            class="mx-n5"
+            @click="router.replace('/contactUs')"
+            >Contact US</v-btn
+          ></v-col
         >
         <v-col class="d-none d-md-flex justify-end mr-16">
           <v-btn
