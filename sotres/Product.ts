@@ -10,7 +10,7 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "/imges/products/WheyPortain/Picsart_24-01-26_06-54-21-965.png",
+            "/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
             "/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
@@ -42,7 +42,7 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN STRWPERRY",
           price: 1250,
           imgs: [
-            "/imges/products/WheyPortain/IMG_20240126_055846.png",
+            "/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
             "/imges/products/WheyPortain/IMG_20240208_160203.png",
             "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
@@ -462,9 +462,7 @@ export const useUserStore = defineStore("user", {
           id: 1,
           name: "CREATINE MONOHYDRATE 60 SERVING",
           price: 1250,
-          imgs: [
-            "/imges/products/Creatine/Picsart_24-08-12_09-45-27-894.png",
-          ],
+          imgs: ["/imges/products/Creatine/Picsart_24-08-12_09-45-27-894.png"],
           category: "Creatine",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
@@ -497,9 +495,7 @@ export const useUserStore = defineStore("user", {
           id: 2,
           name: "CREATINE MONOHYDRATE 30 SERVING",
           price: 1200,
-          imgs: [
-            "/imges/products/Creatine/Picsart_24-08-12_09-46-11-258.png",
-          ],
+          imgs: ["/imges/products/Creatine/Picsart_24-08-12_09-46-11-258.png"],
           category: "Creatine",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
