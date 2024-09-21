@@ -123,10 +123,7 @@
             :hot="pro.isHot"
             class="ma-3"
           /> -->
-          <img
-            src="../static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"
-            alt=""
-          />
+          <img :src="pro.imgs[0]" alt="" class="img" />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
@@ -228,7 +225,12 @@ const addToCart = (pro: SpecialProduct) => {
   transition: all 0.5s;
   z-index: 0;
 }
-
+.img {
+  width: 100%;
+  height: 250px;
+  border-radius: 30px;
+  object-fit: fill;
+}
 .col:hover {
   position: relative;
   background-color: #fff;
