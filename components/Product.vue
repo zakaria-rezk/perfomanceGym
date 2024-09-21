@@ -123,11 +123,7 @@
             :hot="pro.isHot"
             class="ma-3"
           /> -->
-          <img
-            src="/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png"
-            alt=""
-            class="img"
-          />
+          <img :src="url" alt="" class="img" />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
@@ -154,6 +150,8 @@
 </template>
 
 <script setup lang="ts">
+const url =
+  "/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
 import { useProductStore } from "~/sotres/ProductSotre";
 const productStore = useProductStore();
 const router = useRouter();
