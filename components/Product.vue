@@ -151,7 +151,7 @@
 </template>
 
 <script setup lang="ts">
-const url = "/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
+const url = "/_nuxt/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
 const url2 =
   "https://master--leafy-alfajores-fc6788.netlify.app/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
 import { useProductStore } from "~/sotres/ProductSotre";
