@@ -117,7 +117,7 @@
           class="text-decoration-none text-black"
         >
           <LzyLoadingImg
-            src="/static/imges/products/WheyPortain/IMG_20230306_021505-860x982.png"
+            src="../static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"
             alt="pro.alt"
             :object="true"
             :hot="pro.isHot"
