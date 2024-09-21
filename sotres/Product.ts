@@ -10,8 +10,8 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
-            "/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
           details:
@@ -42,9 +42,9 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN STRWPERRY",
           price: 1250,
           imgs: [
-            "/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
-            "/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240208_160203.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -79,9 +79,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY OREO 1kg",
           price: 1500,
           imgs: [
-            "/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
-            "/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
-            "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -116,7 +116,7 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN CHOCOLATE",
           price: 1800,
           imgs: [
-            "../_nuxt/imges/products/WheyPortain/IMG_20240126_061031.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/_nuxt/imges/products/WheyPortain/IMG_20240126_061031.png",
             "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
             "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
             "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
@@ -154,7 +154,7 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN STRWPERRY 1.5kg",
           price: 1000,
           imgs: [
-            "/imges/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
             "/imges/products/WheyPortain/IMG_20240208_160203.png",
             "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
@@ -191,7 +191,7 @@ export const useUserStore = defineStore("user", {
           name: "WHEY STROPERRY CHEESE CAKE 1kg",
           price: 2500,
           imgs: [
-            "/imges/products/WheyPortain/IMG_20240126_054636.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240126_054636.png",
             "/imges/products/WheyPortain/IMG_20240208_160203.png",
             "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
@@ -224,7 +224,7 @@ export const useUserStore = defineStore("user", {
           name: "CITRULLINE MALATE 60 SERVING",
           price: 750,
           imgs: [
-            "/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
             "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
             "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
@@ -257,7 +257,7 @@ export const useUserStore = defineStore("user", {
           name: "BETA-ALANINE 60 SERVING",
           price: 800,
           imgs: [
-            "/imges/products/PreWorkout/Picsart_24-02-23_22-09-52-372.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-02-23_22-09-52-372.png",
             "/imges/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
           ],
           category: "PreWorkout",
@@ -292,7 +292,7 @@ export const useUserStore = defineStore("user", {
           name: "RUSH PUMP LEMON MINT 30 SERVING",
           price: 850,
           imgs: [
-            "/imges/products/PreWorkout/Picsart_24-04-26_05-03-50-535.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-04-26_05-03-50-535.png",
             "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
           category: "PreWorkout",
@@ -327,7 +327,7 @@ export const useUserStore = defineStore("user", {
           name: "RUSH PUMP WATERMELON 30 SERVING",
           price: 1000,
           imgs: [
-            "/imges/products/PreWorkout/Picsart_24-04-26_04-57-48-902-430x645.png",
+            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-04-26_04-57-48-902-430x645.png",
             "/imges/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
             "/imges/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
             "/imges/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
@@ -363,7 +363,7 @@ export const useUserStore = defineStore("user", {
           name: "HANDLITING",
           price: 150,
           imgs: [
-            "/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
             "/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
           ],
           category: "Accessories",
