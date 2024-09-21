@@ -123,7 +123,7 @@
             :hot="pro.isHot"
             class="ma-3"
           /> -->
-          <img :src="pro.imgs[0]" alt="" class="img" />
+          <img :src="`imges/${pro.imgs[0]}`" alt="" class="img" />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
