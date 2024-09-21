@@ -123,7 +123,11 @@
             :hot="pro.isHot"
             class="ma-3"
           /> -->
-          <img :src="pro.imgs[0]" alt="" class="img" />
+          <img
+            src="/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png"
+            alt=""
+            class="img"
+          />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>

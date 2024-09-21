@@ -10,8 +10,8 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN OREO 1.5k",
           price: 100,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240221_020330-768x947.png",
+            "/_nuxt/static/images/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240221_020330-768x947.png",
           ],
           category: "WheyProtain",
           details:
@@ -42,9 +42,9 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN STRWPERRY",
           price: 1250,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "/_nuxt/static/images/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160203.png",
+            "/_nuxt/static/images/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -79,9 +79,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY OREO 1kg",
           price: 1500,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240126_055056-700x1013.png",
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20230306_021505-860x982.png",
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240126_055056-700x1013.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png",
+            "/_nuxt/static/images/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -116,10 +116,10 @@ export const useUserStore = defineStore("user", {
           name: "CASEIN PROTEIN CHOCOLATE",
           price: 1800,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/_nuxt/imges/products/WheyPortain/IMG_20240126_061031.png",
-            "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
-            "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
-            "/imges/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "/_nuxt/_nuxt/static/images/products/WheyPortain/IMG_20240126_061031.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160218-768x1032.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160218-768x1032.png",
           ],
           category: "WheyProtain",
           details:
@@ -154,9 +154,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY PROTIEN STRWPERRY 1.5kg",
           price: 1000,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
-            "/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "/_nuxt/static/images/products/WheyPortain/Picsart_24-01-26_07-02-43-283.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160203.png",
+            "/_nuxt/static/images/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -191,9 +191,9 @@ export const useUserStore = defineStore("user", {
           name: "WHEY STROPERRY CHEESE CAKE 1kg",
           price: 2500,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/imges/products/WheyPortain/IMG_20240126_054636.png",
-            "/imges/products/WheyPortain/IMG_20240208_160203.png",
-            "/imges/products/WheyPortain/1-e1676102590559-1192x1536.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240126_054636.png",
+            "/_nuxt/static/images/products/WheyPortain/IMG_20240208_160203.png",
+            "/_nuxt/static/images/products/WheyPortain/1-e1676102590559-1192x1536.png",
           ],
           category: "WheyProtain",
           details:
@@ -224,9 +224,9 @@ export const useUserStore = defineStore("user", {
           name: "CITRULLINE MALATE 60 SERVING",
           price: 750,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
-            "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
-            "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-02-23_21-50-20-117-621x800 (1).png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
           category: "PreWorkout",
           details:
@@ -257,8 +257,8 @@ export const useUserStore = defineStore("user", {
           name: "BETA-ALANINE 60 SERVING",
           price: 800,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-02-23_22-09-52-372.png",
-            "/imges/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-02-23_22-09-52-372.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
           ],
           category: "PreWorkout",
           details:
@@ -292,8 +292,8 @@ export const useUserStore = defineStore("user", {
           name: "RUSH PUMP LEMON MINT 30 SERVING",
           price: 850,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-04-26_05-03-50-535.png",
-            "/imges/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_05-03-50-535.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_05-04-39-687-860x1290.png",
           ],
           category: "PreWorkout",
           details:
@@ -327,10 +327,10 @@ export const useUserStore = defineStore("user", {
           name: "RUSH PUMP WATERMELON 30 SERVING",
           price: 1000,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/PreWorkout/Picsart_24-04-26_04-57-48-902-430x645.png",
-            "/imges/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
-            "/imges/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
-            "/imges/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_04-57-48-902-430x645.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-25_03-10-14-212-1.png",
+            "/_nuxt/static/images/products/PreWorkout/Picsart_24-04-26_04-59-55-769-430x645.png",
           ],
           category: "PreWorkout",
           details:
@@ -363,8 +363,8 @@ export const useUserStore = defineStore("user", {
           name: "HANDLITING",
           price: 150,
           imgs: [
-            "https://master--leafy-alfajores-fc6788.netlify.app/static/imges/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
-            "/imges/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
+            "/_nuxt/static/images/products/Accessories/4126XBijESL._AC_SL1500_-313x300.jpg",
+            "/_nuxt/static/images/products/Accessories/51FqvoM4LgL._AC_SL1500_.jpg",
           ],
           category: "Accessories",
           details:
@@ -395,7 +395,7 @@ export const useUserStore = defineStore("user", {
           name: "LIFTING LETING",
           price: 250,
           imgs: [
-            "/imges/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
+            "/_nuxt/static/images/products/Accessories/Picsart_23-02-11_20-20-42-190-860x860.png",
           ],
           category: "Accessories",
           details:
@@ -426,8 +426,8 @@ export const useUserStore = defineStore("user", {
           name: "SHAKER 70ML",
           price: 200,
           imgs: [
-            "/imges/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
-            "/imges/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
+            "/_nuxt/static/images/products/Accessories/Picsart_24-01-26_08-44-09-221-1024x1536.png",
+            "/_nuxt/static/images/products/Accessories/Picsart_24-01-26_08-45-13-217-1024x1536.png",
           ],
           category: "Accessories",
           details:
@@ -462,7 +462,7 @@ export const useUserStore = defineStore("user", {
           id: 1,
           name: "CREATINE MONOHYDRATE 60 SERVING",
           price: 1250,
-          imgs: ["/imges/products/Creatine/Picsart_24-08-12_09-45-27-894.png"],
+          imgs: ["/_nuxt/static/images/products/Creatine/Picsart_24-08-12_09-45-27-894.png"],
           category: "Creatine",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
@@ -495,7 +495,7 @@ export const useUserStore = defineStore("user", {
           id: 2,
           name: "CREATINE MONOHYDRATE 30 SERVING",
           price: 1200,
-          imgs: ["/imges/products/Creatine/Picsart_24-08-12_09-46-11-258.png"],
+          imgs: ["/_nuxt/static/images/products/Creatine/Picsart_24-08-12_09-46-11-258.png"],
           category: "Creatine",
           details:
             "Lorem ipsum is placeholder text commonly used in the graphic.",
@@ -533,10 +533,10 @@ export const useUserStore = defineStore("user", {
           name: "CARPOTINE STRAWPERRY 1.5kg",
           price: 650,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-07-10-921.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-03-26_17-07-10-921.png",
 
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072909-860x1052.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072909.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072909-860x1052.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072909.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -564,10 +564,10 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER CHOCOLATE ICE CREAM 4KG",
           price: 750,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-01-26_07-47-00-836.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-01-26_07-47-00-836.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_074807.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -598,10 +598,10 @@ export const useUserStore = defineStore("user", {
           name: "CARPOTINE MANGO",
           price: 950,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-02-13-476.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-03-26_17-02-13-476.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_074807.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -632,7 +632,7 @@ export const useUserStore = defineStore("user", {
           name: "CARBO GAINER WATERMELON 1kg",
           price: 1150,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -663,7 +663,7 @@ export const useUserStore = defineStore("user", {
           name: "CARBO GAINER STRAWPERRY 1kg",
           price: 1200,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_23-02-08_13-47-57-062.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_23-02-08_13-47-57-062.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -697,10 +697,10 @@ export const useUserStore = defineStore("user", {
           name: "CARPOTINE CHOCOLATE 1.5kg",
           price: 800,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-03-26_17-00-04-216.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-03-26_17-00-04-216.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_074807.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -728,10 +728,10 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER VANILLA 4KG",
           price: 1500,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-01-26_08-23-34-882.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-01-26_08-23-34-882.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_074807.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
           ],
           category: "WeightGainerCarbs",
           details:
@@ -759,10 +759,10 @@ export const useUserStore = defineStore("user", {
           name: "BULK GAINER MANGO",
           price: 1500,
           imgs: [
-            "/imges/products/WeightGainerCarbs/Picsart_24-01-26_07-57-49-568.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_074807.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
-            "/imges/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/Picsart_24-01-26_07-57-49-568.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_074807.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
+            "/_nuxt/static/images/products/WeightGainerCarbs/IMG_20240126_072936-768x1014.png",
           ],
           category: "WeightGainerCarbs",
           details:
