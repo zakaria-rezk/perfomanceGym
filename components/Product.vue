@@ -116,12 +116,16 @@
           }"
           class="text-decoration-none text-black"
         >
-          <LzyLoadingImg
+          <!-- <LzyLoadingImg
             src="../static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"
             alt="pro.alt"
             :object="true"
             :hot="pro.isHot"
             class="ma-3"
+          /> -->
+          <img
+            src="../static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"
+            alt=""
           />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
