@@ -8,7 +8,7 @@ export function useGymAccessoires() {
       name: "HANDLITING",
       price: 150,
       imgs: [
-        "https://master--precious-medovik-187566.netlify.app/static/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
+        "https://master--precious-medovik-187566.netlify.app/imges/4126XBijESL._AC_SL1500_-313x300.jpg",
         "https://master--precious-medovik-187566.netlify.app/_nuxt/static/imges/51FqvoM4LgL._AC_SL1500_.jpg",
       ],
       category: "Accessories",
@@ -38,7 +38,7 @@ export function useGymAccessoires() {
       id: 2,
       name: "LIFTING LETING",
       price: 250,
-      imgs: ["/static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"],
+      imgs: ["/imges/Picsart_23-02-11_20-20-42-190-860x860.png"],
       category: "Accessories",
       details: "Lorem ipsum is placeholder text commonly used in the graphic.",
       isHot: false,
@@ -67,7 +67,7 @@ export function useGymAccessoires() {
       name: "SHAKER 70ML",
       price: 200,
       imgs: [
-        "https://master--precious-medovik-187566.netlify.app/_nuxt/static/imges/Picsart_24-01-26_08-44-09-221-1024x1536.png",
+        "https://master--precious-medovik-187566.netlify.app/_nuxt/imges/Picsart_24-01-26_08-44-09-221-1024x1536.png",
         "https://master--precious-medovik-187566.netlify.app/_nuxt/static/imges/Picsart_24-01-26_08-45-13-217-1024x1536.png",
       ],
       category: "Accessories",
