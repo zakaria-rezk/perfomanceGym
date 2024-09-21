@@ -124,6 +124,7 @@
             class="ma-3"
           /> -->
           <img :src="url" alt="" class="img" />
+          <img :src="url2" alt="" class="img" />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
@@ -151,7 +152,9 @@
 
 <script setup lang="ts">
 const url =
-  "/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
+  "~/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
+const url2 =
+  "require('~/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png')";
 import { useProductStore } from "~/sotres/ProductSotre";
 const productStore = useProductStore();
 const router = useRouter();
