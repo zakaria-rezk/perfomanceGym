@@ -33,7 +33,11 @@
                   >
                 </td>
                 <td>
-                  <img src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png" width="100" alt="" />
+                  <img
+                    src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+                    width="100"
+                    alt=""
+                  />
                 </td>
                 <td>{{ pro.name }}</td>
                 <td>{{ pro.price }}</td>
@@ -110,7 +114,9 @@
                     {{ totalPrice + 20 }} USD
                   </p>
                 </div>
-                <v-btn class="w-100 bg-orange-accent-4" @click="updateTotal"
+                <v-btn
+                  class="w-100 bg-orange-accent-4"
+                  @click="updateTotal(true)"
                   >Complate Order</v-btn
                 ></v-card
               >
@@ -128,6 +134,7 @@
 import { useProductStore } from "~/sotres/ProductSotre";
 import type { SpecialProduct } from "~/types/SpecialProduct";
 const navigationWarn = ref<boolean>(false);
+const router = useRouter();
 const parent = ref<any>(null);
 const progress = ref<HTMLDivElement>();
 const location = ref<boolean>(false);
@@ -159,7 +166,7 @@ const loactionvisibality = () => {
     }, 500);
   }
 };
-const updateTotal = () => {
+const updateTotal = (checkout: boolean = false) => {
   if (!parent.value || !progress.value) return;
   parent.value?.classList.add("opictiy");
 
@@ -170,6 +177,7 @@ const updateTotal = () => {
     totalPrice.value = 0;
     productStore.cart.forEach((el: SpecialProduct) => {
       totalPrice.value += el.cartQuanity * el.price;
+      if (checkout) router.replace("/checkout");
     });
   }, 500);
 };

@@ -182,6 +182,7 @@
 import { useProductStore } from "~/sotres/ProductSotre";
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
 import { z } from "zod";
+
 const userSchema = z.object({
   firstname: z.string().min(1, { message: "First Name Is Required" }),
   lastname: z.string().min(1, { message: "Last Name Is Required" }),
@@ -214,6 +215,7 @@ const submit = () => {
   setTimeout(() => {
     (checkoutRef.value as any).redirectToCheckout();
     stripe.value = false;
+   
   }, 200);
 };
 const publishableKey =
