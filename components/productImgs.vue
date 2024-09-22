@@ -46,7 +46,11 @@
           :disabled="CurrImgNum === index"
           :class="{ disabled: CurrImgNum === index }"
         >
-          <img src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png" alt="" class="imgTH" />
+          <img
+            src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+            alt=""
+            class="imgTH"
+          />
         </button>
       </div>
     </div>
@@ -79,10 +83,10 @@ const swapArrowRight = (index: number) => {
       mainImg.value?.classList.remove("center2left");
       mainImg.value?.classList.add("right2center");
       console.log(CurrImgNum.value);
-      mainImg.value.src = props.imgSrc[CurrImgNum.value];
+      // mainImg.value.src = props.imgSrc[CurrImgNum.value];
       CurrImgNum.value = index;
     }, 300 * (CurrImgNum.value - index));
-    mainImg.value.src = props.imgSrc[CurrImgNum.value];
+    // mainImg.value.src = props.imgSrc[CurrImgNum.value];
   }
 };
 const swapArrowLeft = async (index: number) => {
@@ -94,10 +98,10 @@ const swapArrowLeft = async (index: number) => {
       mainImg.value?.classList.remove("center2right");
       mainImg.value?.classList.add("left2center");
       console.log(CurrImgNum.value);
-      mainImg.value.src = props.imgSrc[CurrImgNum.value];
+      // mainImg.value.src = props.imgSrc[CurrImgNum.value];
       CurrImgNum.value = index;
     }, 300 * 1);
-    mainImg.value.src = props.imgSrc[CurrImgNum.value];
+    mainImg.value.src = '../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png';
     mainImg.value?.classList.remove("left2center");
   }
 };
