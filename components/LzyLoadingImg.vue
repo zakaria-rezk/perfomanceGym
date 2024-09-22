@@ -3,7 +3,7 @@
     <img
       class=" img"
       :class="{ default: props.object }"
-      :src="props.src"
+      src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
       :alt="props.alt"
     />
   </figure>
