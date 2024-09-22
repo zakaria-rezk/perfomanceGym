@@ -17,8 +17,8 @@
     <v-list-item>
       <div class="d-flex justify-end text-white">
         <div class="mx-4">
-          <p>dsfsdfasfsd</p>
-          <p>dsfadsfsdaf</p>
+          <p>WheyPortain</p>
+          <p class="text-orange-accent-4">1500 USD</p>
         </div>
         <div>
           <img

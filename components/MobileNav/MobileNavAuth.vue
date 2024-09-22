@@ -52,7 +52,6 @@
   </div>
 </template>
 <script setup>
-
 const rememberMe = ref(false);
 const showPassword = ref(false);
 const togglePasswordVisibility = () => {
