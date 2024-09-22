@@ -55,7 +55,7 @@
               <v-divider></v-divider>
             </tbody>
           </v-table>
-          <v-btn @click="updateTotal" class="w-100 bg-orange-accent-4 my-2"
+          <v-btn @click="updateTotal(false)" class="w-100 bg-orange-accent-4 my-2"
             >Upadte Cart</v-btn
           >
         </v-col>
