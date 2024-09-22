@@ -13,7 +13,7 @@
       >
         <div>
           <img
-            :src="pro.imgs[0]"
+            src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
             alt=""
             class="rounded-xl"
             width="80"

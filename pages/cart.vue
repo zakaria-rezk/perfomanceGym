@@ -33,7 +33,7 @@
                   >
                 </td>
                 <td>
-                  <img :src="pro.imgs[0]" width="100" alt="" />
+                  <img src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png" width="100" alt="" />
                 </td>
                 <td>{{ pro.name }}</td>
                 <td>{{ pro.price }}</td>

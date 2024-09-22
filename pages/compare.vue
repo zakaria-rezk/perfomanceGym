@@ -55,7 +55,7 @@
                 >remove</v-btn
               >
             </div>
-            <img :src="pro.imgs[0]" alt="" :width="trWidth" class="img" />
+            <img src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png" alt="" :width="trWidth" class="img" />
             <p class="ma-1">{{ pro.name }}</p>
 
             <p class="ma-1">{{ pro.price }}USD</p>
@@ -119,8 +119,6 @@ onMounted(() => {});
 .img {
   min-width: 100px;
   max-width: 300px;
-}
-.compersion {
 }
 .list {
   top: 70%;
