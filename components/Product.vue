@@ -116,15 +116,14 @@
           }"
           class="text-decoration-none text-black"
         >
-          <!-- <LzyLoadingImg
-            src="../static/imges/Picsart_23-02-11_20-20-42-190-860x860.png"
+          <LzyLoadingImg
+            src="/static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
             alt="pro.alt"
             :object="true"
             :hot="pro.isHot"
             class="ma-3"
-          /> -->
-          <img :src="url" alt="" class="img" />
-          <img :src="url2" alt="" class="img" />
+          />
+
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
@@ -151,7 +150,8 @@
 </template>
 
 <script setup lang="ts">
-const url = "/_nuxt/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
+const url =
+  "/_nuxt/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
 const url2 =
   "https://master--leafy-alfajores-fc6788.netlify.app/static/images/products/WheyPortain/IMG_20230306_021505-860x982.png";
 import { useProductStore } from "~/sotres/ProductSotre";
