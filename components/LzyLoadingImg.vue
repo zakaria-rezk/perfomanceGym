@@ -1,15 +1,17 @@
 <template>
   <figure ref="figure position-relative" :class="{ hot: props.hot }">
     <img
-      class=" img"
+      class="img"
       :class="{ default: props.object }"
-      src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+      :src="url"
       :alt="props.alt"
     />
   </figure>
 </template>
 <script setup lang="ts">
 const props = defineProps<Props>() as Props;
+const url =
+  "../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png";
 interface Props {
   src: string;
   alt: string;
@@ -20,8 +22,6 @@ interface Props {
 const figure = ref<HTMLDivElement>();
 </script>
 <style scoped>
-
-
 .img {
   width: 100%;
   height: 250px;
@@ -29,7 +29,6 @@ const figure = ref<HTMLDivElement>();
   object-fit: fill;
 }
 .default {
- 
   height: 300px;
 }
 
