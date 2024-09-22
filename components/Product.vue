@@ -117,7 +117,7 @@
           class="text-decoration-none text-black"
         >
           <LzyLoadingImg
-            src="/static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+            src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
             alt="pro.alt"
             :object="true"
             :hot="pro.isHot"
