@@ -120,7 +120,7 @@
         >
           <div v-if="nextProduct?.imgs[0]" class="pa-1">
             <img
-              :src="nextProduct?.imgs[0]"
+              src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
               alt=""
               width="100px"
               height="120px"
@@ -147,7 +147,7 @@
         >
           <div v-if="prevProduct?.imgs[0]" class="pa-1">
             <img
-              :src="prevProduct?.imgs[0]"
+              src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
               alt=""
               width="100px"
               height="120px"

@@ -4,7 +4,10 @@
       <v-container class="content rounded-xl position-relative w-75">
         <v-row>
           <v-col cols="6">
-            <img :src="Props.product.imgs[0]" class="img" />
+            <img
+              src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+              class="img"
+            />
           </v-col>
           <v-col cols="6">
             <div class="text-right">

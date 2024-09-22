@@ -21,7 +21,7 @@
             :class="{ hot: props.hot }"
           >
             <img
-              :src="props.imgSrc[0]"
+              src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
               alt=""
               class="my-md-2 mx-md-5 mainimg position-relative cursor-move"
               @mousemove="magnfiy"
@@ -46,7 +46,7 @@
           :disabled="CurrImgNum === index"
           :class="{ disabled: CurrImgNum === index }"
         >
-          <img :src="img" alt="" class="imgTH" />
+          <img src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png" alt="" class="imgTH" />
         </button>
       </div>
     </div>
