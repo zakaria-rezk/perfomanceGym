@@ -3,7 +3,6 @@
     <v-container>
       <SectionTitle title="categrious" SectionContent="product categrious" />
       <v-row class="overflow-hidden container">
-       
         <v-col
           v-for="(pro, index) in products"
           :key="pro.id"
@@ -19,16 +18,14 @@
             :to="{
               name: 'ProductCategory-category',
               params: { category: pro.title },
-              
             }"
             class="text-decoration-none"
           >
-            <LzyLoadingImg
-              :src="pro.img"
+            <img
+              src="../static/images/Categrious/on-understanding-optimum-nutrition-gold-standard-100-whey-protein_Image_01.jpeg"
               :alt="pro.alt"
-              :object="false"
               v-if="intersecting"
-              :hot="false"
+              class="img"
             />
             <p
               class="position text-white text-h5 text-uppercase text-decoration-none"
@@ -97,9 +94,13 @@ const stopObserving = () => {
   text-align: center;
   border-radius: 10px;
   padding-top: 7px;
-  
 }
-
+.img {
+  width: 100%;
+  height: 250px;
+  border-radius: 30px;
+  object-fit: fill;
+}
 .position {
   position: relative;
   bottom: 40%;
