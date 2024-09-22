@@ -35,7 +35,7 @@
       </div>
       <div class="">
         <div
-          class="icons bg-grey-lighten-5 elevation-1 position-absolute d-flex flex-column justify-space-around flex-column-end"
+          class="icons bg-grey-lighten-5 elevation-1 position-absolute d-none d-md-flex flex-column justify-space-around flex-column-end"
         >
           <div v-if="!pro.compare">
             <v-btn
@@ -123,7 +123,7 @@
             :hot="pro.isHot"
             class="ma-3"
           />
-       
+
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
@@ -284,10 +284,7 @@ const addToCart = (pro: SpecialProduct) => {
   position: relative;
   top: -5px;
 }
-.col:hover .icons {
-  display: flex !important;
-  animation: left2right 0.3s ease-in-out forwards;
-}
+
 .col:hover .details {
   display: inline !important;
 }
@@ -316,6 +313,12 @@ const addToCart = (pro: SpecialProduct) => {
   background-color: rgb(252, 249, 249);
   border-radius: 0 0 10px 10px;
   transition: all 0.5s;
+}
+@media (min-width: 768px) {
+  .col:hover .icons {
+    display: flex !important;
+    animation: left2right 0.3s ease-in-out forwards;
+  }
 }
 button:hover .icon {
   transform: translateY(-50%);
