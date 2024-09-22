@@ -123,7 +123,10 @@
             :hot="pro.isHot"
             class="ma-3"
           />
-
+          <img
+            src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+            alt=""
+          />
           <p class="offers" v-if="pro.offer">{{ pro.offer }}</p>
           <div class="text-right">
             <p>{{ pro.name }}</p>
