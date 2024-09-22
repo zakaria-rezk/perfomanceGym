@@ -3,14 +3,13 @@
     <img
       class=" img"
       :class="{ default: props.object }"
-      src="../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png"
+      :src="props.src"
       :alt="props.alt"
     />
   </figure>
 </template>
 <script setup lang="ts">
 const props = defineProps<Props>() as Props;
-
 interface Props {
   src: string;
   alt: string;
