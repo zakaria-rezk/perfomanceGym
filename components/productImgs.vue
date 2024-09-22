@@ -101,7 +101,7 @@ const swapArrowLeft = async (index: number) => {
       // mainImg.value.src = props.imgSrc[CurrImgNum.value];
       CurrImgNum.value = index;
     }, 300 * 1);
-    mainImg.value.src = '../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png';
+    // mainImg.value.src = '../static/images/products/WeightGainerCarbs/Picsart_23-02-10_08-46-30-149.png';
     mainImg.value?.classList.remove("left2center");
   }
 };
